@@ -50,13 +50,46 @@ include::../tg-template/tg-generalExecutiveSummary.adoc[]
 
 include::tg-au-ExecutiveSummary.adoc[]
 
-include::../tg-template/tg-acknowledgements.adoc[]
+= Acknowledgements
 
 :numbered:
 
-include::../tg-template/tg-scope.adoc[]
+= Scope
 
-include::../tg-tempalte/tg-overview.adoc[]
+= Overview
+
+= Specification scopes
+
+= Indentification information
+
+= Data content and structure
+
+== Application schemas - Overview
+
+=== Application schemas included in the IRs
+
+== Basic notions
+
+=== Notations
+
+=== Voidable characteristics
+
+=== Enumerations
+
+=== Code lists
+
+=== Consistency between spatial data sets
+
+=== Identifier management
+
+=== Geometry representation
+
+=== Temporality representation
+
+include::tg-au-applicationSchemas.adoc[]
+
+
+
 
 :numbered!:
 

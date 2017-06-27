@@ -1,4 +1,4 @@
-[[tg-au-metadata-table]]
+[[tg-au-metadata]]
 
 = D2.8.I.2 Data Specification on Administrative Units – Technical Guidelines
 
