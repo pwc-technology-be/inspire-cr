@@ -38,6 +38,10 @@ include::tg-au-metadata.adoc[]
 
 <<<
 
+toc::[]
+
+<<<
+
 :leveloffset: +1
 
 include::../tg-template/tg-foreword.adoc[]
@@ -47,12 +51,6 @@ include::../tg-template/tg-generalExecutiveSummary.adoc[]
 include::tg-au-ExecutiveSummary.adoc[]
 
 include::../tg-template/tg-acknowledgements.adoc[]
-
-<<<
-
-toc::[]
-
-<<<
 
 :numbered:
 
