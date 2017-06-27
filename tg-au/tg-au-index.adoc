@@ -1,0 +1,68 @@
+:doctype: book
+
+:stylesdir: stylesheets/
+:stylesheet: inspire.css
+:linkcss:
+
+:toc: macro
+:toc-title: Table of contents
+:toclevels: 4
+:toc-position: left
+:appendix-caption: Annex
+
+:icons: font
+
+:source-highlighter: pygments
+:pygments-style: autumn
+:pygments-linenums-mode: inline
+
+
+
+
+[[EC_logo]]
+image::../tg-template/images/EC%20logo.jpeg["European Commission Logo",150,align="center"]
+
+[frame="none",grid="none",cols="^25,<.^75"]
+|===
+|image:../tg-template/images/INSPIRE%20logo.png["INSPIRE Logo",150] | [inspire_headline]#INSPIRE +
+Infrastructure for Spatial Information in Europe#
+|===
+
+
+WARNING: WORK IN PROGRESS
+
+include::../tg-template/tg-config-pdf.adoc[]
+
+include::tg-au-metadata.adoc[]
+
+<<<
+
+:leveloffset: +1
+
+include::../tg-template/tg-foreword.adoc[]
+
+include::../tg-template/tg-generalExecutiveSummary.adoc[]
+
+include::tg-au-ExecutiveSummary.adoc[]
+
+include::../tg-template/tg-acknowledgements.adoc[]
+
+<<<
+
+toc::[]
+
+<<<
+
+:numbered:
+
+include::../tg-template/tg-scope.adoc[]
+
+include::../tg-tempalte/tg-overview.adoc[]
+
+:numbered!:
+
+include::tg-annexA.adoc[]
+
+include::tg-annexB.adoc[]
+
+:leveloffset: -1
