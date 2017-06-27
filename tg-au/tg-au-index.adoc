@@ -1,6 +1,6 @@
 :doctype: book
 
-:stylesdir: stylesheets/
+:stylesdir: ../stylesheets/
 :stylesheet: inspire.css
 :linkcss:
 
@@ -32,8 +32,13 @@ Infrastructure for Spatial Information in Europe#
 WARNING: WORK IN PROGRESS
 
 include::../tg-template/tg-config-pdf.adoc[]
+include::tg-au-config.adoc[]
 
 include::tg-au-metadata.adoc[]
+
+<<<
+
+toc::[]
 
 <<<
 
@@ -46,12 +51,6 @@ include::../tg-template/tg-generalExecutiveSummary.adoc[]
 include::tg-au-ExecutiveSummary.adoc[]
 
 include::../tg-template/tg-acknowledgements.adoc[]
-
-<<<
-
-toc::[]
-
-<<<
 
 :numbered:
 

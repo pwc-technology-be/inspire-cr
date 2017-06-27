@@ -7,10 +7,10 @@
 | *Title* | D2.8.I.2 Data Specification on _Administrative Units_ – Technical Guidelines
 | *Creator* | INSPIRE Thematic Working Group Administrative Units
 | *Date* | 2014-04-17
-| *Subject* | INSPIRE Data Specification for the spatial data theme Administrative Units
+| *Subject* | INSPIRE Data Specification for the spatial data theme _Administrative Units_
 | *Publisher* | European Commission Joint Research Centre
 | *Type* | Text
-| *Description* | This document describes the INSPIRE Data Specification for the spatial data theme Administrative Units
+| *Description* | This document describes the INSPIRE Data Specification for the spatial data theme _Administrative Units_
 | *Contributor* | Members of the INSPIRE Thematic Working Group Administrative Units
 | *Format* | {format}
 | *Source* | 
