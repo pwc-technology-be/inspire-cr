@@ -8,8 +8,9 @@
 === Application schemas included in the IRs
 
 [[tg-au-typesToBeUsed]]
-The types to be used for the exchange and classification of spatial objects from data sets related to the spatial data theme {theme} are defined in the following application schemas :
-* AdministrativeUnits application schema (see section {sectionApplicationSchemaAU}). 
+The types to be used for the exchange and classification of spatial objects from data sets related to the spatial data theme {theme} are defined in the following application schemas:
+
+* AdministrativeUnits application schema (see section {sectionApplicationSchemaAU}).
 * MaritimeUnits application schema (see section {sectionApplicationSchemaMU}).
 
 [[tg-au-consistencyBetweenSpatialDataSets]]
@@ -263,18 +264,18 @@ Finally, the following associations between boundaries and administrative units 
 
 |=== 
 
-| *BOUNDARY --> UNIT* | *UNIT --> BOUNDARY*
+| *BOUNDARY -> UNIT* | *UNIT -> BOUNDARY*
 
-| BF1 --> AU1, AU3 +
-BF2 --> AU1, AU2, AU5 +
-BF3 --> AU1, AU2, AU4 +
-BF4 --> AU2, AU3, AU4 +
-BF5 --> AU2, AU3, AU5 +
-BF6 --> AU4, AU5 | AU1 --> BF1, BF2, BF3 +
-AU2 --> BF2, BF3, BF4, BF5 +
-AU3 --> BF1, BF4, BF5 +
-AU4 --> BF3, BF4, BF6 +
-AU5 --> BF2, BF5, BF6
+| BF1 -> AU1, AU3 +
+BF2 -> AU1, AU2, AU5 +
+BF3 -> AU1, AU2, AU4 +
+BF4 -> AU2, AU3, AU4 +
+BF5 -> AU2, AU3, AU5 +
+BF6 -> AU4, AU5 | AU1 -> BF1, BF2, BF3 +
+AU2 -> BF2, BF3, BF4, BF5 +
+AU3 -> BF1, BF4, BF5 +
+AU4 -> BF3, BF4, BF6 +
+AU5 -> BF2, BF5, BF6
 
 |===
 
@@ -359,33 +360,33 @@ Finally, the following associations between boundaries and administrative units 
 
 |=== 
 
-| *BOUNDARY --> UNIT* | *UNIT --> BOUNDARY*
+| *BOUNDARY -> UNIT* | *UNIT -> BOUNDARY*
 
 | national boundaries: +
-BF1.1 --> AU1 (boundary with AU-X) +
-BF1.2 --> AU1 (boundary with AU-Y) +
-BF1.3 --> AU1 (boundary with AU-Z)
+BF1.1 -> AU1 (boundary with AU-X) +
+BF1.2 -> AU1 (boundary with AU-Y) +
+BF1.3 -> AU1 (boundary with AU-Z)
 |
 national units: +
-AU1 --> BF1.1, BF1.2, BF1.3
+AU1 -> BF1.1, BF1.2, BF1.3
 
 regional boundaries: +
-BF2.3 --> AU2, AU3 +
-BF2.2 --> AU2 +
-BF2.1 --> AU3
+BF2.3 -> AU2, AU3 +
+BF2.2 -> AU2 +
+BF2.1 -> AU3
 |
 regional units: +
-AU2 --> BF2.1, BF2.2 +
-AU3 --> BF2.1, BF2.3
+AU2 -> BF2.1, BF2.2 +
+AU3 -> BF2.1, BF2.3
 
 local boundaries: +
-BF3.1 --> AU4 +
-BF3.2 --> AU4, AU5 +
-BF3.3 --> AU5
+BF3.1 -> AU4 +
+BF3.2 -> AU4, AU5 +
+BF3.3 -> AU5
 | 
 local units: +
-AU4 --> BF3.1, BF3.2 +
-AU5 --> BF3.2, BF3.3
+AU4 -> BF3.1, BF3.2 +
+AU5 -> BF3.2, BF3.3
 
 |===
 
@@ -397,40 +398,45 @@ AU5 --> BF3.2, BF3.3
 
 
 [[tg-au-classPackageStructure]]
+.Overview of the {theme} packages and their dependencies
 image::images/classPackageStructure.PNG["Overview of the {theme} packages and their dependencies"]
 
 [[tg-au-classAUOverview]]
+.UML class diagram: Overview of the AdministrativeUnits application schema
 image::images/classAUOverview.PNG["UML class diagram: Overview of the AdministrativeUnits application schema"]
 
 [[tg-au-classAU]]
+.Administrative Unit
 image::images/classAU.PNG["Administrative Unit"]
 
 [[tg-au-classAdministrativeBoundary]]
+.Administrative Boundary
 image::images/classAdministrativeBoundary.PNG["Administrative Boundary"]
 
 [[tg-au-classCondominium]]
+.Condominiums and relationsip to AdministrativeUnit
 image::images/classCondominium.PNG["Condominiums and relationsip to AdministrativeUnit"]
 
 [[tg-au-geometryRepresentationExample1]]
-image::images/geometryRepresentationExample1.PNG
+image::images/geometryRepresentationExample1.PNG[""]
 
 [[tg-au-geometryRepresentationExample2]]
-image::images/geometryRepresentationExample2.PNG
+image::images/geometryRepresentationExample2.PNG[""]
 
 [[tg-au-geometryRepresentationExample3]]
-image::images/geometryRepresentationExample3.PNG
+image::images/geometryRepresentationExample3.PNG[""]
 
 [[tg-au-geometryRepresentationExample4]]
-image::images/geometryRepresentationExample4.PNG
+image::images/geometryRepresentationExample4.PNG[""]
 
 [[tg-au-geometryRepresentationExample5]]
-image::images/geometryRepresentationExample5.PNG
+image::images/geometryRepresentationExample5.PNG[""]
 
 [[tg-au-geometryRepresentationExample6]]
-image::images/geometryRepresentationExample6.PNG
+image::images/geometryRepresentationExample6.PNG[""]
 
 [[tg-au-geometryRepresentationExample7]]
-image::images/geometryRepresentationExample7.PNG
+image::images/geometryRepresentationExample7.PNG[""]
 
 [[tg-au-geometryRepresentationExample8]]
-image::images/geometryRepresentationExample8.PNG
+image::images/geometryRepresentationExample8.PNG[""]
