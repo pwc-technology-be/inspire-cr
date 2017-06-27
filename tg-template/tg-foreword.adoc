@@ -1,7 +1,7 @@
 [[foreword]]
 = Foreword 
 
-= How to read the document?
+== How to read the document?
 
 This document describes the _“{documentname}”_ version 3.1(.0) as developed by the Thematic Working Group (TWG) _{theme}_ using both natural and a conceptual schema language. 
 
@@ -15,8 +15,8 @@ The UML diagrams (in Chapter 5) offer a rapid way to see the main elements of th
 
 
 [NOTE]
-The document will be publicly available as a ‗non-paper‘. It does not represent an official position of the European Commission, and as such cannot be invoked in the context of legal procedures.
+The document will be publicly available as a 'non-paper'. It does not represent an official position of the European Commission, and as such cannot be invoked in the context of legal procedures.
 
-*Legal Notice*
+== Legal Notice
 
 Neither the European Commission nor any person acting on behalf of the Commission is responsible for the use which might be made of this publication.

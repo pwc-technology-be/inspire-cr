@@ -1,3 +1,0 @@
-= Conformance
-
-#TBD - do we need an abstract test suite?#
