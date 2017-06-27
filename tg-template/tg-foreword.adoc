@@ -1,0 +1,22 @@
+[[foreword]]
+= Foreword 
+
+= How to read the document?
+
+This document describes the _“{documentname}”_ version 3.1(.0) as developed by the Thematic Working Group (TWG) _{theme}_ using both natural and a conceptual schema language. 
+
+The data specification is based on a common template1 used for all data specifications, which has been harmonised using the experience from the development of the Annex I, II and III data specifications. 
+
+This document provides guidelines for the implementation of the provisions laid down in the draft Implementing Rule for spatial data sets and services of the INSPIRE Directive. It also includes additional requirements and recommendations that, although not included in the Implementing Rule, are relevant to guarantee or to increase data interoperability. 
+
+Two executive summaries provide a quick overview of the INSPIRE data specification process in general, and the content of the data specification on _{theme}_ in particular. We highly recommend that managers, decision makers, and all those new to the INSPIRE process and/or information modelling should read these executive summaries first. 
+
+The UML diagrams (in Chapter 5) offer a rapid way to see the main elements of the specifications and their relationships. The definition of the spatial object types, attributes, and relationships are included in the Feature Catalogue (also in Chapter 5). People having thematic expertise but not familiar with UML can fully understand the content of the data model focusing on the Feature Catalogue. Users might also find the Feature Catalogue especially useful to check if it contains the data necessary for the applications that they run. The technical details are expected to be of prime interest to those organisations that are responsible for implementing INSPIRE within the field of _{theme}_, but also to other stakeholders and users of the spatial data infrastructure. The technical provisions and the underlying concepts are often illustrated by examples. Smaller examples are within the text of the specification, while longer explanatory examples and descriptions of selected use cases are attached in the annexes. In order to distinguish the INSPIRE spatial data themes from the spatial object types, the INSPIRE spatial data themes are written in italics.
+
+
+[NOTE]
+The document will be publicly available as a ‗non-paper‘. It does not represent an official position of the European Commission, and as such cannot be invoked in the context of legal procedures.
+
+*Legal Notice*
+
+Neither the European Commission nor any person acting on behalf of the Commission is responsible for the use which might be made of this publication.

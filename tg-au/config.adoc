@@ -1,0 +1,2 @@
+:documentname: INSPIRE data specification on Administrative Units - Technical Guidelines
+:theme: Administrative Units
