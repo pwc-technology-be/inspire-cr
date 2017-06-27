@@ -1,12 +1,11 @@
-[[foreword]]
-
+[[tg-foreword]]
 = Foreword 
 
 == How to read the document?
 
 This document describes the _“{documentname}”_ version 3.1(.0) as developed by the Thematic Working Group (TWG) _{theme}_ using both natural and a conceptual schema language. 
 
-The data specification is based on a common template1 used for all data specifications, which has been harmonised using the experience from the development of the Annex I, II and III data specifications. 
+The data specification is based on a common template footnote:[The common document template is available in the ―Framework documents‖ section of the data specifications web page at http://inspire.jrc.ec.europa.eu/index.cfm/pageid/2] used for all data specifications, which has been harmonised using the experience from the development of the Annex I, II and III data specifications. 
 
 This document provides guidelines for the implementation of the provisions laid down in the draft Implementing Rule for spatial data sets and services of the INSPIRE Directive. It also includes additional requirements and recommendations that, although not included in the Implementing Rule, are relevant to guarantee or to increase data interoperability. 
 
