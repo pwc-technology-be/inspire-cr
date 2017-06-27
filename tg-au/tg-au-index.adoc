@@ -17,8 +17,6 @@
 :pygments-linenums-mode: inline
 
 
-
-
 [[EC_logo]]
 image::../tg-template/images/EC%20logo.jpeg["European Commission Logo",150,align="center"]
 
@@ -62,29 +60,7 @@ include::tg-au-ExecutiveSummary.adoc[]
 
 = Indentification information
 
-= Data content and structure
-
-== Application schemas - Overview
-
-=== Application schemas included in the IRs
-
-== Basic notions
-
-=== Notations
-
-=== Voidable characteristics
-
-=== Enumerations
-
-=== Code lists
-
-=== Consistency between spatial data sets
-
-=== Identifier management
-
-=== Geometry representation
-
-=== Temporality representation
+include::tg-au-dataContentAndStructure.adoc[]
 
 include::tg-au-applicationSchemas.adoc[]
 

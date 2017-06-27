@@ -1,17 +1,17 @@
 [[tg-au-metadata]]
 
-= D2.8.I.2 Data Specification on Administrative Units – Technical Guidelines
+= D2.8.I.2 {documentName}
 
 [frame="topbot",grid="none"]
 |===
-| *Title* | D2.8.I.2 Data Specification on _Administrative Units_ – Technical Guidelines
+| *Title* | D2.8.I.2 {documentName}
 | *Creator* | INSPIRE Thematic Working Group Administrative Units
 | *Date* | 2014-04-17
-| *Subject* | INSPIRE Data Specification for the spatial data theme _Administrative Units_
+| *Subject* | INSPIRE Data Specification for the spatial data theme _{theme}_
 | *Publisher* | European Commission Joint Research Centre
 | *Type* | Text
-| *Description* | This document describes the INSPIRE Data Specification for the spatial data theme _Administrative Units_
-| *Contributor* | Members of the INSPIRE Thematic Working Group Administrative Units
+| *Description* | This document describes the INSPIRE Data Specification for the spatial data theme _{theme}_
+| *Contributor* | Members of the INSPIRE Thematic Working Group {theme}
 | *Format* | {format}
 | *Source* | 
 | *Rights* | Public
