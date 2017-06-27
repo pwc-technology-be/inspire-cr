@@ -372,6 +372,10 @@ In addition, some themes make reference to the types TimeValuePair and Timeserie
 
 Where possible, only these coverage types (or a subtype thereof) are used in INSPIRE application schemas.
 
+include::tg-dataContentAndStructure.adoc[rectifiedGrid]
+
+include::tg-dataContentAndStructure.adoc[referenceableGrid]
+
 [[rectifiedGrid]]
 image::images/rectified-grid.png["Rectified Grid"]
 
