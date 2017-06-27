@@ -4,10 +4,10 @@ Articles 3, 4 and 5 of the Implementing Rules lay down the requirements for the 
 
 [IRREQUIREMENT, id="IR Requirement"]
 ======
-Article 4 +
+__Article 4__ +
 *Types for the Exchange of Classification of Spatial Objects*
 
-. For the exchange and classification of spatial objects from data sets meeting the conditions laid down in Article 4 of Directive 2007/2/EC, Member States shall use the spatial object types and associated data types, enumerations and code lists that are defined in Annexes II, III and IV for the themes the data sets relate to. 
+. For the exchange and classification of spatial objects from data sets meeting the conditions laid down in _Article 4_ of Directive 2007/2/EC, Member States shall use the spatial object types and associated data types, enumerations and code lists that are defined in Annexes II, III and IV for the themes the data sets relate to. 
 . Spatial object types and data types shall comply with the definitions and constraints and include the attributes and association roles set out in the Annexes. 
 . The enumerations and code lists used in attributes or association roles of spatial object types or data types shall comply with the definitions and include the values set out in Annex II. The enumeration and code list values are uniquely identified by language-neutral mnemonic codes for computers. The values may also include a language-specific name to be used for human interaction.
 ======
@@ -22,17 +22,17 @@ NOTE	The application schemas presented in this section contain some additional i
 Spatial object types and data types shall comply with the multiplicities defined for the attributes and association roles in this section.
 ======
 
-An application schema may include references (e.g. in attributes or inheritance relationships) to common types or types defined in other spatial data themes. These types can be found in a sub-section called ―Imported Types‖ at the end of each application schema section. The common types referred to from application schemas included in the IRs are addressed in Article 3.
+An application schema may include references (e.g. in attributes or inheritance relationships) to common types or types defined in other spatial data themes. These types can be found in a sub-section called ―Imported Types‖ at the end of each application schema section. The common types referred to from application schemas included in the IRs are addressed in _Article 3_.
 
 [IRREQUIREMENT, id="IR Requirement"]
 ======
-Article 3 +
+_Article 3_ +
 *Common Types*
 
 Types that are common to several of the themes listed in Annexes I, II and III to Directive 2007/2/EC shall conform to the definitions and constraints and include the attributes and association roles set out in Annex I.
 ======
 
-NOTE	Since the IRs contain the types for all INSPIRE spatial data themes in one document, Article 3 does not explicitly refer to types defined in other spatial data themes, but only to types defined in external data models. 
+NOTE	Since the IRs contain the types for all INSPIRE spatial data themes in one document, _Article 3_ does not explicitly refer to types defined in other spatial data themes, but only to types defined in external data models. 
 
 Common types are described in detail in the Generic Conceptual Model [DS-D2.7], in the relevant international standards (e.g. of the ISO 19100 series) or in the documents on the common INSPIRE models [DS-D2.10.x]. For detailed descriptions of types defined in other spatial data themes, see the corresponding Data Specification TG document [DS-D2.8.x].
 
@@ -60,7 +60,7 @@ The following important rules related to class inheritance and abstract classes 
 
 [IRREQUIREMENT, id="IR Requirement"]
 ======
-Article 5 +
+_Article 5_ +
 *Types*
 
 (...)
@@ -149,7 +149,7 @@ Enumerations are modelled as classes in the application schemas. Their values ar
 
 [IRREQUIREMENT, id="IR Requirement"]
 ======
-Article 6 +
+_Article 6_ +
 *Code Lists and Enumerations*
 
 (...)
@@ -168,7 +168,7 @@ The IRs distinguish the following types of code lists.
 
 [IRREQUIREMENT, id="IR Requirement"]
 ======
-Article 6 +
+_Article 6_ +
 *Code Lists and Enumerations*
 
 (...)
@@ -197,11 +197,11 @@ Additional values defined by data providers should not replace or redefine any v
 
 NOTE This data specification may specify recommended values for some of the code lists of type (b), (c) and (d) (see section 5.2.4.3). These recommended values are specified in a dedicated Annex. 
 
-In addition, code lists can be hierarchical, as explained in Article 6(2) of the IRs.
+In addition, code lists can be hierarchical, as explained in _Article 6_(2) of the IRs.
 
 [IRREQUIREMENT, id="IR Requirement"]
 ======
-Article 6 +
+_Article 6_ +
 *Code Lists and Enumerations*
 
 (...)
@@ -216,7 +216,7 @@ The type of code list and whether it is hierarchical or not is also indicated in
 
 [IRREQUIREMENT, id="IR Requirement"]
 ======
-Article 6 +
+_Article 6_ +
 *Code Lists and Enumerations*
 
 (...)
@@ -226,9 +226,9 @@ Article 6 +
 . Attributes or association roles of spatial object types or data types whose type is a code list may only take values that are allowed according to the specification of the code list.
 ======
 
-Article 6(4) obliges data providers to use only values that are allowed according to the specification of the code list. The ―allowed values according to the specification of the code list‖ are the values explicitly defined in the IRs plus (in the case of code lists of type (b), (c) and (d)) additional values defined by data providers. 
+_Article 6_(4) obliges data providers to use only values that are allowed according to the specification of the code list. The ―allowed values according to the specification of the code list‖ are the values explicitly defined in the IRs plus (in the case of code lists of type (b), (c) and (d)) additional values defined by data providers. 
 
-For attributes whose type is a code list of type (b), (c) or (d) data providers may use additional values that are not defined in the IRs. Article 6(3) requires that such additional values and their definition be made available in a register. This enables users of the data to look up the meaning of the additional values used in a data set, and also facilitates the re-use of additional values by other data providers (potentially across Member States). 
+For attributes whose type is a code list of type (b), (c) or (d) data providers may use additional values that are not defined in the IRs. _Article 6_(3) requires that such additional values and their definition be made available in a register. This enables users of the data to look up the meaning of the additional values used in a data set, and also facilitates the re-use of additional values by other data providers (potentially across Member States). 
 
 NOTE Guidelines for setting up registers for additional values and how to register additional values in these registers is still an open discussion point between Member States and the Commission.
 
@@ -278,7 +278,7 @@ An empty code list may also be used as a super-class for a number of specific co
 
 [IRREQUIREMENT, id="IR Requirement"]
 ======
-Article 9 +
+_Article 9_ +
 *Identifier Management*
 
 . The data type Identifier defined in Section 2.1 of Annex I shall be used as a type for the external object identifier of a spatial object.
@@ -287,9 +287,9 @@ Article 9 +
 
 NOTE 1 An external object identifier is a unique object identifier which is published by the responsible body, which may be used by external applications to reference the spatial object. [DS-D2.5] 
 
-NOTE 2 Article 9(1) is implemented in each application schema by including the attribute inspireId of type Identifier. 
+NOTE 2 _Article 9_(1) is implemented in each application schema by including the attribute inspireId of type Identifier. 
 
-NOTE 3 Article 9(2) is ensured if the namespace and localId attributes of the Identifier remains the same for different versions of a spatial object; the version attribute can of course change.
+NOTE 3 _Article 9_(2) is ensured if the namespace and localId attributes of the Identifier remains the same for different versions of a spatial object; the version attribute can of course change.
 
 [[tg-geometryRepresentation]]
 
@@ -297,7 +297,7 @@ NOTE 3 Article 9(2) is ensured if the namespace and localId attributes of the Id
 
 [IRREQUIREMENT, id="IR Requirement"]
 ======
-Article 9 +
+_Article 9_ +
 *Other Requirements & Rules*
 
 . The value domain of spatial properties defined in this Regulation shall be restricted to the Simple Feature spatial schema as defined in Herring, John R. (ed.), OpenGIS® Implementation Standard for Geographic information – Simple feature access – Part 1: Common architecture, version 1.2.1, Open Geospatial Consortium, 2011, unless specified otherwise for a specific spatial data theme or type.
@@ -320,7 +320,7 @@ NOTE 2 Changes to the attribute "endLifespanVersion" does not trigger a change i
 
 [IRREQUIREMENT, id="IR Requirement"]
 ======
-Article 10 +
+_Article 10_ +
 *Life-cycle of Spatial Objects*
 
 (...)
@@ -346,7 +346,7 @@ Specific application schemas may give examples what ―being valid‖ means for 
 
 [IRREQUIREMENT, id="IR Requirement"]
 ======
-Article 12 +
+_Article 12_ +
 *Other Requirements & Rules*
 
 (...)
