@@ -80,7 +80,7 @@ Similarly, the down-top relationship between the units of lower and higher level
 
 In some countries the hierarchy of Administrative Units differs from the ideal strictly hierarchical organization. For instance, some units (at lowest level) are not linked to any unit at a higher level but to two or more units at same level. In order to support reporting of such situations a self-reference of AdministrativeUnit with the coAdminister and administeredBy association roles is established in this application schema.
 
-[IRREQUIREMENT, id="IR Requirement"]
+[REQUIREMENT, id="IR Requirement"]
 ======
 _Annex II, Section 4.4_ +
 *Theme-specific Requirements*
@@ -88,7 +88,7 @@ _Annex II, Section 4.4_ +
 . Each instance of spatial object type AdministrativeUnit, except for the country level unit representing a MemberState and co-administered units, shall refer exactly to one unit at a higher level of administrative hierarchy. This correspondence shall be expressed by the upperLevelUnit association role of AdministrativeUnit spatial object type.
 ======
 
-[IRREQUIREMENT, id="IR Requirement"]
+[REQUIREMENT, id="IR Requirement"]
 ======
 _Annex II, Section 4.4_ +
 *Theme-specific Requirements*
@@ -97,7 +97,7 @@ _Annex II, Section 4.4_ +
 . Each instance of spatial object type AdministrativeUnit, except for those at the lowest level, shall refer to their respective lower level units. This correspondence shall be expressed by the lowerLevelUnit association role of AdministrativeUnit spatial object type.
 ======
 
-[IRREQUIREMENT, id="IR Requirement"]
+[REQUIREMENT, id="IR Requirement"]
 ======
 _Annex II, Section 4.4_ +
 *Theme-specific Requirements*
@@ -121,7 +121,7 @@ For each AdministrativeUnit a location of the authority / administration (reside
 
 Since administrative units may consist of mainlands and exclaves, their geometric representation is expressed by the GM_MultiSurface type.
 
-[IRREQUIREMENT, id="IR Requirement"]
+[REQUIREMENT, id="IR Requirement"]
 ======
 _Annex II, Section 4.4_ +
 *Theme-specific Requirements*
@@ -140,7 +140,7 @@ The legal status is not only meant for international boundaries but also for bou
 
 This application schema defines a voidable association between AdministrativeUnit and AdministrativeBoundary spatial object types to support the expression of topological and semantic relationships that can be used in queries to avoid geometric intersections.
 
-[IRREQUIREMENT, id="IR Requirement"]
+[REQUIREMENT, id="IR Requirement"]
 ======
 _Annex II, Section 4.4_ +
 *Theme-specific Requirements*
@@ -165,7 +165,7 @@ include::content/tg-au-dataContentAndStructure.adoc[tg-au-classCondominium]
 
 To support the representation of condominiums a special spatial object type is defined in the application schema AdministrativeUnits. It includes a mandatory surface geometry and an optional name. The association to the AdministrativeUnit type allows representing the connection between the condominium and the administering States.
 
-[IRREQUIREMENT, id="IR Requirement"]
+[REQUIREMENT, id="IR Requirement"]
 ======
 _Annex II, Section 4.4_ +
 *Theme-specific Requirements*
@@ -174,7 +174,7 @@ _Annex II, Section 4.4_ +
 . The spatial extent of a condominium may not be part of the geometry representing the spatial extent of an administrative unit.
 ======
 
-[IRREQUIREMENT, id="IR Requirement"]
+[REQUIREMENT, id="IR Requirement"]
 ======
 _Annex II, Section 4.4_ +
 *Theme-specific Requirements*
