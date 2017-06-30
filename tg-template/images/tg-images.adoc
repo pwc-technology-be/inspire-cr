@@ -1,0 +1,8 @@
+# tag::rectifiedGrid[]
+.Examples of a rectified grid
+image::rectified-grid.png["Rectified Grid"]
+# end::rectifiedGrid[]
+# tag::referenceableGrid[]
+.Examples of a referenceable grid
+image::referenceable-grid.png["Referenceable Grid"]
+# end::rectifiedGrid[]

@@ -24,13 +24,13 @@ class RequirementBlock < Asciidoctor::Extensions::BlockProcessor
 
   def process parent, reader, attrs
     attrs['name'] = 'requirement'
-    attrs['caption'] = 'Requirement'
+#   attrs['caption'] = 'Requirement'
 
     doc = parent.document
     requirement_id = doc.counter('requirement')
     attrs['id'] = "_requirement-#{requirement_id}" unless attrs['id']    
 #attrs['title'] = "#{doc.attributes['requirement-caption'] || 'Requirement'} #{requirement_id}" unless attrs['title']
-    attrs['title'] = "#{doc.attributes['requirement-caption'] || 'Requirement'} #{attrs['id']}" unless attrs['title']
+    attrs['title'] = "#{attrs['id']}" unless attrs['title']
 
     create_block parent, :admonition, reader.lines, attrs, content_model: :compound
   end

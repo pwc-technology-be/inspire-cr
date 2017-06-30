@@ -24,10 +24,10 @@ class PermissionBlock < Asciidoctor::Extensions::BlockProcessor
 
   def process parent, reader, attrs
     attrs['name'] = 'permission'
-    attrs['caption'] = 'Permission'
+#   attrs['caption'] = 'Permission'
 
     doc = parent.document
-    attrs['title'] = "#{doc.attributes['permission-caption'] || 'Permission'} #{attrs['id']}" unless attrs['title']
+    attrs['title'] = "#{attrs['id']}" unless attrs['title']
 
     create_block parent, :admonition, reader.lines, attrs, content_model: :compound
   end
