@@ -6,7 +6,7 @@
 
 :toc: macro
 :toc-title: Table of contents
-:toclevels: 4
+:toclevels: 3
 :toc-position: left
 :appendix-caption: Annex
 
