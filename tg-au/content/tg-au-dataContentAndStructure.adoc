@@ -64,8 +64,6 @@ NOTE Previous versions of the data specification on _Administrative Units_ conta
 
 In some existing implementations for administrative units data (e.g. EuroBoundaryMap), the spatial extent of administrative units is further decomposed into sub-areas, like land areas, islands, inland water or coastal water areas. The reason for this decomposition of administrative units into areas comes from the natural need for combining administrative information with other thematic information. This application schema does not differentiate between the sub-areas of administrative units because it is out of its scope. Considering the INSPIRE harmonization objectives, the correlation of administrative units with elements of other division systems can be derived from cross-theme analysis of thematic spatial objects. In the case described above, the information on decomposition of administrative units into sub-areas can be derived performing spatial analyses with data from other INSPIRE themes (e.g. Land Use theme from Annex II). See also Annex E for further information.
 
-[[tg-au-UMLOverview]]
-
 ==== UML Overview
 
 include::tg-au-dataContentAndStructure.adoc[tg-au-classAUOverview]

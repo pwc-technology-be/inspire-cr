@@ -16,23 +16,16 @@
 :pygments-style: autumn
 :pygments-linenums-mode: inline
 
-
-[[EC_logo]]
-image::../tg-template/images/EC%20logo.jpeg["European Commission Logo",150,align="center"]
-
-[frame="none",grid="none",cols="^25,<.^75"]
-|===
-|image:../tg-template/images/INSPIRE%20logo.png["INSPIRE Logo",150] | [inspire_headline]#INSPIRE +
-Infrastructure for Spatial Information in Europe#
-|===
+:rec-id: 0
 
 
 WARNING: WORK IN PROGRESS
 
-include::../tg-template/tg-config-pdf.adoc[]
-include::tg-au-config.adoc[]
+include:tg-au-index-config.adoc[]
 
-include::tg-au-metadata.adoc[]
+include::tg-au-index-metadata.adoc[]
+
+include::content/tg-au-metadata.adoc[]
 
 <<<
 
@@ -42,35 +35,48 @@ toc::[]
 
 :leveloffset: +1
 
-include::../tg-template/tg-foreword.adoc[]
+include::tg-au-index-foreword.adoc[]
 
-include::../tg-template/tg-generalExecutiveSummary.adoc[]
+include::tg-au-index-generalExecutiveSummary.adoc[]
 
-include::tg-au-ExecutiveSummary.adoc[]
-
-= Acknowledgements
+include::tg-au-index-executiveSummary.adoc[]
 
 :numbered:
 
-= Scope
+include::tg-au-index-scope.adoc[]
 
-= Overview
+include::tg-au-index-overview.adoc[]
 
-= Specification scopes
+include::tg-au-index-specificationScopes.adoc[]
 
-= Indentification information
+include::tg-au-index-indentificationInformation.adoc[]
 
-include::tg-au-dataContentAndStructure.adoc[]
+include::tg-au-index-dataContentAndStructure.adoc[]
 
-include::tg-au-applicationSchemas.adoc[]
+include::tg-au-index-referenceSystemsUnitsOfMeasureAndGrids.adoc[]
 
+include::tg-au-index-dataQuality.adoc[]
 
+include::tg-au-index-datasetlevelMetadata.adoc[]
 
+include::tg-au-index-delivery.adoc[]
+
+include::tg-au-index-dataCapture.adoc[]
+
+include::tg-au-index-portrayal.adoc[]
 
 :numbered!:
 
-include::tg-annexA.adoc[]
+include::tg-au-index-bibliography.adoc[]
 
-include::tg-annexB.adoc[]
+include::tg-au-index-annexA.adoc[]
+
+include::tg-au-index-annexB.adoc[]
+
+include::tg-au-index-annexC.adoc[]
+
+include::tg-au-index-annexD.adoc[]
+
+include::tg-au-index-annexE.adoc[]
 
 :leveloffset: -1

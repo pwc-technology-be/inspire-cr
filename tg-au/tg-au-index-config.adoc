@@ -1,0 +1,2 @@
+include::../tg-template/tg-config-pdf.adoc[]
+include::content/tg-au-config.adoc[]

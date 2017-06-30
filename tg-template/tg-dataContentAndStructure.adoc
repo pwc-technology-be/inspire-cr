@@ -118,7 +118,7 @@ The «voidable» stereotype is used to characterise those properties of a spatia
 
 For all properties defined for a spatial object, a value has to be provided – either the corresponding value (if available in the data set maintained by the data provider) or the value of void. A void value shall imply that no corresponding value is contained in the source spatial data set maintained by the data provider or no corresponding value can be derived from existing values at reasonable costs.
 
-[RECOMMENDATION, id="Recommendation 2"]
+[RECOMMENDATION, id="Recommendation {counter:rec-id}"]
 ======
 The reason for a void value should be provided where possible using a listed value from the VoidReasonValue code list to indicate the reason for the missing value.
 ======
@@ -190,7 +190,7 @@ The type of code list is represented in the UML model through the tagged value e
 - _open_, representing code lists whose allowed values comprise the values specified in the IRs and additional values at any level defined by data providers (type c); and 
 - _any_, representing code lists, for which the IRs do not specify any allowed values, i.e. whose allowed values comprise any values defined by data providers (type d).
 
-[RECOMMENDATION, id="Recommendation 3"]
+[RECOMMENDATION, id="Recommendation {counter:rec-id}"]
 ======
 Additional values defined by data providers should not replace or redefine any value already specified in the IRs.
 ======
@@ -236,7 +236,7 @@ NOTE Guidelines for setting up registers for additional values and how to regist
 
 For code lists of type (b), (c) and (d), this data specification may propose additional values as a recommendation (in a dedicated Annex). These values will be included in the INSPIRE code list register. This will facilitate and encourage the usage of the recommended values by data providers since the obligation to make additional values defined by data providers available in a register (see section 5.2.4.2) is already met.
 
-[RECOMMENDATION, id="Recommendation 4"]
+[RECOMMENDATION, id="Recommendation {counter:rec-id}"]
 ======
 Where these Technical Guidelines recommend values for a code list in addition to those specified in the IRs, these values should be used.
 ======
@@ -259,7 +259,7 @@ The tables describing externally governed code lists in this section contain the
 
 Code list values are encoded using http URIs and labels. Rules for generating these URIs and labels are specified in a separate table.
 
-[RECOMMENDATION, id="Recommendation 5"]
+[RECOMMENDATION, id="Recommendation {counter:rec-id}"]
 ======
 The http URIs and labels used for encoding code list values should be taken from the INSPIRE code list registry for INSPIRE-governed code lists and generated according to the relevant rules specified for externally governed code lists.
 ======
@@ -274,6 +274,8 @@ If the value is missing or empty, this indicates an empty code list. If no sub-c
 
 An empty code list may also be used as a super-class for a number of specific code lists whose values may be used to specify the attribute value. If the sub-classes specified in the model represent all valid extensions to the empty code list, the subtyping relationship is qualified with the standard UML constraint "{complete,disjoint}".
 
+
+[[tg-identifierManagement]]
 === Identifier management
 
 [IRREQUIREMENT, id="IR Requirement"]
@@ -290,6 +292,7 @@ NOTE 1 An external object identifier is a unique object identifier which is publ
 NOTE 2 Article 9(1) is implemented in each application schema by including the attribute inspireId of type Identifier. 
 
 NOTE 3 Article 9(2) is ensured if the namespace and localId attributes of the Identifier remains the same for different versions of a spatial object; the version attribute can of course change.
+
 
 [[tg-geometryRepresentation]]
 
@@ -331,7 +334,7 @@ Article 10 +
 
 NOTE The requirement expressed in the IR Requirement above will be included as constraints in the UML data models of all themes.
 
-[RECOMMENDATION, id="Recommendation 6"]
+[RECOMMENDATION, id="Recommendation {counter:rec-id}"]
 ======
 If life-cycle information is not maintained as part of the spatial data set, all spatial objects belonging to this data set should provide a void value with a reason of "unpopulated".
 ======
