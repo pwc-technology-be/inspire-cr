@@ -24,7 +24,7 @@ class RecommendationBlock < Asciidoctor::Extensions::BlockProcessor
 
   def process parent, reader, attrs
     attrs['name'] = 'recommendation'
-    attrs['caption'] = 'Recommendation'
+#   attrs['caption'] = 'Recommendation'
 
     doc = parent.document
     attrs['title'] = "#{doc.attributes['recommendation-caption'] || 'Recommendation'} #{attrs['id']}" unless attrs['title']

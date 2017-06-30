@@ -24,7 +24,7 @@ class RequirementBlock < Asciidoctor::Extensions::BlockProcessor
 
   def process parent, reader, attrs
     attrs['name'] = 'requirement'
-    attrs['caption'] = 'Requirement'
+#   attrs['caption'] = 'Requirement'
 
     doc = parent.document
     requirement_id = doc.counter('requirement')

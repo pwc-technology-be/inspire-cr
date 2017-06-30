@@ -2,24 +2,24 @@ include::content/tg-au-dataContentAndStructure.adoc[tg-au-applicationSchemasOver
 
 include::../tg-template/tg-dataContentAndStructure.adoc[tg-applicationSchemasIncludedInTheIRs-article4]
 
-include::content/tg-au-dataContentAndStructure.adoc[tg-au-typesToBeUsed]
+##include::content/tg-au-dataContentAndStructure.adoc[tg-au-typesToBeUsed]##
 
-include::../tg-template/tg-dataContentAndStructure.adoc[tg-applicationSchemasIncludedInTheIRs-article3]
+##include::../tg-template/tg-dataContentAndStructure.adoc[tg-applicationSchemasIncludedInTheIRs-article3]##
 
-include::../tg-template/tg-dataContentAndStructure.adoc[tg-basicNotions]
+##include::../tg-template/tg-dataContentAndStructure.adoc[tg-basicNotions]##
 
-include::content/tg-au-dataContentAndStructure.adoc[tg-au-consistencyBetweenSpatialDataSets]
+##include::content/tg-au-dataContentAndStructure.adoc[tg-au-consistencyBetweenSpatialDataSets]##
 
-include::../tg-template/tg-dataContentAndStructure.adoc[tg-identifierManagement]
+##include::../tg-template/tg-dataContentAndStructure.adoc[tg-identifierManagement]##
 
-include::content/tg-au-dataContentAndStructure.adoc[tg-au-identifierManagement]
+##include::content/tg-au-dataContentAndStructure.adoc[tg-au-identifierManagement]##
 
-include::../tg-template/tg-dataContentAndStructure.adoc[tg-geometryRepresentation]
+##include::../tg-template/tg-dataContentAndStructure.adoc[tg-geometryRepresentation]##
 
-include::content/tg-au-dataContentAndStructure.adoc[tg-au-temporalityRepresentation]
+##include::content/tg-au-dataContentAndStructure.adoc[tg-au-temporalityRepresentation]##
 
-include::../tg-template/tg-dataContentAndStructure.adoc[tg-temporalityRepresentation]
+##include::../tg-template/tg-dataContentAndStructure.adoc[tg-temporalityRepresentation]##
 
-include::content/tg-au-dataContentAndStructure.adoc[tg-au-applicationSchemas]
+##include::content/tg-au-dataContentAndStructure.adoc[tg-au-applicationSchemas]##
 
-include::content/tg-au-dataContentAndStructure.adoc[tg-au-applicationSchemaAU]
+##include::content/tg-au-dataContentAndStructure.adoc[tg-au-applicationSchemaAU]##

@@ -119,7 +119,7 @@ For purposes of multilingual support in the identification of administrative uni
 
 For the same purpose, the names of the levels (attribute nationalLevelName) are of data type localisedCharacterString.
 
-[RECOMMENDATION, id="Recommendation {counter:rec-id}"]
+[PERMISSION, id="Recommendation {counter:rec-id}"]
 ======
 The value of ‗language‘ attribute for AdministrativeUnit.name (GeographicalName DataType) should be provided, except for the situation that the data producer does not have such information.
 ======
@@ -156,7 +156,7 @@ _Annex II, Section 4.4_ +
 . Instances of the spatial object type AdministrativeBoundary shall correspond to the edges in the topological structure of the complete (including all levels) boundary graph.
 ======
 
-[RECOMMENDATION, id="Recommendation {counter:rec-id}"]
+[PERMISSION, id="Recommendation {counter:rec-id}"]
 ======
 The following geometric and topological constraints are recommendations for this data specification:
 . Adjacent administrative units should not overlap, i.e. their boundaries should not intersect with each other.
