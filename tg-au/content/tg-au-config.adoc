@@ -1,5 +1,5 @@
 :documentName: INSPIRE Data Specification on Administrative Units - Technical Guidelines
 :theme: Administrative Units
-:sectionApplicationSchemaAU: [#tg-au-applicationSchemaAU]Application schema AdministrativeUnits
-:sectionApplicationSchemaMU: [#tg-au-applicationSchemaMU]Application schema MaritimeUnits
-:sectionUMLOverview: [#tg-au-UMLOverview]UML Overview
+:sectionApplicationSchemaAU: <<tg-au-applicationSchemaAU, Application schema AdministrativeUnits>>
+:sectionApplicationSchemaMU: <<tg-au-applicationSchemaMU, Application schema MaritimeUnits>>
+:sectionUMLOverview: <<tg-au-UMLOverview, UML Overview>>
