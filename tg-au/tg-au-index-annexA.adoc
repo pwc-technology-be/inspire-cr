@@ -1,1 +1,3 @@
 = Annex A (normative) Abstract Test Suite
+
+include::https://github.com/pwc-technology-be/data-au/blob/master/README.adoc[]
