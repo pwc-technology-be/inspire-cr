@@ -17,7 +17,7 @@ The application schemas specify requirements on the properties of each spatial o
 
 NOTE	The application schemas presented in this section contain some additional information that is not included in the Implementing Rules, in particular multiplicities of attributes and association roles.
 
-[TGREQUIREMENT, id="TG Requirement 1"]
+[RECOMMENDATION, id="TG Requirement {counter:tgreq-id}"]
 ======
 Spatial object types and data types shall comply with the multiplicities defined for the attributes and association roles in this section.
 ======
