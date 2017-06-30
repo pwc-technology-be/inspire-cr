@@ -23,3 +23,7 @@ include::../tg-template/tg-dataContentAndStructure.adoc[tags=tg-temporalityRepre
 include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-applicationSchemas]
 
 include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-applicationSchemaAU]
+
+include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-featureCatalogue]
+
+include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-applicationSchemaMU]
