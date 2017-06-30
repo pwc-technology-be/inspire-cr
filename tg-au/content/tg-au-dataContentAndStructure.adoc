@@ -44,7 +44,7 @@ The spatial object types in the AdministrativeUnits and MaritimeUnits schemas us
 
 Both packages refer to the Base Types package to use the Identifer type from the GCM.
 
-include::content/tg-au-dataContentAndStructure.adoc[tg-au-classPackageStructure]
+include::images/tg-au-dataContentAndStructure.adoc[tg-au-classPackageStructure]
 
 [[tg-au-applicationSchemaAU]]
 == Application schema AdministrativeUnits
@@ -71,7 +71,7 @@ In some existing implementations for administrative units data (e.g. EuroBoundar
 
 ==== UML Overview
 
-include::content/tg-au-dataContentAndStructure.adoc[tg-au-classAUOverview]
+include::images/tg-au-dataContentAndStructure.adoc[tg-au-classAUOverview]
 
 The AdministrativeUnit spatial object type uses the GeographicalName type from the Geographical Names package. The AdministrativeUnits package also refers the package Base Types for using the Identifer type defined in the GCM.
 
@@ -79,7 +79,7 @@ AdministrativeUnit is the main spatial object type included in the application s
 
 The number of administrative levels differs from country to country (in the EU Member States up to 6 levels are in use, see the examples in Annex D), therefore no absolute levels can be fixed. Instead, the (spatial) correspondence between the levels is a common characteristic of national administrative hierarchies. The representation of these relationships between the units is supported in this application schema by a self-reference of the AdministrativeUnit type, and corresponding to the lowerLevelUnit and upperLevelUnit association roles. The top-down inclusion of units is expressed in the application schema by the lowerLevelUnit association role of the AdministrativeUnit spatial object type. Each unit except for those on the lowest level shall provide the relation to their lower level units. The spatial object type AdministrativeUnit is shown in detail in  <<tg-au-classAU, Figure 4>>
 
-include::content/tg-au-dataContentAndStructure.adoc[tg-au-classAU]
+include::images/tg-au-dataContentAndStructure.adoc[tg-au-classAU]
 
 Similarly, the down-top relationship between the units of lower and higher levels can be determined. In fact, usually lower level units refer exactly one higher level unit. A support for describing this is provided by the upperLevelUnit association role of the AdministrativeUnit spatial object type. The only exception to this situation are the units at the highest (country) level; they have no upper level units.
 
@@ -137,7 +137,7 @@ _Annex II, Section 4.4_ +
 
 The second spatial object type in the application schema, AdministrativeBoundary, is the type representing the boundaries between neighbouring administrative units and including their boundary-specific attributes. <<tg-au-classAdministrativeBoundary, Figure 5>> shows this spatial object type in detail.
 
-include::content/tg-au-dataContentAndStructure.adoc[tg-au-classAdministrativeBoundary]
+include::images/tg-au-dataContentAndStructure.adoc[tg-au-classAdministrativeBoundary]
 
 AdministrativeBoundary provides important information concerning the administrative division. In particular, it is labelled with a legal and a technical status of the boundary. The legal status refers to the political agreement between the units, whereas the technical status faces the edge-matching issues; the "edge-matched" value meaning that the boundary of neighbouring administrative units have the same set of coordinates. If available both indicators shall be provided.
 
@@ -166,7 +166,7 @@ The following geometric and topological constraints are recommendations for this
 
 Consistent with existing definitions, a condominium in the context of this specification is considered as a political territory over which two or more sovereign States jointly exercise their jurisdictional rights, without further territorial decomposition. Consequently, a condominium cannot be part of a national administrative hierarchy. On the other hand, condominiums might be included into national datasets and the information about them shall be shared on the European level. Condominium is shown in <<tg-au-classCondominium, Figure 6>>.
 
-include::content/tg-au-dataContentAndStructure.adoc[tg-au-classCondominium]
+include::images/tg-au-dataContentAndStructure.adoc[tg-au-classCondominium]
 
 To support the representation of condominiums a special spatial object type is defined in the application schema AdministrativeUnits. It includes a mandatory surface geometry and an optional name. The association to the AdministrativeUnit type allows representing the connection between the condominium and the administering States.
 
@@ -228,7 +228,7 @@ The geometric model is explained by the following example.
 
 Assume the following situation for the area features (instances of AdministrativeUnit):
 
-include::content/tg-au-dataContentAndStructure.adoc[tg-au-geometryRepresentationExample1]
+include::images/tg-au-dataContentAndStructure.adoc[tg-au-geometryRepresentationExample1]
 
 The polygons represent Administrative units at three levels:
 
@@ -242,13 +242,13 @@ The boundary features (BF = instances of spatial object type AdministrativeBound
 
 In this example the following vertices are identified:
 
-include::content/tg-au-dataContentAndStructure.adoc[tg-au-geometryRepresentationExample2]
+include::images/tg-au-dataContentAndStructure.adoc[tg-au-geometryRepresentationExample2]
 
 The Points P3, P5, P7, and P8 are nodes in the topological structure, all other points are intermediate points (vertices).
 
 Then, the curves and Boundary features are built as follows:
 
-include::content/tg-au-dataContentAndStructure.adoc[tg-au-geometryRepresentationExample3]
+include::images/tg-au-dataContentAndStructure.adoc[tg-au-geometryRepresentationExample3]
 
 * C1 = (P7, P1, P2, P3) = BF1 +
  with nationalLevel=1, 2
@@ -302,7 +302,7 @@ The geometric model is explained by the following example.
 
 This example considers exactly the same situation, as discussed in the case of flat geometric model.
 
-include::content/tg-au-dataContentAndStructure.adoc[tg-au-geometryRepresentationExample4]
+include::images/tg-au-dataContentAndStructure.adoc[tg-au-geometryRepresentationExample4]
 
 The polygons represent Administrative Units at three levels:
 . national level 1: AU1 polygon represents a country;
@@ -319,7 +319,7 @@ The nationalLevel of the AdministrativeBoundary feature (BF) corresponds to the 
 
 In this example the following vertices are identified:
 
-include::content/tg-au-dataContentAndStructure.adoc[tg-au-geometryRepresentationExample5]
+include::images/tg-au-dataContentAndStructure.adoc[tg-au-geometryRepresentationExample5]
 
 * P10, P3 and P9 are begin/end nodes of national boundaries between AU1 and AU-X, AU1 and AU-Y, AU1 and AU-Z;
 * P7 and P3 nodes are begin/end nodes of regional boundary between AU2 and AU3
@@ -329,7 +329,7 @@ Begin and end nodes of international boundaries do not necessarily meet begin/en
 
 Based on the identified nodes the following boundaries at three levels of administrative structure can be determined:
 
-include::content/tg-au-dataContentAndStructure.adoc[tg-au-geometryRepresentationExample6]
+include::images/tg-au-dataContentAndStructure.adoc[tg-au-geometryRepresentationExample6]
 
 The AdministrativeBoundary features are built as follows:
 
@@ -339,7 +339,7 @@ The AdministrativeBoundary features are built as follows:
 * BF1.2 = C2(P10,P2,P3)
 * BF1.3 = C3(P3,P4,P9)
 
-include::content/tg-au-dataContentAndStructure.adoc[tg-au-geometryRepresentationExample7]
+include::images/tg-au-dataContentAndStructure.adoc[tg-au-geometryRepresentationExample7]
 
 The AdministrativeBoundary features are built as follows:
 
@@ -349,7 +349,7 @@ The AdministrativeBoundary features are built as follows:
 * BF2.2 = C2.2(P3,P4,P9,P5,P6,P7)
 * BF2.3 = C2.3(P7,P8,P3)
 
-include::content/tg-au-dataContentAndStructure.adoc[tg-au-geometryRepresentationExample8]
+include::images/tg-au-dataContentAndStructure.adoc[tg-au-geometryRepresentationExample8]
 
 The AdministrativeBoundary features are built as follows:
 
@@ -398,48 +398,3 @@ AU5 -> BF3.2, BF3.3
 
 [[tg-au-applicationSchemaMU]]
 == Application schema MaritimeUnits
-
-
-[[tg-au-classPackageStructure]]
-.Overview of the {theme} packages and their dependencies
-image::images/classPackageStructure.PNG["Overview of the {theme} packages and their dependencies"]
-
-[[tg-au-classAUOverview]]
-.UML class diagram: Overview of the AdministrativeUnits application schema
-image::images/classAUOverview.PNG["UML class diagram: Overview of the AdministrativeUnits application schema"]
-
-[[tg-au-classAU]]
-.Administrative Unit
-image::images/classAU.PNG["Administrative Unit"]
-
-[[tg-au-classAdministrativeBoundary]]
-.Administrative Boundary
-image::images/classAdministrativeBoundary.PNG["Administrative Boundary"]
-
-[[tg-au-classCondominium]]
-.Condominiums and relationsip to AdministrativeUnit
-image::images/classCondominium.PNG["Condominiums and relationsip to AdministrativeUnit"]
-
-[[tg-au-geometryRepresentationExample1]]
-image::images/geometryRepresentationExample1.PNG[""]
-
-[[tg-au-geometryRepresentationExample2]]
-image::images/geometryRepresentationExample2.PNG[""]
-
-[[tg-au-geometryRepresentationExample3]]
-image::images/geometryRepresentationExample3.PNG[""]
-
-[[tg-au-geometryRepresentationExample4]]
-image::images/geometryRepresentationExample4.PNG[""]
-
-[[tg-au-geometryRepresentationExample5]]
-image::images/geometryRepresentationExample5.PNG[""]
-
-[[tg-au-geometryRepresentationExample6]]
-image::images/geometryRepresentationExample6.PNG[""]
-
-[[tg-au-geometryRepresentationExample7]]
-image::images/geometryRepresentationExample7.PNG[""]
-
-[[tg-au-geometryRepresentationExample8]]
-image::images/geometryRepresentationExample8.PNG[""]

@@ -1,0 +1,6 @@
+[[rectifiedGrid]]
+image::rectified-grid.png["Rectified Grid"]
+
+[[referenceableGrid]]
+.Examples of a rectified grid (left) and a referenceable grid (right)
+image::referenceable-grid.png["Referenceable Grid"]

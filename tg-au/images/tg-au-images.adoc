@@ -1,0 +1,43 @@
+[[tg-au-classPackageStructure]]
+.Overview of the {theme} packages and their dependencies
+image::images/classPackageStructure.PNG["Overview of the {theme} packages and their dependencies"]
+
+[[tg-au-classAUOverview]]
+.UML class diagram: Overview of the AdministrativeUnits application schema
+image::images/classAUOverview.PNG["UML class diagram: Overview of the AdministrativeUnits application schema"]
+
+[[tg-au-classAU]]
+.Administrative Unit
+image::images/classAU.PNG["Administrative Unit"]
+
+[[tg-au-classAdministrativeBoundary]]
+.Administrative Boundary
+image::images/classAdministrativeBoundary.PNG["Administrative Boundary"]
+
+[[tg-au-classCondominium]]
+.Condominiums and relationsip to AdministrativeUnit
+image::images/classCondominium.PNG["Condominiums and relationsip to AdministrativeUnit"]
+
+[[tg-au-geometryRepresentationExample1]]
+image::images/geometryRepresentationExample1.PNG[""]
+
+[[tg-au-geometryRepresentationExample2]]
+image::images/geometryRepresentationExample2.PNG[""]
+
+[[tg-au-geometryRepresentationExample3]]
+image::images/geometryRepresentationExample3.PNG[""]
+
+[[tg-au-geometryRepresentationExample4]]
+image::images/geometryRepresentationExample4.PNG[""]
+
+[[tg-au-geometryRepresentationExample5]]
+image::images/geometryRepresentationExample5.PNG[""]
+
+[[tg-au-geometryRepresentationExample6]]
+image::images/geometryRepresentationExample6.PNG[""]
+
+[[tg-au-geometryRepresentationExample7]]
+image::images/geometryRepresentationExample7.PNG[""]
+
+[[tg-au-geometryRepresentationExample8]]
+image::images/geometryRepresentationExample8.PNG[""]
