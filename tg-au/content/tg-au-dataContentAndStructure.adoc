@@ -1,5 +1,6 @@
 [[tg-au-dataContentAndStructure]]
 
+<<<
 [[tg-au-applicationSchemasOverview]]
 = Data content and Structure
 
@@ -7,26 +8,31 @@
 
 === Application schemas included in the IRs
 
+<<<
 [[tg-au-typesToBeUsed]]
 The types to be used for the exchange and classification of spatial objects from data sets related to the spatial data theme {theme} are defined in the following application schemas:
 
 * AdministrativeUnits application schema (see section {sectionApplicationSchemaAU}).
 * MaritimeUnits application schema (see section {sectionApplicationSchemaMU}).
 
+<<<
 [[tg-au-consistencyBetweenSpatialDataSets]]
 === Consistency between spatial data sets
 {theme} and maritime zones will very likely be used in conjunction with data coming from other INSPIRE themes (e.g. cadastral parcels, orthoimagery, statistical units, sea regions). {theme} and maritime zones should be considered as reference data, and geometric consistency with other themes may be achieved if these other themes use {theme} or maritime zones as background data during the production or the validation of their own data.
 
 Currently, there are no consistency rules other than those defined within the application schemas. No consistency rules between {theme} / maritime zones and other spatial data sets have been identified.
 
+<<<
 [[tg-au-identifierManagement]]
 Each spatial object type in the application schemas of the {theme} theme has the mandatory _inspireId_ attribute. Therefore each spatial object needs to provide a unique identifier. This identifier shall be maintained by the national or regional authority. The identifier consists of two parts: the namespace and a local id. The namespace uniquely identifies a national registry wherein the identifier is registered, whereas the local id uniquely identifies an object within this namespace.
 
 Since INSPIRE objectives refer data exchange only, the maintenance and management of unique INSPIRE identifiers is out of INSPIRE scope, and is under the responsibility of the Member States.
 
+<<<
 [[tg-au-temporalityRepresentation]]
 === Temporality Representation
 
+<<<
 [[tg-au-applicationSchemas]]
 == {theme} - Application Schemas
 
@@ -41,6 +47,7 @@ Both packages refer to the Base Types package to use the Identifer type from the
 
 include::../images/tg-au-images.adoc[tg-au-classPackageStructure]
 
+<<<
 [[tg-au-applicationSchemaAU]]
 == Application schema AdministrativeUnits
 
@@ -388,8 +395,10 @@ AU5 -> BF3.2, BF3.3
 
 |===
 
+<<<
 [[tg-au-featureCatalogue]]
 === Feature catalogue
 
+<<<
 [[tg-au-applicationSchemaMU]]
 == Application schema MaritimeUnits
