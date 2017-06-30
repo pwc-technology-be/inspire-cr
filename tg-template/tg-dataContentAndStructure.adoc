@@ -1,4 +1,4 @@
-[[tg-applicationSchemasIncludedInTheIRs-article4]]
+# tag::tg-applicationSchemasIncludedInTheIRs-article4[]
 
 Articles 3, 4 and 5 of the Implementing Rules lay down the requirements for the content and structure of the data sets related to the INSPIRE Annex themes.
 
@@ -12,7 +12,8 @@ __Article 4__ +
 . The enumerations and code lists used in attributes or association roles of spatial object types or data types shall comply with the definitions and include the values set out in Annex II. The enumeration and code list values are uniquely identified by language-neutral mnemonic codes for computers. The values may also include a language-specific name to be used for human interaction.
 ======
 
-[[tg-applicationSchemasIncludedInTheIRs-article3]]
+# end::tg-applicationSchemasIncludedInTheIRs-article4[]
+# tag::tg-applicationSchemasIncludedInTheIRs-article3[]
 The application schemas specify requirements on the properties of each spatial object including its multiplicity, domain of valid values, constraints, etc.
 
 NOTE	The application schemas presented in this section contain some additional information that is not included in the Implementing Rules, in particular multiplicities of attributes and association roles.
@@ -36,11 +37,13 @@ NOTE	Since the IRs contain the types for all INSPIRE spatial data themes in one 
 
 Common types are described in detail in the Generic Conceptual Model [DS-D2.7], in the relevant international standards (e.g. of the ISO 19100 series) or in the documents on the common INSPIRE models [DS-D2.10.x]. For detailed descriptions of types defined in other spatial data themes, see the corresponding Data Specification TG document [DS-D2.8.x].
 
-[[tg-additionalRecommendedApplicationSchemas]]
+# end::tg-applicationSchemasIncludedInTheIRs-article3[]
+# tag::tg-additionalRecommendedApplicationSchemas[]
 
 These additional application schemas are not included in the IRs. They typically address requirements from specific (groups of) use cases and/or may be used to provide additional information. They are included in this specification in order to improve interoperability also for these additional aspects and to illustrate the extensibility of the application schemas included in the IRs.
 
-[[tg-basicNotions]]
+# end::tg-additionalRecommendedApplicationSchemas[]
+# tag::tg-basicNotions[]
 
 == Basic notions
 
@@ -275,7 +278,8 @@ If the value is missing or empty, this indicates an empty code list. If no sub-c
 An empty code list may also be used as a super-class for a number of specific code lists whose values may be used to specify the attribute value. If the sub-classes specified in the model represent all valid extensions to the empty code list, the subtyping relationship is qualified with the standard UML constraint "{complete,disjoint}".
 
 
-[[tg-identifierManagement]]
+# end::tg-basicNotions[]
+# tag::tg-identifierManagement[]
 === Identifier management
 
 [REQUIREMENT, id="IR Requirement"]
@@ -294,7 +298,8 @@ NOTE 2 _Article 9_(1) is implemented in each application schema by including the
 NOTE 3 _Article 9_(2) is ensured if the namespace and localId attributes of the Identifier remains the same for different versions of a spatial object; the version attribute can of course change.
 
 
-[[tg-geometryRepresentation]]
+# end::tg-identifierManagement[]
+# tag::tg-geometryRepresentation[]
 
 === Geometry representation
 
@@ -311,7 +316,8 @@ NOTE 1 The specification restricts the spatial schema to 0-, 1-, 2-, and 2.5-dim
 NOTE 2 The topological relations of two spatial objects based on their specific geometry and topology properties can in principle be investigated by invoking the operations of the types defined in ISO 19107 (or the methods specified in EN ISO 19125-1).
 
 
-[[tg-temporalityRepresentation]]
+# end::tg-geometryRepresentation[]
+# tag::tg-temporalityRepresentation[]
 
 The application schema(s) use(s) the derived attributes "beginLifespanVersion" and "endLifespanVersion" to record the lifespan of a spatial object.
 
@@ -339,7 +345,8 @@ NOTE The requirement expressed in the IR Requirement above will be included as c
 If life-cycle information is not maintained as part of the spatial data set, all spatial objects belonging to this data set should provide a void value with a reason of "unpopulated".
 ======
 
-[[tg-validityOfTheRealWorldPhenomena]]
+# end::tg-temporalityRepresentation[]
+# tag::tg-validityOfTheRealWorldPhenomena[]
 
 The application schema(s) use(s) the attributes "validFrom" and "validTo" to record the validity of the real-world phenomenon represented by a spatial object. 
 
@@ -360,7 +367,8 @@ _Article 12_ +
 
 NOTE The requirement expressed in the IR Requirement above will be included as constraints in the UML data models of all themes.
 
-[[tg-coverages]]
+# end::tg-validityOfTheRealWorldPhenomena[]
+# tag::tg-coverages[]
 
 Coverage functions are used to describe characteristics of real-world phenomena that vary over space and/or time. Typical examples are temperature, elevation, precipitation, imagery. A coverage contains a set of such values, each associated with one of the elements in a spatial, temporal or spatio-temporal domain. Typical spatial domains are point sets (e.g. sensor locations), curve sets (e.g. isolines), grids (e.g. orthoimages, elevation models), etc. 
 
@@ -378,3 +386,4 @@ Where possible, only these coverage types (or a subtype thereof) are used in INS
 include::images/tg-images.adoc[rectifiedGrid]
 
 include::images/tg-images.adoc[referenceableGrid]
+# end::tg-coverages[]
