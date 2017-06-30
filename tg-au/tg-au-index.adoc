@@ -21,7 +21,7 @@
 
 WARNING: WORK IN PROGRESS
 
-include:tg-au-index-config.adoc[]
+include::tg-au-index-config.adoc[]
 
 include::tg-au-index-metadata.adoc[]
 
