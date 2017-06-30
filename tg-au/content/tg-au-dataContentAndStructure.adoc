@@ -7,6 +7,11 @@
 
 === Application schemas included in the IRs
 
+[REQUIREMENT]
+====
+What's the main tool for selecting colors?
+====
+
 [[tg-au-typesToBeUsed]]
 The types to be used for the exchange and classification of spatial objects from data sets related to the spatial data theme {theme} are defined in the following application schemas:
 
