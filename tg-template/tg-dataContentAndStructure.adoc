@@ -2,7 +2,7 @@
 
 Articles 3, 4 and 5 of the Implementing Rules lay down the requirements for the content and structure of the data sets related to the INSPIRE Annex themes.
 
-[IRREQUIREMENT, id="IR Requirement"]
+[REQUIREMENT, id="IR Requirement"]
 ======
 __Article 4__ +
 *Types for the Exchange of Classification of Spatial Objects*
@@ -24,7 +24,7 @@ Spatial object types and data types shall comply with the multiplicities defined
 
 An application schema may include references (e.g. in attributes or inheritance relationships) to common types or types defined in other spatial data themes. These types can be found in a sub-section called ―Imported Types‖ at the end of each application schema section. The common types referred to from application schemas included in the IRs are addressed in _Article 3_.
 
-[IRREQUIREMENT, id="IR Requirement"]
+[REQUIREMENT, id="IR Requirement"]
 ======
 _Article 3_ +
 *Common Types*
@@ -58,7 +58,7 @@ The use of a common conceptual schema language (i.e. UML) allows for an automate
 
 The following important rules related to class inheritance and abstract classes are included in the IRs.
 
-[IRREQUIREMENT, id="IR Requirement"]
+[REQUIREMENT, id="IR Requirement"]
 ======
 _Article 5_ +
 *Types*
@@ -147,7 +147,7 @@ Enumerations are modelled as classes in the application schemas. Their values ar
 - No initial value, but only the attribute name part, is used. 
 - The attribute name conforms to the rules for attributes names, i.e. is a lowerCamelCase name. Exceptions are words that consist of all uppercase letters (acronyms).
 
-[IRREQUIREMENT, id="IR Requirement"]
+[REQUIREMENT, id="IR Requirement"]
 ======
 _Article 6_ +
 *Code Lists and Enumerations*
@@ -166,7 +166,7 @@ Code lists are modelled as classes in the application schemas. Their values, how
 
 The IRs distinguish the following types of code lists.
 
-[IRREQUIREMENT, id="IR Requirement"]
+[REQUIREMENT, id="IR Requirement"]
 ======
 _Article 6_ +
 *Code Lists and Enumerations*
@@ -199,7 +199,7 @@ NOTE This data specification may specify recommended values for some of the code
 
 In addition, code lists can be hierarchical, as explained in _Article 6_(2) of the IRs.
 
-[IRREQUIREMENT, id="IR Requirement"]
+[REQUIREMENT, id="IR Requirement"]
 ======
 _Article 6_ +
 *Code Lists and Enumerations*
@@ -214,7 +214,7 @@ The type of code list and whether it is hierarchical or not is also indicated in
 
 ==== Obligations on data providers
 
-[IRREQUIREMENT, id="IR Requirement"]
+[REQUIREMENT, id="IR Requirement"]
 ======
 _Article 6_ +
 *Code Lists and Enumerations*
@@ -278,7 +278,7 @@ An empty code list may also be used as a super-class for a number of specific co
 [[tg-identifierManagement]]
 === Identifier management
 
-[IRREQUIREMENT, id="IR Requirement"]
+[REQUIREMENT, id="IR Requirement"]
 ======
 _Article 9_ +
 *Identifier Management*
@@ -298,7 +298,7 @@ NOTE 3 _Article 9_(2) is ensured if the namespace and localId attributes of the 
 
 === Geometry representation
 
-[IRREQUIREMENT, id="IR Requirement"]
+[REQUIREMENT, id="IR Requirement"]
 ======
 _Article 9_ +
 *Other Requirements & Rules*
@@ -321,7 +321,7 @@ NOTE 1 The attributes specify the beginning of the lifespan of the version in th
 
 NOTE 2 Changes to the attribute "endLifespanVersion" does not trigger a change in the attribute "beginLifespanVersion".
 
-[IRREQUIREMENT, id="IR Requirement"]
+[REQUIREMENT, id="IR Requirement"]
 ======
 _Article 10_ +
 *Life-cycle of Spatial Objects*
@@ -347,7 +347,7 @@ The attributes "validFrom" specifies the date and time at which the real-world p
 
 Specific application schemas may give examples what ―being valid‖ means for a specific real-world phenomenon represented by a spatial object.
 
-[IRREQUIREMENT, id="IR Requirement"]
+[REQUIREMENT, id="IR Requirement"]
 ======
 _Article 12_ +
 *Other Requirements & Rules*
