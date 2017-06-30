@@ -27,7 +27,7 @@ class RecommendationBlock < Asciidoctor::Extensions::BlockProcessor
 #   attrs['caption'] = 'Recommendation'
 
     doc = parent.document
-    attrs['title'] = "#{doc.attributes['recommendation-caption'] || 'Recommendation'} #{attrs['id']}" unless attrs['title']
+    attrs['title'] = "#{attrs['id']}" unless attrs['title']
 
     create_block parent, :admonition, reader.lines, attrs, content_model: :compound
   end

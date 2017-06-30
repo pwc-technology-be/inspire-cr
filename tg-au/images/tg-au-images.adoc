@@ -1,43 +1,56 @@
-[[tg-au-classPackageStructure]]
+# tag::tg-au-classPackageStructure[]
 .Overview of the {theme} packages and their dependencies
 image::images/classPackageStructure.PNG["Overview of the {theme} packages and their dependencies"]
 
-[[tg-au-classAUOverview]]
+# end::tg-au-classPackageStructure[]
+# tag::tg-au-classAUOverview[]
 .UML class diagram: Overview of the AdministrativeUnits application schema
 image::images/classAUOverview.PNG["UML class diagram: Overview of the AdministrativeUnits application schema"]
 
-[[tg-au-classAU]]
+# end::tg-au-classAUOverview[]
+# tag::tg-au-classAU[]
 .Administrative Unit
 image::images/classAU.PNG["Administrative Unit"]
 
-[[tg-au-classAdministrativeBoundary]]
+# end::tg-au-classAU[]
+# tag::tg-au-classAdministrativeBoundary[]
 .Administrative Boundary
 image::images/classAdministrativeBoundary.PNG["Administrative Boundary"]
 
-[[tg-au-classCondominium]]
+# end::tg-au-classAdministrativeBoundary[]
+# tag::tg-au-classCondominium[]
 .Condominiums and relationsip to AdministrativeUnit
 image::images/classCondominium.PNG["Condominiums and relationsip to AdministrativeUnit"]
 
-[[tg-au-geometryRepresentationExample1]]
+# end::tg-au-classCondominium[]
+# tag::tg-au-geometryRepresentationExample1[]
 image::images/geometryRepresentationExample1.PNG[""]
 
-[[tg-au-geometryRepresentationExample2]]
+# end::tg-au-geometryRepresentationExample1[]
+# tag::tg-au-geometryRepresentationExample2[]
 image::images/geometryRepresentationExample2.PNG[""]
 
-[[tg-au-geometryRepresentationExample3]]
+# end::tg-au-geometryRepresentationExample2[]
+# tag::tg-au-geometryRepresentationExample3[]
 image::images/geometryRepresentationExample3.PNG[""]
 
-[[tg-au-geometryRepresentationExample4]]
+# end::tg-au-geometryRepresentationExample3[]
+# tag::tg-au-geometryRepresentationExample4[]
 image::images/geometryRepresentationExample4.PNG[""]
 
-[[tg-au-geometryRepresentationExample5]]
+# end::tg-au-geometryRepresentationExample4[]
+# tag::tg-au-geometryRepresentationExample5[]
 image::images/geometryRepresentationExample5.PNG[""]
 
-[[tg-au-geometryRepresentationExample6]]
+# end::tg-au-geometryRepresentationExample5[]
+# tag::tg-au-geometryRepresentationExample6[]
 image::images/geometryRepresentationExample6.PNG[""]
 
-[[tg-au-geometryRepresentationExample7]]
+# end::tg-au-geometryRepresentationExample6[]
+# tag::tg-au-geometryRepresentationExample7[]
 image::images/geometryRepresentationExample7.PNG[""]
 
-[[tg-au-geometryRepresentationExample8]]
+# end::tg-au-geometryRepresentationExample7[]
+# tag::tg-au-geometryRepresentationExample8[]
 image::images/geometryRepresentationExample8.PNG[""]
+# end::tg-au-geometryRepresentationExample8[]
