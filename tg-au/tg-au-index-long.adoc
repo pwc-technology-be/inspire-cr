@@ -23,7 +23,7 @@
 WARNING: WORK IN PROGRESS
 
 [NOTE]
-Read the short version of this Data Specifications http://52.50.205.146:8890/inspire-cr/html/tg-au/[here]
+Read the http://52.50.205.146:8890/inspire-cr/html/tg-au/[short version of this Data Specifications]
 
 include::tg-au-index-config.adoc[]
 
