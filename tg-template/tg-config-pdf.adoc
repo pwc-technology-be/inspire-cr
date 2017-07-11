@@ -1,1 +1,1 @@
-:format: Portable Document Format (pdf)
+:format: Hypertext Markup Language (html)
