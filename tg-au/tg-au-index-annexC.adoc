@@ -1,1 +1,3 @@
-= Annex C (normative) Code list values
+include::../tg-template/tg-annexC.adoc[]
+
+include::content/tg-au-annexC.adoc[]
