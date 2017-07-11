@@ -19,6 +19,10 @@ The types to be used for the exchange and classification of spatial objects from
 
 
 # end::tg-au-typesToBeUsed[]
+# tag::tg-au-basicNotions[]
+== Basic notions
+
+# end::tg-au-basicNotions[]
 # tag::tg-au-consistencyBetweenSpatialDataSets[]
 === Consistency between spatial data sets
 {theme} and maritime zones will very likely be used in conjunction with data coming from other INSPIRE themes (e.g. cadastral parcels, orthoimagery, statistical units, sea regions). {theme} and maritime zones should be considered as reference data, and geometric consistency with other themes may be achieved if these other themes use {theme} or maritime zones as background data during the production or the validation of their own data.
