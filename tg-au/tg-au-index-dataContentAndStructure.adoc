@@ -6,6 +6,8 @@ include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-typesToBeUsed]
 
 include::../tg-template/tg-dataContentAndStructure.adoc[tags=tg-applicationSchemasIncludedInTheIRs-article3]
 
+include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-basicNotions]
+
 include::../tg-template/tg-dataContentAndStructure.adoc[tags=tg-basicNotions]
 
 include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-consistencyBetweenSpatialDataSets]
