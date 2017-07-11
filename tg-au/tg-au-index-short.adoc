@@ -1,0 +1,94 @@
+:doctype: book
+
+:stylesdir: ../stylesheets/
+:stylesheet: inspire.css
+:linkcss:
+
+:toc: macro
+:toc-title: Table of contents
+:toclevels: 3
+:toc-position: left
+:appendix-caption: Annex
+
+:icons: font
+
+:source-highlighter: pygments
+:pygments-style: autumn
+:pygments-linenums-mode: inline
+
+:rec-id: 0
+:tgreq-id: 0
+
+
+WARNING: WORK IN PROGRESS
+
+[NOTE]
+Read the long version of this Data Specifications http://52.50.205.146:8890/inspire-cr/html/tg-au-long/[here]
+
+include::tg-au-index-config.adoc[]
+
+include::tg-au-index-metadata.adoc[]
+
+<<<
+
+toc::[]
+
+<<<
+
+:leveloffset: +1
+
+include::content/tg-au-executiveSummary.adoc[]
+
+:numbered:
+
+= Overview
+
+= Identification information
+
+include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-applicationSchemasOverview]
+
+include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-typesToBeUsed]
+
+include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-basicNotions]
+
+include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-consistencyBetweenSpatialDataSets]
+
+include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-identifierManagement]
+
+include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-temporalityRepresentation]
+
+include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-applicationSchemas]
+
+include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-applicationSchemaAU]
+
+include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-featureCatalogue]
+
+include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-applicationSchemaMU]
+
+= Data quality
+
+= Dataset-level metadata
+
+= Delivery
+
+= Data Capture
+
+= Portrayal
+
+:numbered!:
+
+ = Bibliography
+
+= Annex A (normative) Abstract Test Suite
+
+include::https://raw.githubusercontent.com/pwc-technology-be/data-au/master/README.adoc[]
+
+= Annex B (informative) Use Cases
+
+= Annex C (normative) Code list values
+
+= Annex D (informative) National Administrative Hierarchies (examples)
+
+= Annex E (informative) Limitations in the use of Administrative Units data
+
+:leveloffset: -1
