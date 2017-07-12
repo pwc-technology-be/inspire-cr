@@ -79,16 +79,6 @@ include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-applicationSchema
 
  = Bibliography
 
-= Annex A (normative) Abstract Test Suite
-
 include::https://raw.githubusercontent.com/pwc-technology-be/data-au/master/README.adoc[]
-
-= Annex B (informative) Use Cases
-
-= Annex C (normative) Code list values
-
-= Annex D (informative) National Administrative Hierarchies (examples)
-
-= Annex E (informative) Limitations in the use of Administrative Units data
 
 :leveloffset: -1
