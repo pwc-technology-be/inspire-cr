@@ -411,6 +411,7 @@ AU5 -> BF3.2, BF3.3
 # tag::tg-au-featureCatalogue[]
 === Feature catalogue
 
+http://inspire-twg.jrc.ec.europa.eu/data-model/approved/r937/fc/#_P367[Click here for the Application Schema: AdministrativeUnits Feature Catalogue.]
 
 # end::tg-au-featureCatalogue[]
 # tag::tg-au-applicationSchemaMU[]
