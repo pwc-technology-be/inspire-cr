@@ -1,0 +1,6 @@
+[[tg-foreword]]
+= Scope
+
+This document specifies a harmonised data specification for the spatial data theme _{theme}_ as defined in Annex I of the INSPIRE Directive. 
+
+This data specification provides the basis for the drafting of Implementing Rules according to Article 7 (1) of the INSPIRE Directive [Directive 2007/2/EC]. The entire data specification is published as implementation guidelines accompanying these Implementing Rules.

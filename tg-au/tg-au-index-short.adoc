@@ -39,6 +39,10 @@ toc::[]
 
 include::content/tg-au-executiveSummary.adoc[]
 
+include::content/tg-au-acknowledgements.adoc[tags=tg-au-title]
+
+include::content/tg-au-acknowledgements.adoc[tags=tg-au-thematicWorkingGroup]
+
 :numbered:
 
 = Overview

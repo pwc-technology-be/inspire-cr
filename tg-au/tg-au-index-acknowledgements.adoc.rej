@@ -1,0 +1,12 @@
+diff a/tg-au/tg-au-index-acknowledgements.adoc b/tg-au/tg-au-index-acknowledgements.adoc	(rejected hunks)
+@@ -0,7 +0 @@
+-include::content/tg-au-acknowledgements.adoc[tags=tg-au-title]
+-
+-include::../tg-template/tg-acknowledgements.adoc[tags=tg-paragraphStart]
+-
+-include::content/tg-au-acknowledgements.adoc[tags=tg-au-thematicWorkingGroup]
+-
+-include::../tg-template/tg-acknowledgements.adoc[tags=tg-contactInformation]
+\ No newline at end of file
++= Acknowledgements
+\ No newline at end of file
