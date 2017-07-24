@@ -1,1 +1,7 @@
-= Acknowledgements
+include::content/tg-au-acknowledgements.adoc[tags=tg-au-title]
+
+include::../tg-template/tg-acknowledgements.adoc[tags=tg-paragraphStart]
+
+include::content/tg-au-acknowledgements.adoc[tags=tg-au-thematicWorkingGroup]
+
+include::../tg-template/tg-acknowledgements.adoc[tags=tg-contactInformation]
