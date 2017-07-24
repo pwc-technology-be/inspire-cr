@@ -135,7 +135,7 @@ NOTE It is possible that additional reasons will be identified in the future, in
 The «voidable» stereotype does not give any information on whether or not a characteristic exists in the real world. This is expressed using the multiplicity: 
 
 - If a characteristic may or may not exist in the real world, its minimum cardinality shall be defined as 0. For example, if an Address may or may not have a house number, the multiplicity of the corresponding property shall be 0..1. 
-- If at least one value for a certain characteristic exists in the real world, the minimum cardinality shall be defined as 1. For example, if an _{theme}_ always has at least one name, the multiplicity of the corresponding property shall be 1..*. 
+- If at least one value for a certain characteristic exists in the real world, the minimum cardinality shall be defined as 1. For example, if an Administrative Unit always has at least one name, the multiplicity of the corresponding property shall be 1..*. 
 
 In both cases, the «voidable» stereotype can be applied. In cases where the minimum multiplicity is 0, the absence of a value indicates that it is known that no value exists, whereas a value of void indicates that it is not known whether a value exists or not. 
 

@@ -1,1 +1,1 @@
-include::../tg-template/tg-scope.adoc[]
+= Scope
