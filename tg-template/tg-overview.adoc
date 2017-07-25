@@ -1,0 +1,123 @@
+# tag::tg-name[]
+== Name
+
+INSPIRE data specification for the theme _{theme}_.
+# end::tg-name[]
+
+# tag::tg-normativeReferences[]
+[cols="25%,75%", frame="none", grid="none"]
+|===
+|[Directive 2007/2/EC]
+|Directive 2007/2/EC of the European Parliament and of the Council of 14 March 2007 establishing an Infrastructure for Spatial Information in the European Community (INSPIRE)
+
+|[ISO 19107]
+|EN ISO 19107:2005, Geographic Information – Spatial Schema
+
+|[ISO 19108] 
+|EN ISO 19108:2005, Geographic Information – Temporal Schema
+
+|[ISO 19108-c]
+|ISO 19108:2002/Cor 1:2006, Geographic Information – Temporal Schema, Technical Corrigendum 1
+
+|[ISO 19111]
+|EN ISO 19111:2007 Geographic information - Spatial referencing by coordinates (ISO 19111:2007)
+
+|[ISO 19113]
+|EN ISO 19113:2005, Geographic Information – Quality principles
+
+|[ISO 19115]
+|EN ISO 19115:2005, Geographic information – Metadata (ISO 19115:2003)
+ 
+|[ISO 19118]
+|EN ISO 19118:2006, Geographic information – Encoding (ISO 19118:2005)
+ 
+|[ISO 19123]
+|EN ISO 19123:2007, Geographic Information – Schema for coverage geometry and functions
+
+|[ISO 19125-1]
+|EN ISO 19125-1:2004, Geographic Information – Simple feature access – Part 1: Common architecture
+
+|[ISO 19135]
+|EN ISO 19135:2007 Geographic information – Procedures for item registration (ISO 19135:2005)
+ 
+|[ISO 19138]
+|ISO/TS 19138:2006, Geographic Information – Data quality measures
+
+|[ISO 19139]
+|ISO/TS 19139:2007, Geographic information – Metadata – XML schema implementation
+
+|[ISO 19157]
+|ISO/DIS 19157, Geographic information – Data quality
+
+|[ISO 3166-1]
+|EN ISO 3166-1:2006, Codes for the representation of names of countries and their subdivisions – Part 1: Country codes
+
+|[OGC 06-103r4]
+|Implementation Specification for Geographic Information - Simple feature access – Part 1: Common Architecture v1.2.1 +
+NOTE	This is an updated version of "EN ISO 19125-1:2004, Geographic information – Simple feature access – Part 1: Common architecture".
+
+|[Regulation 1205/2008/EC]
+|Regulation 1205/2008/EC implementing Directive 2007/2/EC of the European Parliament and of the Council as regards metadata
+|===
+# end::tg-normativeReferences[]
+
+# tag::tg-termsAndDefinitions[]
+General terms and definitions helpful for understanding the INSPIRE data specification documents are defined in the INSPIRE Glossary.footnote:[The INSPIRE Glossary is available from http://inspire-registry.jrc.ec.europa.eu/registers/GLOSSARY].
+# end::tg-termsAndDefinitions[]
+
+# tag::tg-technicalGuidelinesMapToImplementingRules[]
+== How the Technical Guidelines map to the Implementing Rules
+
+The schematic diagram in Figure {counter:pic-id} gives an overview of the relationships between the INSPIRE legal acts (the INSPIRE Directive and Implementing Rules) and the INSPIRE Technical Guidelines. The INSPIRE Directive and Implementing Rules include legally binding requirements that describe, usually on an abstract level, what Member States must implement.
+
+In contrast, the Technical Guidelines define _how_ Member States might implement the requirements included in the INSPIRE Implementing Rules. As such, they may include non-binding technical requirements that must be satisfied if a Member State data provider chooses to conform to the Technical Guidelines. Implementing these Technical Guidelines will maximise the interoperability of INSPIRE spatial data sets.
+
+include::images/tg-images.adoc[tags=relationshipBetweenImplementingRulesAndTechnicalGuidelines]
+
+== Requirements
+
+The purpose of these Technical Guidelines (Data specifications on __{theme}__) is to provide practical guidance for implementation that is guided by, and satisfies, the (legally binding) requirements included for the spatial data theme _{theme}_ in the Regulation (Implementing Rules) on interoperability of spatial data sets and services. These requirements are highlighted in this document as follows:
+
+[REQUIREMENT, id="IR Requirement"]
+======
+_Article / Annex / Section no. +
+*Title / Heading*
+
+This style is used for requirements contained in the Implementing Rules on interoperability of spatial data sets and services (Commission Regulation (EU) No 1089/2010).
+======
+
+For each of these IR requirements, these Technical Guidelines contain additional explanations and examples. 
+
+[NOTE]
+The Abstract Test Suite (ATS) in Annex A contains conformance tests that directly check conformance with these IR requirements.
+
+Furthermore, these Technical Guidelines may propose a specific technical implementation for satisfying an IR requirement. In such cases, these Technical Guidelines may contain additional technical requirements that need to be met in order to be conformant with the corresponding IR requirement _when using this proposed implementation_. These technical requirements are highlighted as follows:    
+
+[RECOMMENDATION, id="TG Requirement X"]
+======
+This style is used for requirements for a specific technical solution proposed in these Technical Guidelines for an IR requirement.
+======
+
+[NOTE]
+Conformance of a data set with the TG requirement(s) included in the ATS implies conformance with the corresponding IR requirement(s).
+
+[NOTE]
+In addition to the requirements included in the Implementing Rules on interoperability of spatial data sets and services, the INSPIRE Directive includes further legally binding obligations that put additional requirements on data providers. For example, Art. 10(2) requires that Member States shall, where appropriate, decide by mutual consent on the depiction and position of geographical features whose location spans the frontier between two or more Member States. General guidance for how to meet these obligations is provided in the INSPIRE framework documents.
+
+=== Recommendations
+
+In addition to IR and TG requirements, these Technical Guidelines may also include a number of recommendations for facilitating implementation or for further and coherent development of an interoperable infrastructure. 
+
+[PERMISSION, id="Recommendation X"]
+======
+Recommendations are shown using this style.
+======
+
+[NOTE]
+The implementation of recommendations is not mandatory. Compliance with these Technical Guidelines or the legal obligation does not depend on the fulfilment of the recommendations.
+
+=== Conformance
+
+Annex A includes the abstract test suite for checking conformance with the requirements included in these Technical Guidelines and the corresponding parts of the Implementing Rules (Commission Regulation (EU) No 1089/2010).
+
+# end::tg-technicalGuidelinesMapToImplementingRules[]

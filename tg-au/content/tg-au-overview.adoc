@@ -1,0 +1,98 @@
+# tag::tg-au-title[]
+= Overview
+# end::tg-au-title[]
+
+# tag::tg-au-informalDescription[]
+== Informal Description
+
+[.underline]#*Definition:*#
+
+Units of administration, dividing areas where Member States have and/or exercise jurisdictional rights, for local, regional and national governance, separated by administrative boundaries [Directive 2007/2/EC].
+
+[.underline]#*Description:*#
+
+Each national territory is divided into administrative units at different administrative levels as defined by the national administrative hierarchy. Administrative units are separated by administrative boundaries. Under United Nations Convention on the Law of the Sea the coastal States can define maritime zones, wherein they exercise jurisdictional rights on sea area. The zones are separated by maritime boundaries.
+ 
+The administrative / maritime division forms an indirect spatial reference system. The reference to an administrative unit or maritime zone provides a spatial dimension to data without using coordinates (INSPIRE IMS, 2003).
+ 
+Administrative units may correspond to the items identified in frame of other territory division systems. The examples of such relationships include, among others, the cadastral parcels, census districts, postal regions, sea regions, statistical units, or sector-specific regions. These items are not considered to constitute a part of the definition of administrative units; they are within the scope of other INSPIRE themes.
+
+Administrative and maritime boundaries are the key to horizontal interoperability between the products of national data custodians. Neighbours should agree on international boundaries with shared geometry at the best possible resolution (INSPIRE RDM, 2002).
+ 
+The reference date of the administrative units has to be considered for purpose of linkage to statistical information as for instance population figures. Therefore, the aspect of temporal reference and update has to be considered carefully for administrative units.
+
+
+Provision of national datasets on administrative units, harmonised according to this data specification and to defined reference dates, is required to facilitate interoperable data exchange of all official administrative units according to the administrative levels as defined within each Member State.
+
+The EU-wide harmonized data of all these administrative units can be seen as a key dataset for any kind of (cross-border) spatial handling, important in operations and management.
+
+This data specification has been derived from the specification of EuroGeographics EBM product which is already used for the Administrative Unit Theme of European Commission’s GISCO reference database. The European Environment Agency (EEA) is using this dataset to relate their environmental information and indicators to the official defined administrative units in Europe.
+
+[.underline]#_Use cases_#
+
+This INSPIRE data specification on Administrative units theme is to support the following high level use cases:
+
+* Filtering data. A user selects regions (e.g. by clicking or entering a name or code). The geometry of the selected administrative units and maritime zones is used in a query filter when retrieving geographic information (using a download service) or metadata (using a discovery service). This could e.g. be used in verification to identify features located at the border between two administrative units or maritime zones.
+* Linking thematic information. To provide users with easy and rapid access to comparable thematic information, data providers link their information to the administrative units and maritime zones.
+* Disaster management. The administrative units and maritime zones that are affected by an environmental phenomenon or disaster are selected.
+* Boundary based analysis. Verification of data of thematic features located at the boundaries of administrative units or maritime zones. This covers the aspect of edge-matching. 
+* Discovery of unit related data. Search catalogues to discover available data sets with respect to administrative unit / maritime zone geometry or name (or code).
+# end::tg-au-informalDescription[]
+
+# tag::tg-au-normativeReferencesTitle[]
+== Normative References
+# end::tg-au-normativeReferencesTitle[]
+
+# tag::tg-au-normativeReferencesTable[]
+[cols="25%,75%", frame="none", grid="none"]
+|===
+|[UNCLOS]
+|United Nations Convention on the Law of the Sea
+|===
+# end::tg-au-normativeReferencesTable[]
+
+# tag::tg-au-termsAndDefinitionsTitle[]
+== Terms and definitions
+# end::tg-au-termsAndDefinitionsTitle[]
+
+# tag::tg-au-symbolsAndAbbreviations[]
+== Symbols and abbreviations
+[cols="25%,75%", frame="none", grid="none"]
+|===
+|BKG
+|Federal Agency for Cartography and Geodesy (Germany)
+
+|EuroGeographics
+|Association representing nearly all European National Mapping and Cadastral Agencies (NMCAs)
+
+|Eurostat
+|Statistical Office of the European Communities
+
+|GISCO
+|Geographic Information System of the European Commission 
+
+|EBM
+|EuroBoundaryMap (product of EuroGeographics)
+
+|EEA
+|European Environment Agency
+
+|FADN 
+|Farm Accountancy Data Network (See Council Regulation 79/65/EEC) 
+
+|LAU
+|Local administrative units 
+
+|NUTS  
+|Nomenclature of Territorial Units for Statistics 
+
+|OCL 
+|Object Constraint Language
+
+|UML 
+|Unified Modelling Language
+
+|UNCLOS
+|United Nation Convention on the Law of the Sea
+|===
+# end::tg-au-symbolsAndAbbreviations[]
