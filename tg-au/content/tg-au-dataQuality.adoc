@@ -1,0 +1,354 @@
+# tag::tg-au-dataQualityTitle[]
+= Data quality
+# end::tg-au-dataQualityTitle[]
+
+# tag::tg-au-dataQualityElements[]
+
+.Data quality elements used in the spatial data theme __{theme}__
+[cols="10%, 20%, 20%, 30%, 20%"]
+|===
+
+| *Section* | *Data quality element* | *Data quality sub-element* | *Definition* | *Evaluation Scope*
+
+|7.1.1
+|Completeness
+|Commission
+|Excess data present in the dataset, as described by the scope
+|dataset
+
+|7.1.2
+|Completeness
+|Omission
+|Data absent from the dataset, as described by the scope
+|dataset
+
+|7.1.3
+|Logical consistency
+|Conceptual consistency
+|Adherence to rules of the conceptual schema
+|dataset
+
+|7.1.4
+|Logical consistency
+|Domain consistency
+|Adherence of values to the value domains
+|dataset
+
+|7.1.5
+|Logical consistency
+|Topological consistency
+|Correctness of the explicitly encoded topological characteristics of the dataset, as described by the scope
+|dataset
+
+|7.1.6
+|Positional accuracy
+|Absolute or external accuracy
+|Closeness of reported coordinate values to values accepted as or being true
+|dataset
+
+|===
+
+# end::tg-au-dataQualityElements[]
+
+# tag::tg-au-completeness[]
+=== Completeness - Comission
+
+[RECOMMENDATION, id="TG Requirement {counter:rec-id}"]
+======
+Commission should be evaluated and documented using Rate of excess items, as specified in the table below.
+======
+
+[cols="30%,70%"]
+|===
+| *Name* | *Rate of excess items*
+
+|Alternative name
+|-
+
+|Data quality element 
+|Completeness
+
+|Data quality sub-element
+|Commission
+
+|Data quality basic measure
+|Error rate
+
+|Definition
+|Number of excess items in the dataset in relation to the number of items that should have been present.
+
+|Description
+|-
+
+|Evaluation scope
+|data set
+
+|Reporting scope
+|data set
+
+|Parameter
+|-
+
+|Data quality value type
+|Real, Percentage, Ratio
+
+|Data quality value structure
+|Single value
+
+|Source reference
+|ISO/DIS 19157 Geographic information – Data quality
+
+|Example
+|-
+
+|Measure identifier
+|3
+|===
+
+=== Completeness - Omission
+
+[RECOMMENDATION, id="TG Requirement {counter:rec-id}"]
+======
+Omission should be evaluated and documented using Rate of missing items, as specified in the table below.
+======
+
+[cols="30%,70%"]
+|===
+| *Name* | *Rate of missing items*
+
+|Alternative name
+|-
+
+|Data quality element 
+|Completeness
+
+|Data quality sub-element
+|Omission
+
+|Data quality basic measure
+|Error rate
+
+|Definition
+|Number of missing items in the dataset in relation to the number of items that should have been present.
+
+|Description
+|-
+
+|Evaluation scope
+|data set
+
+|Reporting scope
+|data set
+
+|Parameter
+|-
+
+|Data quality value type
+|Real, Percentage, Ratio
+
+|Data quality value structure
+|Single value
+
+|Source reference
+|ISO/DIS 19157 Geographic information – Data quality
+
+|Example
+|-
+
+|Measure identifier
+|7
+|===
+
+=== Logical consistency - Conceptual consistency
+
+The Application Schema conformance class of the Abstract Test Suite in Annex I defines a number of tests to evaluate the conceptual consistency (tests A.1.1-A.1.9) of a data set.
+# end::tg-au-completeness[]
+
+# tag::tg-au-logicalConsistencyDomain[]
+=== Logical consistency - Domain consistency
+
+The Application Schema conformance class of the Abstract Test Suite in Annex I defines a number of tests to evaluate the domain consistency (tests A1.10-A.1.12) of a data set.
+# end::tg-au-logicalConsistencyDomain[]
+
+# tag::tg-au-logicalConsistencyTopological[]
+=== Logical consistency - Topological consistency
+
+[RECOMMENDATION, id="TG Requirement {counter:rec-id}"]
+======
+Topological consistency should be evaluated and documented using Number of faulty point-curve connections and Number of missing connections due to undershoots, as specified in the tables below.
+======
+
+[cols="30%,70%"]
+|===
+| *Name* | *Number of faulty point-curve connections*
+
+|Alternative name
+|Extraneous nodes
+
+|Data quality element 
+|Logical consistency 
+
+|Data quality sub-element
+|Topological consistency
+
+|Data quality basic measure
+|Error count
+
+|Definition
+|Number of faulty point-curve connections in the dataset. 
+
+|Description
+|A point-curve connection exists where different curves touch. These curves have an intrinsic topological relationship that has to reflect the true constellation. If the point-curve connection contradicts the universe of discourse, the point-curve connection is faulty with respect to this data quality measure. The data quality measure counts the number of errors of this kind.
+
+|Evaluation scope
+|data set
+
+|Reporting scope
+|data set
+
+|Parameter
+|-
+
+|Data quality value type
+|Integer
+
+|Data quality value structure
+|Single value
+
+|Source reference
+|ISO/DIS 19157 Geographic information – Data quality
+
+|Example
+|-
+
+|Measure identifier
+|21
+|===
+
+[cols="30%,70%"]
+|===
+| *Name* | *Number of missing connections due to undershoots*
+
+|Alternative name
+|Undershoots
+
+|Data quality element 
+|Logical consistency 
+
+|Data quality sub-element
+|Topological consistency
+
+|Data quality basic measure
+|Error count
+
+|Definition
+|Count of items in the dataset, within the parameter tolerance, that are mismatched due to undershoots. 
+
+|Description
+|-
+
+|Evaluation scope
+|data set
+
+|Reporting scope
+|data set
+
+|Parameter
+|Search distance from the end of a dangling line
+
+|Data quality value type
+|Integer
+
+|Data quality value structure
+|Single value
+
+|Source reference
+|ISO/DIS 19157 Geographic information – Data quality
+
+|Example
+|-
+
+|Measure identifier
+|23
+|===
+
+=== Positional accuracy - Absolute or external accuracy
+
+[RECOMMENDATION, id="TG Requirement {counter:rec-id}"]
+======
+Absolute or external accuracy should be evaluated and documented using Mean value of positional uncertainties, as specified in the tables below.
+======
+
+|===
+| *Name* | *Mean value of positional uncertainties (1D, 2D)*
+
+|Alternative name
+|-
+
+|Data quality element 
+|Positional accuracy
+
+|Data quality sub-element
+|Absolute or external accuracy
+
+|Data quality basic measure
+|Not applicable
+
+|Definition
+|Mean value of the positional uncertainties for a set of positions where the positional uncertainties are defined as the distance between a measured position and what is considered as the corresponding true position.
+
+|Description
+|For a number of points (N), the measured positions are given as xmi, and ymi coordinates depending on the dimension in which the position of the point is measured. A corresponding set of coordinates, xti and yti are considered to represent the true positions. The errors are calculated as 
+ 
+include::../images/tg-au-images.adoc[tags=tg-au-calculationOne]
+
+The mean positional uncertainties of the horizontal absolute or external positions are then calculated as 
+  
+include::../images/tg-au-images.adoc[tags=tg-au-calculationTwo]
+
+A criterion for the establishing of correspondence should also be stated (e.g. allowing for correspondence to the closest position, correspondence on vertices or along lines). The criterion/criteria for finding the corresponding points shall be reported with the data quality evaluation result. 
+This data quality measure is different from the standard deviation. 
+
+|Evaluation scope
+|data set
+
+|Reporting scope
+|data set
+
+|Parameter
+|-
+
+|Data quality value type
+|Measure
+
+|Data quality value structure
+|Single value
+
+|Source reference
+|ISO/DIS 19157 Geographic information – Data quality
+
+|Example
+|-
+
+|Measure identifier
+|28
+|===
+
+== Minimum data quality requirements
+
+No minimum data quality requirements are defined for the spatial data theme _{theme}_.
+
+== Recommendation on data quality
+
+[RECOMMENDATION, id="TG Requirement {counter:rec-id}"]
+======
+All spatial objects of the __{theme}__ theme should be provided at the source accuracy where possible.  
+======
+
+[RECOMMENDATION, id="TG Requirement {counter:rec-id}"]
+======
+All spatial objects of the __{theme}__ theme should have a positional accuracy of 50 meters or better.
+======
+
+No other minimum data quality recommendations are defined
+# end::tg-au-logicalConsistencyTopological[]

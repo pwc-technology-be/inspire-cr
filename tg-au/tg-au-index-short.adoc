@@ -82,7 +82,15 @@ include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-applicationSchema
 
 include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-featureCatalogueMU]
 
-= Data quality
+include::content/tg-au-dataQuality.adoc[tags=tg-au-dataQualityTitle]
+
+include::content/tg-au-dataQuality.adoc[tags=tg-au-dataQualityElements]
+
+include::content/tg-au-dataQuality.adoc[tags=tg-au-completeness]
+
+include::content/tg-au-dataQuality.adoc[tags=tg-au-logicalConsistencyDomain]
+
+include::content/tg-au-dataQuality.adoc[tags=tg-au-logicalConsistencyTopological]
 
 = Dataset-level metadata
 

@@ -97,3 +97,13 @@ image::images/classBaseline.png["class Baseline"]
 .MaritimeBoundary spatial object type
 image::images/classMaritimeBoundary.png["class Maritime Boundary"]
 # end::tg-au-classMaritimeBoundary[]
+
+# tag::tg-au-calculationOne[]
+[[tg-au-calculationOne]]
+image:images/calculationOne.png[""]
+# end::tg-au-calculationOne[]
+
+# tag::tg-au-calculationTwo[]
+[[tg-au-calculationTwo]]
+image:images/calculationTwo.png[""]
+# end::tg-au-calculationTwo[]

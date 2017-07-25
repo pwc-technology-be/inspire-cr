@@ -1,1 +1,17 @@
-= Data quality
+include::content/tg-au-dataQuality.adoc[tags=tg-au-dataQualityTitle]
+
+include::../tg-template/tg-dataQuality.adoc[tags=tg-intro]
+
+include::content/tg-au-dataQuality.adoc[tags=tg-au-dataQualityElements]
+
+include::../tg-template/tg-dataQuality.adoc[tags=tg-recommendation]
+
+include::content/tg-au-dataQuality.adoc[tags=tg-au-completeness]
+
+include::../tg-template/tg-dataQuality.adoc[tags=tg-logicalConsistencyConceptual]
+
+include::content/tg-au-dataQuality.adoc[tags=tg-au-logicalConsistencyDomain]
+
+include::../tg-template/tg-dataQuality.adoc[tags=tg-logicalConsistencyDomain]
+
+include::content/tg-au-dataQuality.adoc[tags=tg-au-logicalConsistencyTopological]

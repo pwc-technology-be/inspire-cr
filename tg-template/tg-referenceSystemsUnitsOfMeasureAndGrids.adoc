@@ -93,6 +93,7 @@ CRS identifiers may be used e.g. in: +
 * requests to INSPIRE network services.
 ====
 
+.http URIs for the default coordinate reference systems
 [cols="40%,20%,40%"]
 |===
 

@@ -1,0 +1,135 @@
+# tag::tg-intro[]
+
+This chapter includes a description of the data quality elements and sub-elements as well as the corresponding data quality measures that should be used to evaluate and document data quality for data sets related to the spatial data theme _{theme}_ (section <<_data_quality_elements, Data quality elements>>).
+
+It may also define requirements or recommendations about the targeted data quality results applicable for data sets related to the spatial data theme Administrative Units (sections <<_minimum_data_quality_requirements, Minimum data quality requirements>> and <<_recommendations_on_data_quality, Recommendation on data quality>>).
+
+In particular, the data quality elements, sub-elements and measures specified in section <<_data_quality_elements, Data quality elements>> should be used for
+* evaluating and documenting data quality properties and constraints of spatial objects, where such properties or constraints are defined as part of the application schema(s) (see section <<_data_content_and_structure, Data content and structure);
+* evaluating and documenting data quality metadata elements of spatial data sets (see section <<_dataset-level_metadata, Dataset-level metadata>>); and/or
+* specifying requirements or recommendations about the targeted data quality results applicable for data sets related to the spatial data theme Administrative Units (see sections <<_minimum_data_quality_requirements, Minimum data quality requirements>> and <<_recommendations_on_data_quality, Recommendation on data quality>>).
+
+The descriptions of the elements and measures are based on Annex D of ISO/DIS 19157 Geographic information – Data quality.
+
+== Data quality elements
+
+The following table lists all data quality elements and sub-elements that are being used in this specification. Data quality information can be evaluated at level of spatial object, spatial object type, dataset or dataset series. The level at which the evaluation is performed is given in the "Evaluation Scope" column.
+
+The measures to be used for each of the listed data quality sub-elements are defined in the following sub-sections.
+# end::tg-intro[]
+
+# tag::tg-recommendation[]
+[RECOMMENDATION, id="TG Requirement {counter:rec-id}"]
+======
+Where it is impossible to express the evaluation of a data quality element in a quantitative way, the evaluation of the element should be expressed with a textual statement as a data quality descriptive result.
+======
+# end::tg-recommendation[]
+
+# tag::tg-logicalConsistencyConceptual[]
+[RECOMMENDATION, id="TG Requirement {counter:rec-id}"]
+======
+For the tests on conceptual consistency, it is recommended to use the Logical consistency – Conceptual consistency data quality sub-element and the measure _Number of items not compliant with the rules of the conceptual schema_ as specified in the table below.
+======
+
+[cols="30%,70%"]
+|===
+| *Name* | *Number of items not compliant with the rules of the conceptual schema*
+
+|Alternative name
+|-
+
+|Data quality element 
+|Logical consistency
+
+|Data quality sub-element
+|Conceptual consistency
+
+|Data quality basic measure
+|Error count
+
+|Definition
+|Count of all items in the dataset that are not compliant with the rules of the conceptual schema
+
+|Description
+|If the conceptual schema explicitly or implicitly describes rules, these rules shall be followed. Violations against such rules can be, for example, invalid placement of features within a defined tolerance, duplication of features and invalid overlap of features.
+
+|Evaluation scope
+|spatial object / spatial object type 
+
+|Reporting scope
+|data set 
+
+|Parameter
+|-
+
+|Data quality value type
+|Integer
+
+|Data quality value structure
+|-
+
+|Source reference
+|ISO/DIS 19157 Geographic information – Data quality
+
+|Example
+|
+
+|Measure identifier
+|10
+|===
+# end::tg-logicalConsistencyConceptual[]
+
+# tag::tg-logicalConsistencyDomain[]
+[RECOMMENDATION, id="TG Requirement {counter:rec-id}"]
+======
+For the tests on domain consistency, it is recommended to use the Logical consistency – Domain consistency data quality sub-element and the measure _Number of items not in conformance with their value domain_ as specified in the table below.
+======
+
+[cols="30%,70%"]
+|===
+| *Name* | *Number of items not in conformance with their value domain*
+
+|Alternative name
+|-
+
+|Data quality element 
+|Logical consistency
+
+|Data quality sub-element
+|Domain consistency
+
+|Data quality basic measure
+|Error count
+
+|Definition
+|Count of all items in the dataset that are not in conformance with their value domain
+
+|Description
+|
+
+|Evaluation scope
+|spatial object / spatial object type 
+
+|Reporting scope
+|data set 
+
+|Parameter
+|-
+
+|Data quality value type
+|Integer
+
+|Data quality value structure
+|-
+
+|Source reference
+|ISO/DIS 19157 Geographic information – Data quality
+
+|Example
+|
+
+|Measure identifier
+|16
+|===
+
+# end::tg-logicalConsistencyDomain[]

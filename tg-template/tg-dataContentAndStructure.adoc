@@ -83,8 +83,8 @@ NOTE Since "void" is not a concept supported by OCL, OCL constraints cannot incl
 
 In the application schemas in this section several stereotypes are used that have been defined as part of a UML profile for use in INSPIRE [DS-D2.5]. These are explained in the table below.
 
+.Stereotypes (adapted from [DS-D2.5])
 |=== 
-
 | *Stereotype* | *Model element*  | *Description*  
 
 | applicationSchema | Package | An INSPIRE application schema according to ISO 19109 and the Generic Conceptual Model.
