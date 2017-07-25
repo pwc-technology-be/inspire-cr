@@ -467,7 +467,7 @@ Other kinds of maritime zones may be additionally provided depending on the geog
 
 {counter2:pic-id} 
 
-By definition there are well known topological relationships between the various types of zones. In particular (see also <<tg-au-classMUOverview, Figure {counter:pic-id}>> and <<tg-au-recommendationMaritimeUnits, Recommendation {counter:rec-id}>>):
+By definition there are well known topological relationships between the various types of zones. In particular (see also <<tg-au-classMUOverview, Figure {counter:pic-id}>> and <<tg-au-recommendationMaritimeUnits, following Recommendation>>):
 
 * the internal waters of a coastal State shall be adjacent to the AdministrativeUnit spatial object representing the State (i.e. where the attribute nationalLevel is equal to ’1stOrder’).
 * the territorial sea of a coastal State and its internal waters shall be adjacent on the Baseline.
@@ -476,7 +476,7 @@ By definition there are well known topological relationships between the various
 * the exclusive economic zone shall include the contiguous zone.
 
 [[tg-au-recommendationMaritimeUnits]]
-[PERMISSION, id="Recommendation {rec-id}"]
+[PERMISSION, id="Recommendation {counter:rec-id}"]
 ======
 The following geometric and topological constraints are recommendations for this data specification:
 

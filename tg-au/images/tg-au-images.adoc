@@ -71,29 +71,29 @@ image::images/geometryRepresentationExample8.PNG[""]
 # tag::tg-au-conceptsMaritimeUnits[]
 [[tg-au-conceptsMaritimeUnits]]
 .The concepts underlying definition of MaritimeUnits application schema
-image::images/conceptsMaritimeUnits.PNG["Concepts MaritimeUnits application schema"]
+image::images/conceptsMaritimeUnits.png["Concepts MaritimeUnits application schema"]
 # end::tg-au-conceptsMaritimeUnits[]
 
 # tag::tg-au-classMUOverview[]
 [[tg-au-classMUOverview]]
 .UML class diagram: Overview of the MaritimeUnits application schema
-image::images/classMUOverview.PNG["UML class Overview Maritime Units"]
+image::images/classMUOverview.png["UML class Overview Maritime Units"]
 # end::tg-au-classMUOverview[]
 
 # tag::tg-au-classMaritimeZone[]
 [[tg-au-classMUOverview]]
 .MaritimeZone spatial object type
-image::images/classMaritimeZone.PNG["MaritimeZone spatial object type"]
+image::images/classMaritimeZone.png["MaritimeZone spatial object type"]
 # end::tg-au-classMaritimeZone[]
 
 # tag::tg-au-classBaseline[]
 [[tg-au-classBaseline]]
 .Baseline spatial object type
-image::images/classBaseline.PNG["class Baseline"]
+image::images/classBaseline.png["class Baseline"]
 # end::tg-au-classBaseline[]
 
 # tag::tg-au-classMaritimeBoundary[]
 [[tg-au-classMaritimeBoundary]]
 .MaritimeBoundary spatial object type
-image::images/classMaritimeBoundary.PNG["class Maritime Boundary"]
+image::images/classMaritimeBoundary.png["class Maritime Boundary"]
 # end::tg-au-classMaritimeBoundary[]
