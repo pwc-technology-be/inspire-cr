@@ -80,7 +80,7 @@ The purpose of these Technical Guidelines (Data specifications on __{theme}__) i
 
 [REQUIREMENT, id="IR Requirement"]
 ======
-_Article / Annex / Section no. +
+_Article / Annex / Section no._ +
 *Title / Heading*
 
 This style is used for requirements contained in the Implementing Rules on interoperability of spatial data sets and services (Commission Regulation (EU) No 1089/2010).

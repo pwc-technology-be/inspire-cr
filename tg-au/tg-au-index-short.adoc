@@ -80,6 +80,8 @@ include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-featureCatalogueA
 
 include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-applicationSchemaMU]
 
+include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-featureCatalogueMU]
+
 = Data quality
 
 = Dataset-level metadata

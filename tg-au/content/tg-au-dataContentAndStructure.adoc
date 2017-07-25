@@ -132,7 +132,7 @@ For the same purpose, the names of the levels (attribute nationalLevelName) are 
 
 [PERMISSION, id="Recommendation {counter:rec-id}"]
 ======
-The value of ‗language‘ attribute for AdministrativeUnit.name (GeographicalName DataType) should be provided, except for the situation that the data producer does not have such information.
+The value of 'language' attribute for AdministrativeUnit.name (GeographicalName DataType) should be provided, except for the situation that the data producer does not have such information.
 ======
 
 For each AdministrativeUnit a location of the authority / administration (residenceOfAuthority) can be reported. It is of data type ResidenceOfAuthority which specifies a geographical name and the position of the authority (e.g. a point geometry).
