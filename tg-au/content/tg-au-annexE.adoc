@@ -1,0 +1,9 @@
+= Annex E (informative) Limitations in the use of Administrative Units data
+
+include::../images/tg-au-images.adoc[tags=tg-au-limitations]
+
+In some countries administrative units have been defined stretching into the sea or including large inland water areas. However, this specification does not distinguish between the land and the water part of an administrative unit. Knowing the area of the land part of administrative units can be important for calculating and/or portraying consistent statistics based on per-area values.
+
+To extract the land part of an administrative unit in such cases a spatial difference operation needs to be performed between the administrative unit and a relevant maritime zone.
+
+An alternative option to calculate the land area of these administrative units is to use data from different INSPIRE themes (e.g. by performing spatial intersection operations).

@@ -1,1 +1,1 @@
-= Annex B (informative) Use Cases
+include::content/tg-au-annexB.adoc[]

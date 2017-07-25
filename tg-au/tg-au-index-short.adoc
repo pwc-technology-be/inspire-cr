@@ -106,4 +106,11 @@ include::content/tg-au-dataQuality.adoc[tags=tg-au-logicalConsistencyTopological
 
 include::https://raw.githubusercontent.com/pwc-technology-be/data-au/master/README.adoc[]
 
+include::content/tg-au-annexB.adoc[]
+
+include::content/tg-au-annexC.adoc[]
+
+include::content/tg-au-annexD.adoc[]
+
+include::content/tg-au-annexE.adoc[]
 :leveloffset: -1

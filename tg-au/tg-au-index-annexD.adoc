@@ -1,1 +1,1 @@
-= Annex D (informative) National Administrative Hierarchies (examples)
+include::content/tg-au-annexD.adoc[]
