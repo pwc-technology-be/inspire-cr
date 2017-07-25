@@ -49,7 +49,7 @@ Since INSPIRE objectives refer data exchange only, the maintenance and managemen
 === Description
 
 ==== Narrative description
-The {theme} data specification establishes two application schemas: AdministrativeUnits and MaritimeUnits. The dependencies between both application schemas and other schemas of the Generic Conceptual Model are illustrated in <<tg-au-classPackageStructure, Figure 2>>.
+The {theme} data specification establishes two application schemas: AdministrativeUnits and MaritimeUnits. The dependencies between both application schemas and other schemas of the Generic Conceptual Model are illustrated in <<tg-au-classPackageStructure, Figure {counter:pic-id}>>.
 
 The spatial object types in the AdministrativeUnits and MaritimeUnits schemas use the GeographicalName type from the Geographical Names package. The MaritimeZone spatial object type re-uses the LegalStatusValue and TechnicalStatusValue codelists from the AdministrativeUnits package and their corresponding properties.
 
@@ -90,7 +90,7 @@ The AdministrativeUnit spatial object type uses the GeographicalName type from t
 
 AdministrativeUnit is the main spatial object type included in the application schema and represents administrative units at all the levels of administrative hierarchy. Each single unit (i.e. instance of AdministrativeUnit spatial object type) belongs to exactly one hierarchy level. Information about the level in the respective national hierarchy that a certain unit belongs to is documented by the mandatory nationalLevel attribute.
 
-The number of administrative levels differs from country to country (in the EU Member States up to 6 levels are in use, see the examples in Annex D), therefore no absolute levels can be fixed. Instead, the (spatial) correspondence between the levels is a common characteristic of national administrative hierarchies. The representation of these relationships between the units is supported in this application schema by a self-reference of the AdministrativeUnit type, and corresponding to the lowerLevelUnit and upperLevelUnit association roles. The top-down inclusion of units is expressed in the application schema by the lowerLevelUnit association role of the AdministrativeUnit spatial object type. Each unit except for those on the lowest level shall provide the relation to their lower level units. The spatial object type AdministrativeUnit is shown in detail in  <<tg-au-classAU, Figure 4>>
+The number of administrative levels differs from country to country (in the EU Member States up to 6 levels are in use, see the examples in Annex D), therefore no absolute levels can be fixed. Instead, the (spatial) correspondence between the levels is a common characteristic of national administrative hierarchies. The representation of these relationships between the units is supported in this application schema by a self-reference of the AdministrativeUnit type, and corresponding to the lowerLevelUnit and upperLevelUnit association roles. The top-down inclusion of units is expressed in the application schema by the lowerLevelUnit association role of the AdministrativeUnit spatial object type. Each unit except for those on the lowest level shall provide the relation to their lower level units. The spatial object type AdministrativeUnit is shown in detail in  <<tg-au-classAU, Figure {counter:pic-id}>>
 
 include::../images/tg-au-images.adoc[tags=tg-au-classAU]
 
@@ -148,7 +148,7 @@ _Annex II, Section 4.4_ +
 . Administrative units at the same level of administrative hierarchy shall not conceptually share common areas.
 ======
 
-The second spatial object type in the application schema, AdministrativeBoundary, is the type representing the boundaries between neighbouring administrative units and including their boundary-specific attributes. <<tg-au-classAdministrativeBoundary, Figure 5>> shows this spatial object type in detail.
+The second spatial object type in the application schema, AdministrativeBoundary, is the type representing the boundaries between neighbouring administrative units and including their boundary-specific attributes. <<tg-au-classAdministrativeBoundary, Figure {counter:pic-id}>> shows this spatial object type in detail.
 
 include::../images/tg-au-images.adoc[tags=tg-au-classAdministrativeBoundary]
 
@@ -177,7 +177,7 @@ The following geometric and topological constraints are recommendations for this
 . The boundaries must not have dangles, boundaries always divide different administrative units.
 ======
 
-Consistent with existing definitions, a condominium in the context of this specification is considered as a political territory over which two or more sovereign States jointly exercise their jurisdictional rights, without further territorial decomposition. Consequently, a condominium cannot be part of a national administrative hierarchy. On the other hand, condominiums might be included into national datasets and the information about them shall be shared on the European level. Condominium is shown in <<tg-au-classCondominium, Figure 6>>.
+Consistent with existing definitions, a condominium in the context of this specification is considered as a political territory over which two or more sovereign States jointly exercise their jurisdictional rights, without further territorial decomposition. Consequently, a condominium cannot be part of a national administrative hierarchy. On the other hand, condominiums might be included into national datasets and the information about them shall be shared on the European level. Condominium is shown in <<tg-au-classCondominium, Figure {counter:pic-id}>>.
 
 include::../images/tg-au-images.adoc[tags=tg-au-classCondominium]
 
