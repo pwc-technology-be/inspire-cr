@@ -68,7 +68,7 @@ General terms and definitions helpful for understanding the INSPIRE data specifi
 # tag::tg-technicalGuidelinesMapToImplementingRules[]
 == How the Technical Guidelines map to the Implementing Rules
 
-The schematic diagram in Figure {counter:pic-id} gives an overview of the relationships between the INSPIRE legal acts (the INSPIRE Directive and Implementing Rules) and the INSPIRE Technical Guidelines. The INSPIRE Directive and Implementing Rules include legally binding requirements that describe, usually on an abstract level, what Member States must implement.
+The schematic diagram in <<tg-relationshipBetweenImplementingRulesAndTechnicalGuidelines, Figure {counter:pic-id}>> gives an overview of the relationships between the INSPIRE legal acts (the INSPIRE Directive and Implementing Rules) and the INSPIRE Technical Guidelines. The INSPIRE Directive and Implementing Rules include legally binding requirements that describe, usually on an abstract level, what Member States must implement.
 
 In contrast, the Technical Guidelines define _how_ Member States might implement the requirements included in the INSPIRE Implementing Rules. As such, they may include non-binding technical requirements that must be satisfied if a Member State data provider chooses to conform to the Technical Guidelines. Implementing these Technical Guidelines will maximise the interoperability of INSPIRE spatial data sets.
 

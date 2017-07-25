@@ -1,14 +1,17 @@
 # tag::rectifiedGrid[]
+[[tg-rectifiedGrid]]
 .Examples of a rectified grid
 image::../tg-template/images/rectified-grid.png["Rectified Grid"]
 # end::rectifiedGrid[]
 
 # tag::referenceableGrid[]
+[[tg-referenceableGrid]]
 .Examples of a referenceable grid
 image::../tg-template/images/referenceable-grid.png["Referenceable Grid"]
 # end::rectifiedGrid[]
 
 # tag::relationshipBetweenImplementingRulesAndTechnicalGuidelines[]
+[[tg-relationshipBetweenImplementingRulesAndTechnicalGuidelines]]
 .Relationship between INSPIRE Implementing Rules and Technical Guidelines
 image::../tg-template/images/relationshipBetweenImplementingRulesAndTechnicalGuidelines.png["Referenceable Grid"]
 # end::relationshipBetweenImplementingRulesAndTechnicalGuidelines[]
