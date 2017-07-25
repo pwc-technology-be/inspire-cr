@@ -1,1 +1,3 @@
-= Specification scopes
+include::content/tg-au-specificationScopes.adoc[]
+
+include::../tg-template/tg-specificationScopes.adoc[]

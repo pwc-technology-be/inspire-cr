@@ -26,6 +26,8 @@ include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-applicationSchema
 
 include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-applicationSchemaAU]
 
-include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-featureCatalogue]
+include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-featureCatalogueAU]
 
 include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-applicationSchemaMU]
+
+include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-featureCatalogueMU]

@@ -46,9 +46,19 @@ include::content/tg-au-acknowledgements.adoc[tags=tg-au-thematicWorkingGroup]
 
 :numbered:
 
-= Overview
+include::content/tg-au-overview.adoc[tags=tg-au-title]
 
-= Identification information
+include::content/tg-au-overview.adoc[tags=tg-au-informalDescription]
+
+include::content/tg-au-overview.adoc[tags=tg-au-normativeReferencesTitle]
+
+include::content/tg-au-overview.adoc[tags=tg-au-normativeReferencesTable]
+
+include::content/tg-au-overview.adoc[tags=tg-au-termsAndDefinitionsTitle]
+
+include::content/tg-au-overview.adoc[tags=tg-au-symbolsAndAbbreviations]
+
+include::content/tg-au-identificationInformation.adoc[]
 
 include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-applicationSchemasOverview]
 
@@ -66,7 +76,7 @@ include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-applicationSchema
 
 include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-applicationSchemaAU]
 
-include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-featureCatalogue]
+include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-featureCatalogueAU]
 
 include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-applicationSchemaMU]
 

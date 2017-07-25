@@ -54,7 +54,7 @@ include::tg-au-index-overview.adoc[]
 
 include::tg-au-index-specificationScopes.adoc[]
 
-include::tg-au-index-indentificationInformation.adoc[]
+include::tg-au-index-identificationInformation.adoc[]
 
 include::tg-au-index-dataContentAndStructure.adoc[]
 

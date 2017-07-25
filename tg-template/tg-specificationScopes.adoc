@@ -1,0 +1,4 @@
+This data specification does not distinguish different specification scopes, but just considers one general scope.
+
+[NOTE]
+For more information on specification scopes, see [ISO 19131:2007], clause 8 and Annex D. 

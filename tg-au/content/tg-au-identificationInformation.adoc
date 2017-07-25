@@ -1,0 +1,7 @@
+= Identification information
+
+These Technical Guidelines are identified by the following URI:
+http://inspire.ec.europa.eu/tg/au/3.1rc1
+
+[NOTE]
+ISO 19131 suggests further identification information to be included in this section, e.g. the title, abstract or spatial representation type. The proposed items are already described in the document metadata, executive summary, overview description <<_overview, overview description>> and <<_data_content_and_structure, descriptions of the application schemas>>. In order to avoid redundancy, they are not repeated here.
