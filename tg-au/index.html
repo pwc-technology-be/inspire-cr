@@ -1,0 +1,3193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.5">
+<title>D2.8.I.2 INSPIRE Data Specification on Administrative Units - Technical Guidelines</title>
+<link rel="stylesheet" href="../stylesheets/inspire.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/pygments-autumn.css">
+<style>.admonitionblock td.icon .icon-requirement:before { content: "\f06a"; color: #b30000; }</style>
+<style>.admonitionblock td.icon .icon-recommendation:before { content: "\f06a"; color: #ffcc00; }</style>
+<style>.admonitionblock td.icon .icon-permission:before { content: "\f06a"; color: #009933; }</style>
+</head>
+<body class="book toc2 toc-left">
+<div id="header">
+<div id="toc" class="toc2">
+<div id="toctitle">Table of contents</div>
+<ul class="sectlevel0">
+<li><a href="#_d2_8_i_2_inspire_data_specification_on_administrative_units_technical_guidelines">D2.8.I.2 INSPIRE Data Specification on Administrative Units - Technical Guidelines</a>
+<ul class="sectlevel1">
+<li><a href="#tg-au-executiveSummary">Administrative Units - Executive Summary</a></li>
+<li><a href="#_overview">1. Overview</a>
+<ul class="sectlevel2">
+<li><a href="#_informal_description">1.1. Informal Description</a></li>
+<li><a href="#_normative_references">1.2. Normative References</a></li>
+<li><a href="#_symbols_and_abbreviations">1.3. Symbols and abbreviations</a></li>
+</ul>
+</li>
+<li><a href="#_data_content_and_structure">2. Data content and Structure</a>
+<ul class="sectlevel2">
+<li><a href="#_application_schemas_overview">2.1. Application schemas - Overview</a>
+<ul class="sectlevel3">
+<li><a href="#_application_schemas_included_in_the_irs">2.1.1. Application schemas included in the IRs</a></li>
+</ul>
+</li>
+<li><a href="#_basic_notions">2.2. Basic notions</a>
+<ul class="sectlevel3">
+<li><a href="#_consistency_between_spatial_data_sets">2.2.1. Consistency between spatial data sets</a></li>
+</ul>
+</li>
+<li><a href="#_administrative_units_application_schemas">2.3. Administrative Units - Application Schemas</a>
+<ul class="sectlevel3">
+<li><a href="#_description">2.3.1. Description</a></li>
+</ul>
+</li>
+<li><a href="#_application_schema_administrativeunits">2.4. Application schema AdministrativeUnits</a>
+<ul class="sectlevel3">
+<li><a href="#_description_2">2.4.1. Description</a></li>
+<li><a href="#_feature_catalogue">2.4.2. Feature catalogue</a></li>
+</ul>
+</li>
+<li><a href="#_application_schema_maritimeunits">2.5. Application schema MaritimeUnits</a>
+<ul class="sectlevel3">
+<li><a href="#_description_3">2.5.1. Description</a></li>
+<li><a href="#_feature_catalogue_2">2.5.2. Feature catalogue</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_data_quality">3. Data quality</a>
+<ul class="sectlevel2">
+<li><a href="#_data_quality_elements">3.1. Data quality elements</a>
+<ul class="sectlevel3">
+<li><a href="#_completeness_comission">3.1.1. Completeness - Comission</a></li>
+<li><a href="#_completeness_omission">3.1.2. Completeness - Omission</a></li>
+<li><a href="#_logical_consistency_conceptual_consistency">3.1.3. Logical consistency - Conceptual consistency</a></li>
+<li><a href="#_logical_consistency_domain_consistency">3.1.4. Logical consistency - Domain consistency</a></li>
+<li><a href="#_logical_consistency_topological_consistency">3.1.5. Logical consistency - Topological consistency</a></li>
+<li><a href="#_positional_accuracy_absolute_or_external_accuracy">3.1.6. Positional accuracy - Absolute or external accuracy</a></li>
+</ul>
+</li>
+<li><a href="#_minimum_data_quality_requirements">3.2. Minimum data quality requirements</a></li>
+<li><a href="#_recommendation_on_data_quality">3.3. Recommendation on data quality</a></li>
+</ul>
+</li>
+<li><a href="#_dataset_level_metadata">4. Dataset-level metadata</a></li>
+<li><a href="#_delivery">5. Delivery</a>
+<ul class="sectlevel2">
+<li><a href="#_encodings">5.1. Encodings</a>
+<ul class="sectlevel3">
+<li><a href="#_931">5.1.1. Default Encoding(s)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_portrayal">6. Portrayal</a>
+<ul class="sectlevel2">
+<li><a href="#_layers_to_be_provided_by_inspire_view_services">6.1. Layers to be provided by INSPIRE view services</a>
+<ul class="sectlevel3">
+<li><a href="#_layers_organisation">6.1.1. Layers organisation</a></li>
+</ul>
+</li>
+<li><a href="#_styles_required_to_be_supported_by_inspire_view_services">6.2. Styles required to be supported by INSPIRE view services</a>
+<ul class="sectlevel3">
+<li><a href="#_styles_for_the_layer_au_administrativeunit">6.2.1. Styles for the layer AU.AdministrativeUnit</a></li>
+<li><a href="#_styles_for_the_layer_au_administrativeboundary">6.2.2. Styles for the layer AU.AdministrativeBoundary</a></li>
+<li><a href="#_styles_for_the_layer_au_condominium">6.2.3. Styles for the layer AU.Condominium</a></li>
+<li><a href="#_styles_for_the_layer_au_baseline">6.2.4. Styles for the layer AU.Baseline</a></li>
+<li><a href="#_styles_for_the_layer_au_maritimeboundary">6.2.5. Styles for the layer AU.MaritimeBoundary</a></li>
+<li><a href="#_styles_for_the_layer_au_contiguouszone">6.2.6. Styles for the layer AU.ContiguousZone</a></li>
+<li><a href="#_styles_for_the_layer_au_continentalshelf">6.2.7. Styles for the layer AU.ContinentalShelf</a></li>
+<li><a href="#_styles_for_the_layer_au_exclusiveeconomiczone">6.2.8. Styles for the layer AU.ExclusiveEconomicZone</a></li>
+<li><a href="#_styles_for_the_layer_au_internalwaters">6.2.9. Styles for the layer AU.InternalWaters</a></li>
+<li><a href="#_styles_for_the_layer_au_territorialsea">6.2.10. Styles for the layer AU.TerritorialSea</a></li>
+</ul>
+</li>
+<li><a href="#_styles_recommended_to_be_supported_by_inspire_view_services">6.3. Styles recommended to be supported by INSPIRE view services</a></li>
+</ul>
+</li>
+<li><a href="#_annex_a_normative_abstract_test_suite_data_specification_on_administrative_units">Annex A (normative) Abstract Test Suite: Data Specification on Administrative Units</a></li>
+<li><a href="#_annex_c_normative_code_list_values">Annex C (normative) Code list values</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+WORK IN PROGRESS
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Read the <a href="http://52.50.205.146:8890/inspire-cr/html/tg-au/long.html">long version of this Data Specification</a>
+</td>
+</tr>
+</table>
+</div>
+<div id="EC_logo" class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../tg-template/images/EC%20logo.jpeg" alt="European Commission Logo" width="150">
+</div>
+</div>
+<table class="tableblock frame-none grid-none spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../tg-template/images/INSPIRE%20logo.png" alt="INSPIRE Logo" width="150"></span></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><span class="inspire_headline">INSPIRE<br>
+Infrastructure for Spatial Information in Europe</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h1 id="_d2_8_i_2_inspire_data_specification_on_administrative_units_technical_guidelines" class="sect0">D2.8.I.2 INSPIRE Data Specification on Administrative Units - Technical Guidelines</h1>
+<div class="openblock partintro">
+<div class="content">
+<table class="tableblock frame-topbot grid-none spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Title</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">D2.8.I.2 INSPIRE Data Specification on Administrative Units - Technical Guidelines</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Creator</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INSPIRE Thematic Working Group Administrative Units</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Date</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2014-04-17</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Subject</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INSPIRE Data Specification for the spatial data theme <em>Administrative Units</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Publisher</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">European Commission Joint Research Centre</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This document describes the INSPIRE Data Specification for the spatial data theme <em>Administrative Units</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Contributor</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Members of the INSPIRE Thematic Working Group Administrative Units</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Format</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hypertext Markup Language (html)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Source</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Rights</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Public</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Identifier</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">D2.8.I.4_v3.1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Language</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EN</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Relation</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Directive 2007/2/EC of the European Parliament and of the Council of 14 March 2007 establishing an Infrastructure for Spatial Information in the European Community (INSPIRE)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Coverage</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project duration</p></td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"></div>
+<!-- toc disabled -->
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tg-au-executiveSummary">Administrative Units - Executive Summary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Administrative Units</em> are included in Annex I, which means that they are considered as reference data, i.e. data that constitute the spatial frame for linking to and/or pointing at other information that belong to specific thematic fields such as the environment and socio-economic statistics, alongside many others.</p>
+</div>
+<div class="paragraph">
+<p>INSPIRE data specification on Administrative Units has been prepared following the participative principle of a consensus building process. The stakeholders, based on their registration as a Spatial Data Interest Community (SDIC) or a Legally Mandated Organisation (LMO) had the opportunity to bring forward user requirements and reference materials, propose experts for the specification&#8217;s development, and to participate in reviewing and testing the data specifications. The Thematic Working Group responsible for the specification development was composed of experts from Belgium, Germany, Norway, Poland and Sweden.</p>
+</div>
+<div class="paragraph">
+<p>The specification process took place according to the methodology elaborated for INSPIRE respecting the requirements and the recommendation of the INSPIRE Generic Conceptual Model, which is one of the elements that ensures a coherent approach and cross-theme consistency with other themes in the Directive.</p>
+</div>
+<div class="paragraph">
+<p>During the specification development, the Thematic Working Group has considered widely the achievements of the EuroBoundaryMap product, which already achieved considerable results in harmonising administrative unit data held by the National Mapping and Cadastral Agencies of Europe.</p>
+</div>
+<div class="paragraph">
+<p>According to the definition of the Directive, Administrative Units are "units of administration dividing areas where Member States have and/or exercise jurisdictional rights for local, regional and national governance, separated by administrative boundaries". Based on the reference materials and the user requirements, the Thematic Working Group has added some other fundamental aspects like the hierarchical structure of Administrative Units and the relations with statistical units that have already been defined and in use within the EU-administration.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup></p>
+</div>
+<div class="paragraph">
+<p>Administrative Units in INSPIRE play the role of generic information locators. Their main uses include</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Searching / filtering other spatial data based on a name or code.</p>
+</li>
+<li>
+<p>Linking / publishing thematic information in a rapid and comparable way.</p>
+</li>
+<li>
+<p>Finding competent authorities e.g. in case of disasters, for environmental protection , etc.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In addition Administrative Units may provide the frame for a boundary-based analysis of consistency of spatial objects (similar classification, geometrical matching) as required in Art. 8(4) and 10(2) of the Directive.</p>
+</div>
+<div class="paragraph">
+<p>The Administrative Units data theme model is divided in two application schemas:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The core element of the <strong>AdministrativeUnits application schema</strong> is the administrative unit represented by a surface geometry. In accordance with the Directive, each administrative unit carries a unique identifier. Administrative Units are further described by their geographical name, the country of location, the national administrative code, and the hierarchical level within the administrative structure of the country. This information is completed, if available, with the life cycle information (when the administrative unit has been inserted or changed in the dataset, and when it has been (if ever) superseded or retired in the spatial data set), the name of the corresponding national level and the residence of the administrative authority.</p>
+<div class="paragraph">
+<p>The administrative division of the Members States follows a hierarchical structure where the lowest level units (often communes) are united in higher level units (like provinces, counties, etc) that compose other units at a higher level. It must be ensured that an administrative unit of an upper level is composed of one or more Administrative Units of a lower level. Lowest level Administrative Units are further characterised by their geometry and, where available, by the corresponding local administrative unit code. A special spatial object type called condominium has been introduced for describing independent administrative areas that are administered by two or more countries.</p>
+</div>
+<div class="paragraph">
+<p>Administrative Units are separated by administrative boundaries that are specified as lines. As mandatory properties they carry a unique identifier, information on the country, the administrative hierarchic level and their own geometry. These are complemented, when available, with the legal and technical status of the boundary and the life cycle information.</p>
+</div>
+</li>
+<li>
+<p>The <strong>MaritimeUnits application schema</strong> models the existing maritime zones. These are stripes or belts of sea defined according international treaties and conventions, where the coastal States execute their jurisdictional rights. Depending on the zone type property, they may concern an area of seabed, ocean floor, subsoil, resources, or even the air space over the sea, for cadastral, administrative, economic, security or safety purposes. These rights are established by the United Nations Convention on the Law of the Sea (UNCLOS). The baseline, the line from which the outer limits of the territorial sea is measured, serves as reference to calculate the breath of territorial sea, while determines the outer limits of other maritime zones by establishing respectively different distances measured from it.</p>
+<div class="paragraph">
+<p>In contrast to the AdministrativeUnits model, no hierarchical structure is established between different maritime zones. However, they share common properties with Administrative Units, like the unique identifier and the country the maritime zone belongs to. All this information is again complemented, if available, with the life cycle information and the geographical name.</p>
+</div>
+<div class="paragraph">
+<p>Following a common modelling approach with Administrative Units, maritime zones are separated by maritime boundaries that are specified as lines. As mandatory properties they carry a unique identifier, information on the country, and their own geometry. These are complemented, when available, with the legal and technical status of the boundary and the life cycle information.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In the INSPIRE administrative unit data specification, there are no mandatory quality requirements. However it is recommended that Member States provide the data at the source accuracy where possible targeting a minimal positional accuracy of 50 meters. The actual values of data quality sub-elements (completeness - commission and omission; logical consistency - conceptual, domain and topological consistency; positional accuracy – absolute ore external accuracy) should be published as metadata, when they are available. Metadata information have to be complemented with the necessary elements to comply with the Metadata Regulation 1205/2008/EC, the ones identified as needed for the interoperability of the Administrative Units theme and, if possible, those recommended in this specification.</p>
+</div>
+<div class="paragraph">
+<p>Interoperability is further supported by a common reference system and provisions for visualisation. For the latter, simple rules for default portrayal are given in specifying the fill colour of the Administrative Units and maritime zones, and the line-width of their borders corresponding to administrative and maritime boundaries, as well as the font and size of the labels. Moreover, the default portrayal elements reflect the hierarchy of the represented spatial objects.</p>
+</div>
+<div class="paragraph">
+<p>The main value of the INSPIRE Administrative Units theme data models is that they have a simple, yet flexible structure that allows data providers to publish their existing data in the most convenient way. Additionally, this specification has given a firm starting point for the related spatial data themes in Annex III of INSPIRE.</p>
+</div>
+<div class="paragraph">
+<p>As INSPIRE <em>Administrative Units</em> data specification is the result of a detailed analysis of user requirements and strong consideration of existing initiatives that went beyond the strictly environmental scope, it is expected that it will also be a solid element of a multi-purpose European spatial data infrastructure.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_overview">1. Overview</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_informal_description">1.1. Informal Description</h3>
+<div class="paragraph">
+<p><span class="underline"><strong>Definition:</strong></span></p>
+</div>
+<div class="paragraph">
+<p>Units of administration, dividing areas where Member States have and/or exercise jurisdictional rights, for local, regional and national governance, separated by administrative boundaries [Directive 2007/2/EC].</p>
+</div>
+<div class="paragraph">
+<p><span class="underline"><strong>Description:</strong></span></p>
+</div>
+<div class="paragraph">
+<p>Each national territory is divided into administrative units at different administrative levels as defined by the national administrative hierarchy. Administrative units are separated by administrative boundaries. Under United Nations Convention on the Law of the Sea the coastal States can define maritime zones, wherein they exercise jurisdictional rights on sea area. The zones are separated by maritime boundaries.</p>
+</div>
+<div class="paragraph">
+<p>The administrative / maritime division forms an indirect spatial reference system. The reference to an administrative unit or maritime zone provides a spatial dimension to data without using coordinates (INSPIRE IMS, 2003).</p>
+</div>
+<div class="paragraph">
+<p>Administrative units may correspond to the items identified in frame of other territory division systems. The examples of such relationships include, among others, the cadastral parcels, census districts, postal regions, sea regions, statistical units, or sector-specific regions. These items are not considered to constitute a part of the definition of administrative units; they are within the scope of other INSPIRE themes.</p>
+</div>
+<div class="paragraph">
+<p>Administrative and maritime boundaries are the key to horizontal interoperability between the products of national data custodians. Neighbours should agree on international boundaries with shared geometry at the best possible resolution (INSPIRE RDM, 2002).</p>
+</div>
+<div class="paragraph">
+<p>The reference date of the administrative units has to be considered for purpose of linkage to statistical information as for instance population figures. Therefore, the aspect of temporal reference and update has to be considered carefully for administrative units.</p>
+</div>
+<div class="paragraph">
+<p>Provision of national datasets on administrative units, harmonised according to this data specification and to defined reference dates, is required to facilitate interoperable data exchange of all official administrative units according to the administrative levels as defined within each Member State.</p>
+</div>
+<div class="paragraph">
+<p>The EU-wide harmonized data of all these administrative units can be seen as a key dataset for any kind of (cross-border) spatial handling, important in operations and management.</p>
+</div>
+<div class="paragraph">
+<p>This data specification has been derived from the specification of EuroGeographics EBM product which is already used for the Administrative Unit Theme of European Commission’s GISCO reference database. The European Environment Agency (EEA) is using this dataset to relate their environmental information and indicators to the official defined administrative units in Europe.</p>
+</div>
+<div class="paragraph">
+<p><span class="underline"><em>Use cases</em></span></p>
+</div>
+<div class="paragraph">
+<p>This INSPIRE data specification on Administrative units theme is to support the following high level use cases:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Filtering data. A user selects regions (e.g. by clicking or entering a name or code). The geometry of the selected administrative units and maritime zones is used in a query filter when retrieving geographic information (using a download service) or metadata (using a discovery service). This could e.g. be used in verification to identify features located at the border between two administrative units or maritime zones.</p>
+</li>
+<li>
+<p>Linking thematic information. To provide users with easy and rapid access to comparable thematic information, data providers link their information to the administrative units and maritime zones.</p>
+</li>
+<li>
+<p>Disaster management. The administrative units and maritime zones that are affected by an environmental phenomenon or disaster are selected.</p>
+</li>
+<li>
+<p>Boundary based analysis. Verification of data of thematic features located at the boundaries of administrative units or maritime zones. This covers the aspect of edge-matching.</p>
+</li>
+<li>
+<p>Discovery of unit related data. Search catalogues to discover available data sets with respect to administrative unit / maritime zone geometry or name (or code).</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_normative_references">1.2. Normative References</h3>
+<table class="tableblock frame-none grid-none spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[UNCLOS]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">United Nations Convention on the Law of the Sea</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_symbols_and_abbreviations">1.3. Symbols and abbreviations</h3>
+<table class="tableblock frame-none grid-none spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BKG</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Federal Agency for Cartography and Geodesy (Germany)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EuroGeographics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Association representing nearly all European National Mapping and Cadastral Agencies (NMCAs)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Eurostat</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Statistical Office of the European Communities</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GISCO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geographic Information System of the European Commission</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EBM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EuroBoundaryMap (product of EuroGeographics)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EEA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">European Environment Agency</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FADN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Farm Accountancy Data Network (See Council Regulation 79/65/EEC)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LAU</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Local administrative units</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NUTS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nomenclature of Territorial Units for Statistics</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OCL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object Constraint Language</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unified Modelling Language</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UNCLOS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">United Nation Convention on the Law of the Sea</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_data_content_and_structure">2. Data content and Structure</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_application_schemas_overview">2.1. Application schemas - Overview</h3>
+<div class="sect3">
+<h4 id="_application_schemas_included_in_the_irs">2.1.1. Application schemas included in the IRs</h4>
+<div class="paragraph">
+<p>The types to be used for the exchange and classification of spatial objects from data sets related to the spatial data theme Administrative Units are defined in the following application schemas:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>AdministrativeUnits application schema (see section <a href="#_administrative_units_application_schemas">Application schema AdministrativeUnits</a>).</p>
+</li>
+<li>
+<p>MaritimeUnits application schema (see section <a href="#_application_schema_maritimeunits">Application schema MaritimeUnits</a>).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_basic_notions">2.2. Basic notions</h3>
+<div class="sect3">
+<h4 id="_consistency_between_spatial_data_sets">2.2.1. Consistency between spatial data sets</h4>
+<div class="paragraph">
+<p>Administrative Units and maritime zones will very likely be used in conjunction with data coming from other INSPIRE themes (e.g. cadastral parcels, orthoimagery, statistical units, sea regions). Administrative Units and maritime zones should be considered as reference data, and geometric consistency with other themes may be achieved if these other themes use Administrative Units or maritime zones as background data during the production or the validation of their own data.</p>
+</div>
+<div class="paragraph">
+<p>Currently, there are no consistency rules other than those defined within the application schemas. No consistency rules between Administrative Units / maritime zones and other spatial data sets have been identified.</p>
+</div>
+<div class="paragraph">
+<p>Each spatial object type in the application schemas of the Administrative Units theme has the mandatory <em>inspireId</em> attribute. Therefore each spatial object needs to provide a unique identifier. This identifier shall be maintained by the national or regional authority. The identifier consists of two parts: the namespace and a local id. The namespace uniquely identifies a national registry wherein the identifier is registered, whereas the local id uniquely identifies an object within this namespace.</p>
+</div>
+<div class="paragraph">
+<p>Since INSPIRE objectives refer data exchange only, the maintenance and management of unique INSPIRE identifiers is out of INSPIRE scope, and is under the responsibility of the Member States.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_administrative_units_application_schemas">2.3. Administrative Units - Application Schemas</h3>
+<div class="sect3">
+<h4 id="_description">2.3.1. Description</h4>
+<div class="sect4">
+<h5 id="_narrative_description">Narrative description</h5>
+<div class="paragraph">
+<p>The Administrative Units data specification establishes two application schemas: AdministrativeUnits and MaritimeUnits. The dependencies between both application schemas and other schemas of the Generic Conceptual Model are illustrated in <a href="#tg-au-classPackageStructure">Figure 1</a>.</p>
+</div>
+<div class="paragraph">
+<p>The spatial object types in the AdministrativeUnits and MaritimeUnits schemas use the GeographicalName type from the Geographical Names package. The MaritimeZone spatial object type re-uses the LegalStatusValue and TechnicalStatusValue codelists from the AdministrativeUnits package and their corresponding properties.</p>
+</div>
+<div class="paragraph">
+<p>Both packages refer to the Base Types package to use the Identifer type from the GCM.</p>
+</div>
+<div id="tg-au-classPackageStructure" class="imageblock">
+<div class="content">
+<img src="images/classPackageStructure.PNG" alt="Overview of the Administrative Units packages and their dependencies">
+</div>
+<div class="title">Figure 1. Overview of the Administrative Units packages and their dependencies</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_application_schema_administrativeunits">2.4. Application schema AdministrativeUnits</h3>
+<div class="sect3">
+<h4 id="_description_2">2.4.1. Description</h4>
+<div class="sect4">
+<h5 id="_narrative_description_2">Narrative Description</h5>
+<div class="paragraph">
+<p>The application schema AdministrativeUnits provides the means for common pan-European representation of administrative division of territory in the Member States. The schema identifies three spatial object types: AdministrativeUnit, AdministrativeBoundary and Condominium.</p>
+</div>
+<div class="paragraph">
+<p>AdministrativeUnit is the key spatial object type for representing the units of division at all levels of the administrative hierarchy. Each single unit (i.e. instance of AdministrativeUnit spatial object type) belongs to exactly one level of the respective national hierarchy.</p>
+</div>
+<div class="paragraph">
+<p>Usually, administrative units from a higher level aggregate the units at lower level of administrative hierarchy. As this division of territory is not always strictly hierarchical and can be derived from the geometry, semantic relationships between the units of subsequent upper and lower levels were introduced.</p>
+</div>
+<div class="paragraph">
+<p>The spatial object type AdministrativeBoundary is defined in this application schema to represent the boundaries between the neighbouring units and their boundary-specific attributes (like technical and legal status).</p>
+</div>
+<div class="paragraph">
+<p>Usually, a single administrative unit is administered by only one administrative authority. However, in some cases a unit is co-administered by other units (authorities) and is not (directly) linked to an administrative unit at a higher level. The representation of co-administering is supported in this application schema.</p>
+</div>
+<div class="paragraph">
+<p>In very rare cases a single administrative area is administered by two or more countries. Such an area is named condominium and supported in this application schema by the Condominium spatial object type. The correspondence between the condominium and the countries administering it are represented by a relationship between the AdministrativeUnit and Condominium spatial object types.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Previous versions of the data specification on <em>Administrative Units</em> contained a candidate type called NUTSRegion to accommodate requirements raised by INSPIRE stakeholders to include an explicit connection to statistical units defined by the EU-administration in the application schema AdministrativeUnits in order to link statistical information to administrative units. This candidate type was considered during the development of the data specification on Statistical Units, where it is included as an informative example of a Statistical Units data set.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>In some existing implementations for administrative units data (e.g. EuroBoundaryMap), the spatial extent of administrative units is further decomposed into sub-areas, like land areas, islands, inland water or coastal water areas. The reason for this decomposition of administrative units into areas comes from the natural need for combining administrative information with other thematic information. This application schema does not differentiate between the sub-areas of administrative units because it is out of its scope. Considering the INSPIRE harmonization objectives, the correlation of administrative units with elements of other division systems can be derived from cross-theme analysis of thematic spatial objects. In the case described above, the information on decomposition of administrative units into sub-areas can be derived performing spatial analyses with data from other INSPIRE themes (e.g. Land Use theme from Annex II). See also Annex E for further information.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_uml_overview">UML Overview</h5>
+<div id="tg-au-classAUOverview" class="imageblock">
+<div class="content">
+<img src="images/classAUOverview.PNG" alt="UML class diagram: Overview of the AdministrativeUnits application schema">
+</div>
+<div class="title">Figure 2. UML class diagram: Overview of the AdministrativeUnits application schema</div>
+</div>
+<div class="paragraph">
+<p>The AdministrativeUnit spatial object type uses the GeographicalName type from the Geographical Names package. The AdministrativeUnits package also refers the package Base Types for using the Identifer type defined in the GCM.</p>
+</div>
+<div class="paragraph">
+<p>AdministrativeUnit is the main spatial object type included in the application schema and represents administrative units at all the levels of administrative hierarchy. Each single unit (i.e. instance of AdministrativeUnit spatial object type) belongs to exactly one hierarchy level. Information about the level in the respective national hierarchy that a certain unit belongs to is documented by the mandatory nationalLevel attribute.</p>
+</div>
+<div class="paragraph">
+<p>The number of administrative levels differs from country to country (in the EU Member States up to 6 levels are in use, see the examples in Annex D), therefore no absolute levels can be fixed. Instead, the (spatial) correspondence between the levels is a common characteristic of national administrative hierarchies. The representation of these relationships between the units is supported in this application schema by a self-reference of the AdministrativeUnit type, and corresponding to the lowerLevelUnit and upperLevelUnit association roles. The top-down inclusion of units is expressed in the application schema by the lowerLevelUnit association role of the AdministrativeUnit spatial object type. Each unit except for those on the lowest level shall provide the relation to their lower level units. The spatial object type AdministrativeUnit is shown in detail in  <a href="#tg-au-classAU">Figure 2</a></p>
+</div>
+<div id="tg-au-classAU" class="imageblock">
+<div class="content">
+<img src="images/classAU.PNG" alt="Administrative Unit">
+</div>
+<div class="title">Figure 3. Administrative Unit</div>
+</div>
+<div class="paragraph">
+<p>Similarly, the down-top relationship between the units of lower and higher levels can be determined. In fact, usually lower level units refer exactly one higher level unit. A support for describing this is provided by the upperLevelUnit association role of the AdministrativeUnit spatial object type. The only exception to this situation are the units at the highest (country) level; they have no upper level units.</p>
+</div>
+<div class="paragraph">
+<p>In some countries the hierarchy of Administrative Units differs from the ideal strictly hierarchical organization. For instance, some units (at lowest level) are not linked to any unit at a higher level but to two or more units at same level. In order to support reporting of such situations a self-reference of AdministrativeUnit with the coAdminister and administeredBy association roles is established in this application schema.</p>
+</div>
+<div id="IR Requirement" class="admonitionblock requirement">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-requirement" title=""></i>
+</td>
+<td class="content">
+<div class="title">IR Requirement</div>
+<div class="paragraph">
+<p><em>Annex II, Section 4.4</em><br>
+<strong>Theme-specific Requirements</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Each instance of spatial object type AdministrativeUnit, except for the country level unit representing a MemberState and co-administered units, shall refer exactly to one unit at a higher level of administrative hierarchy. This correspondence shall be expressed by the upperLevelUnit association role of AdministrativeUnit spatial object type.</p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="IR Requirement" class="admonitionblock requirement">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-requirement" title=""></i>
+</td>
+<td class="content">
+<div class="title">IR Requirement</div>
+<div class="paragraph">
+<p><em>Annex II, Section 4.4</em><br>
+<strong>Theme-specific Requirements</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p>Each instance of spatial object type AdministrativeUnit, except for those at the lowest level, shall refer to their respective lower level units. This correspondence shall be expressed by the lowerLevelUnit association role of AdministrativeUnit spatial object type.</p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="IR Requirement" class="admonitionblock requirement">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-requirement" title=""></i>
+</td>
+<td class="content">
+<div class="title">IR Requirement</div>
+<div class="paragraph">
+<p><em>Annex II, Section 4.4</em><br>
+<strong>Theme-specific Requirements</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="3">
+<li>
+<p>If an administrative unit is co-administered by two or more other administrative units the association role administeredBy shall be used. The units co-administering this unit shall apply inverse role coAdminister.</p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The association roles involved in the three requirements above have received the voidable stereotype, which means that they only need to be provided to INSPIRE when this information is available in the source data sets.</p>
+</div>
+<div class="paragraph">
+<p>For purposes of multilingual support in the identification of administrative units, their names are of data type GeographicalName.</p>
+</div>
+<div class="paragraph">
+<p>For the same purpose, the names of the levels (attribute nationalLevelName) are of data type localisedCharacterString.</p>
+</div>
+<div id="Recommendation 1" class="admonitionblock permission">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-permission" title=""></i>
+</td>
+<td class="content">
+<div class="title">Recommendation 1</div>
+<div class="paragraph">
+<p>The value of 'language' attribute for AdministrativeUnit.name (GeographicalName DataType) should be provided, except for the situation that the data producer does not have such information.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For each AdministrativeUnit a location of the authority / administration (residenceOfAuthority) can be reported. It is of data type ResidenceOfAuthority which specifies a geographical name and the position of the authority (e.g. a point geometry).</p>
+</div>
+<div class="paragraph">
+<p>Since administrative units may consist of mainlands and exclaves, their geometric representation is expressed by the GM_MultiSurface type.</p>
+</div>
+<div id="IR Requirement" class="admonitionblock requirement">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-requirement" title=""></i>
+</td>
+<td class="content">
+<div class="title">IR Requirement</div>
+<div class="paragraph">
+<p><em>Annex II, Section 4.4</em><br>
+<strong>Theme-specific Requirements</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="4">
+<li>
+<p>Administrative units at the same level of administrative hierarchy shall not conceptually share common areas.</p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The second spatial object type in the application schema, AdministrativeBoundary, is the type representing the boundaries between neighbouring administrative units and including their boundary-specific attributes. <a href="#tg-au-classAdministrativeBoundary">Figure 3</a> shows this spatial object type in detail.</p>
+</div>
+<div id="tg-au-classAdministrativeBoundary" class="imageblock">
+<div class="content">
+<img src="images/classAdministrativeBoundary.PNG" alt="Administrative Boundary">
+</div>
+<div class="title">Figure 4. Administrative Boundary</div>
+</div>
+<div class="paragraph">
+<p>AdministrativeBoundary provides important information concerning the administrative division. In particular, it is labelled with a legal and a technical status of the boundary. The legal status refers to the political agreement between the units, whereas the technical status faces the edge-matching issues; the "edge-matched" value meaning that the boundary of neighbouring administrative units have the same set of coordinates. If available both indicators shall be provided.</p>
+</div>
+<div class="paragraph">
+<p>The legal status is not only meant for international boundaries but also for boundaries within member states as there are also cases where the boundaries are not agreed.</p>
+</div>
+<div class="paragraph">
+<p>This application schema defines a voidable association between AdministrativeUnit and AdministrativeBoundary spatial object types to support the expression of topological and semantic relationships that can be used in queries to avoid geometric intersections.</p>
+</div>
+<div id="IR Requirement" class="admonitionblock requirement">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-requirement" title=""></i>
+</td>
+<td class="content">
+<div class="title">IR Requirement</div>
+<div class="paragraph">
+<p><em>Annex II, Section 4.4</em><br>
+<strong>Theme-specific Requirements</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="5">
+<li>
+<p>Instances of the spatial object type AdministrativeBoundary shall correspond to the edges in the topological structure of the complete (including all levels) boundary graph.</p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="Recommendation 2" class="admonitionblock permission">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-permission" title=""></i>
+</td>
+<td class="content">
+<div class="title">Recommendation 2</div>
+<div class="paragraph">
+<p>The following geometric and topological constraints are recommendations for this data specification:</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Adjacent administrative units should not overlap, i.e. their boundaries should not intersect with each other.</p>
+</li>
+<li>
+<p>There should be no gaps between adjacent administrative units.</p>
+</li>
+<li>
+<p>Unintended gaps between administrative units due to geometrical inconsistencies are in principle not allowed. Boundaries of neighboring administrative units shall have the same set of coordinates, within the specified resolution.</p>
+</li>
+<li>
+<p>The border line that limits the administrative units shall correspond to the geometries representing the boundaries of this administrative unit.</p>
+</li>
+<li>
+<p>The boundaries must not have dangles, boundaries always divide different administrative units.</p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Consistent with existing definitions, a condominium in the context of this specification is considered as a political territory over which two or more sovereign States jointly exercise their jurisdictional rights, without further territorial decomposition. Consequently, a condominium cannot be part of a national administrative hierarchy. On the other hand, condominiums might be included into national datasets and the information about them shall be shared on the European level. Condominium is shown in <a href="#tg-au-classCondominium">Figure 4</a>.</p>
+</div>
+<div id="tg-au-classCondominium" class="imageblock">
+<div class="content">
+<img src="images/classCondominium.PNG" alt="Condominiums and relationsip to AdministrativeUnit">
+</div>
+<div class="title">Figure 5. Condominiums and relationsip to AdministrativeUnit</div>
+</div>
+<div class="paragraph">
+<p>To support the representation of condominiums a special spatial object type is defined in the application schema AdministrativeUnits. It includes a mandatory surface geometry and an optional name. The association to the AdministrativeUnit type allows representing the connection between the condominium and the administering States.</p>
+</div>
+<div id="IR Requirement" class="admonitionblock requirement">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-requirement" title=""></i>
+</td>
+<td class="content">
+<div class="title">IR Requirement</div>
+<div class="paragraph">
+<p><em>Annex II, Section 4.4</em><br>
+<strong>Theme-specific Requirements</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="6">
+<li>
+<p>The spatial extent of a condominium may not be part of the geometry representing the spatial extent of an administrative unit.</p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="IR Requirement" class="admonitionblock requirement">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-requirement" title=""></i>
+</td>
+<td class="content">
+<div class="title">IR Requirement</div>
+<div class="paragraph">
+<p><em>Annex II, Section 4.4</em><br>
+<strong>Theme-specific Requirements</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="7">
+<li>
+<p>Condominiums can only be administered by administrative units at country level.</p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_identifier_management">Identifier management</h5>
+<div class="paragraph">
+<p>Besides the INSPIRE-identifier (inspireId attribute) each AdministrativeUnit spatial object carries an attribute with the national unit code (nationalCode attribute). This code act as a thematic identifier and it may be also unique when preceded by the CountryCode-prefix.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_modelling_of_object_references">Modelling of object references</h5>
+<div class="sect5">
+<h6 id="_internal_references">Internal references</h6>
+<div class="paragraph">
+<p>Each upper level administrative unit is composed of lower level units, and each lower level unit is linked to an upper level unit, with the exceptions highlighted in section <a href="#_uml_overview">UML Overview</a> are limited by boundaries.</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_external_references">External references</h6>
+<div class="paragraph">
+<p>In most of European countries the local administrative units (communes) refer to borders of cadastral parcels. These references are not modelled in this application schema.</p>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_geometry_representation">Geometry representation</h5>
+<div class="paragraph">
+<p>In this technical specification two alternative geometric structures of boundary features are provided:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The first structure aims to support download of mass information collected in a form of data files.</p>
+</li>
+<li>
+<p>The second structure is better suited for presenting administrative units and maritime zones using view services, as well as selective download of small portion of feature instances using direct access download services, e.g. a Web feature service.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Both structures fully comply with the AdministrativeUnits and MaritimeUnits application schemas. Users may decide to implement the structure that fits the best their individual purposes.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The following two sections explain the mentioned structures applied to the AdministrativeUnits application schema, but they are equally valid for the MaritimeUnits application schema, except for the hierarchical relationships, which are not defined for this schema.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect5">
+<h6 id="_flat_model_of_boundary_feature_geometry">Flat model of boundary feature geometry</h6>
+<div class="paragraph">
+<p>In this geometric model, AdministrativeBoundary feature is represented as follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Each AdministrativeBoundary feature corresponds to the curve established between the two significant nodes of topological graph established with respect to the lowest level of national administrative hierarchy.</p>
+</li>
+<li>
+<p>Each single AdministrativeBoundary feature might refer one or more hierarchical levels e.g. AdministrativeBoundary features representing a part of national boundary, part of '2nd level' boundary, and part of '3rd level' boundary.</p>
+</li>
+<li>
+<p>Each AdministrativeUnit feature associates to all touching AdministrativeBoundary features.</p>
+</li>
+<li>
+<p>Each AdministrativeBoundary feature associates to all touching administrative units from all the levels of administrative hierarchy.</p>
+</li>
+</ol>
+</div>
+<div class="exampleblock">
+<div class="title">Example 1. Explanation of the flat model</div>
+<div class="content">
+<div class="paragraph">
+<p>Assume the following situation for the area features (instances of AdministrativeUnit):</p>
+</div>
+<div id="tg-au-geometryRepresentationExample1" class="imageblock">
+<div class="content">
+<img src="images/geometryRepresentationExample1.PNG" alt="">
+</div>
+</div>
+<div class="paragraph">
+<p>The polygons represent Administrative units at three levels:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>national level 1: AU1 polygon represents a country;</p>
+</li>
+<li>
+<p>national level 2: AU2 and AU3 polygons represent regions; AU2 + AU3 topologically equal to AU1</p>
+</li>
+<li>
+<p>national level 3: AU4 and AU5 represent lowest level units; AU4 + AU5 topologically equal to AU2. For AU3 there is no further subdivision.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Level 2 is topologically equivalent to level1 of administrative hierarchy. Level 3 is not topologically equivalent to levels 1 and 2.</p>
+</div>
+<div class="paragraph">
+<p>The boundary features (BF = instances of spatial object type AdministrativeBoundary) are built based on the topological structure of the entire (including all administrative levels) boundary geometry. Each BF consist of only one curve which is built between two connected nodes in the topological network. The nationalLevel attribute of the BF contains all relevant levels of the administrative hierarchy.</p>
+</div>
+<div class="paragraph">
+<p>In this example the following vertices are identified:</p>
+</div>
+<div id="tg-au-geometryRepresentationExample2" class="imageblock">
+<div class="content">
+<img src="images/geometryRepresentationExample2.PNG" alt="">
+</div>
+</div>
+<div class="paragraph">
+<p>The Points P3, P5, P7, and P8 are nodes in the topological structure, all other points are intermediate points (vertices).</p>
+</div>
+<div class="paragraph">
+<p>Then, the curves and Boundary features are built as follows:</p>
+</div>
+<div id="tg-au-geometryRepresentationExample3" class="imageblock">
+<div class="content">
+<img src="images/geometryRepresentationExample3.PNG" alt="">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>C1 = (P7, P1, P2, P3) = BF1<br>
+with nationalLevel=1, 2</p>
+</li>
+<li>
+<p>C2 = (P3, P4, P5) = BF2<br>
+with nationalLevel=1, 2, 3</p>
+</li>
+<li>
+<p>C3 = (P5, P6, P7) = BF3<br>
+with nationalLevel=1, 2, 3</p>
+</li>
+<li>
+<p>C4 = (P7, P8) = BF4<br>
+with nationalLevel=2, 3</p>
+</li>
+<li>
+<p>C5 = (P8, P3) = BF5<br>
+with nationalLevel=2, 3</p>
+</li>
+<li>
+<p>C6 = (P8, P5) = BF6<br>
+with nationalLevel=3</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Finally, the following associations between boundaries and administrative units have to be built:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>BOUNDARY &#8594; UNIT</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>UNIT &#8594; BOUNDARY</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BF1 &#8594; AU1, AU3<br>
+BF2 &#8594; AU1, AU2, AU5<br>
+BF3 &#8594; AU1, AU2, AU4<br>
+BF4 &#8594; AU2, AU3, AU4<br>
+BF5 &#8594; AU2, AU3, AU5<br>
+BF6 &#8594; AU4, AU5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AU1 &#8594; BF1, BF2, BF3<br>
+AU2 &#8594; BF2, BF3, BF4, BF5<br>
+AU3 &#8594; BF1, BF4, BF5<br>
+AU4 &#8594; BF3, BF4, BF6<br>
+AU5 &#8594; BF2, BF5, BF6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_multi_layer_model_of_boundary_features_geometry">Multi-layer model of boundary features geometry</h6>
+<div class="paragraph">
+<p>In this geometric model, AdministrativeBoundary feature is represented as follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Each single AdministrativeBoundary feature represents exactly one administrative boundary established at certain level of national administrative hierarchy e.g. the boundary between Poland and Germany, the boundary between Liguria and Piemonte regions.</p>
+</li>
+<li>
+<p>The AdministrativeBoundary features (that is, boundaries between administrative units) are identified at each hierarchical level e.g.: AdministrativeBoundary features representing the national boundaries, the AdministrativeBoundary features representing '2nd level' boundaries, the AdministrativeBoundary features representing '3rd level' boundaries etc;</p>
+</li>
+<li>
+<p>The geometry of AdministrativeBoundary feature corresponds to the entire line of demarcation determined for the administrative unit at the same level as the boundary level.</p>
+</li>
+<li>
+<p>Each AdministrativeUnit feature associates only to boundaries established at the level corresponding to the level of this administrative unit.</p>
+</li>
+<li>
+<p>Each AdministrativeBoundary feature associates only to admisnitrative units that are separated by this boundary and have the same administrative level as the level of this boundary.</p>
+</li>
+</ol>
+</div>
+<div class="exampleblock">
+<div class="title">Example 2. Explanation of the multi-layer model</div>
+<div class="content">
+<div class="paragraph">
+<p>This example considers exactly the same situation, as discussed in the case of flat geometric model.</p>
+</div>
+<div id="tg-au-geometryRepresentationExample4" class="imageblock">
+<div class="content">
+<img src="images/geometryRepresentationExample4.PNG" alt="">
+</div>
+</div>
+<div class="paragraph">
+<p>The polygons represent Administrative Units at three levels:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>national level 1: AU1 polygon represents a country;</p>
+</li>
+<li>
+<p>national level 2: AU2 and AU3 polygons represent regions; AU2 + AU3 topologically equal to AU1</p>
+</li>
+<li>
+<p>national level 3: AU4 and AU5 represent lowest level units; AU4 + AU5 topologically equal to AU2</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Level 2 is topologically equivalent to level1 of administrative hierarchy. Level 3 is not topologically equivalent to levels 1 and 2.</p>
+</div>
+<div class="paragraph">
+<p>Additionally, the polygons representing the countries adjacent to AU1 have been introduced to evidence the fact that begin and end nodes of country level boundaries do not necessarily meet the begin/end node of some regional boundary. These are labeled AU-X, AU-Y, and AU-Z.</p>
+</div>
+<div class="paragraph">
+<p>The AdministrativeBoundary features are determined independently at each level, and are based on the topological structure established separatelly for each level national administrative hierarchy. Each AdministrativeBoundary is geometrically represented by single Curve (C), that is defined for a selected subset of nodes representing the line of demarcation between the two units.</p>
+</div>
+<div class="paragraph">
+<p>The nationalLevel of the AdministrativeBoundary feature (BF) corresponds to the level at which this boundary was established.</p>
+</div>
+<div class="paragraph">
+<p>In this example the following vertices are identified:</p>
+</div>
+<div id="tg-au-geometryRepresentationExample5" class="imageblock">
+<div class="content">
+<img src="images/geometryRepresentationExample5.PNG" alt="">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>P10, P3 and P9 are begin/end nodes of national boundaries between AU1 and AU-X, AU1 and AU-Y, AU1 and AU-Z;</p>
+</li>
+<li>
+<p>P7 and P3 nodes are begin/end nodes of regional boundary between AU2 and AU3</p>
+</li>
+<li>
+<p>P5 and P8 nodes are begin/end nodes of lowest level boundary between AU4 and AU5</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Begin and end nodes of international boundaries do not necessarily meet begin/end node of some regional boundary.</p>
+</div>
+<div class="paragraph">
+<p>Based on the identified nodes the following boundaries at three levels of administrative structure can be determined:</p>
+</div>
+<div id="tg-au-geometryRepresentationExample6" class="imageblock">
+<div class="content">
+<img src="images/geometryRepresentationExample6.PNG" alt="">
+</div>
+</div>
+<div class="paragraph">
+<p>The AdministrativeBoundary features are built as follows:</p>
+</div>
+<div class="paragraph">
+<p><strong>national boundaries (hierarchyLevel=1):</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>BF1.1 = C1(P9,P5,P6,P7,P1,P10)</p>
+</li>
+<li>
+<p>BF1.2 = C2(P10,P2,P3)</p>
+</li>
+<li>
+<p>BF1.3 = C3(P3,P4,P9)</p>
+</li>
+</ul>
+</div>
+<div id="tg-au-geometryRepresentationExample7" class="imageblock">
+<div class="content">
+<img src="images/geometryRepresentationExample7.PNG" alt="">
+</div>
+</div>
+<div class="paragraph">
+<p>The AdministrativeBoundary features are built as follows:</p>
+</div>
+<div class="paragraph">
+<p><strong>regional boundaries (hierarchyLevel=2):</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>BF2.1 = C2.1(P7,P1,P10,P2,P3)</p>
+</li>
+<li>
+<p>BF2.2 = C2.2(P3,P4,P9,P5,P6,P7)</p>
+</li>
+<li>
+<p>BF2.3 = C2.3(P7,P8,P3)</p>
+</li>
+</ul>
+</div>
+<div id="tg-au-geometryRepresentationExample8" class="imageblock">
+<div class="content">
+<img src="images/geometryRepresentationExample8.PNG" alt="">
+</div>
+</div>
+<div class="paragraph">
+<p>The AdministrativeBoundary features are built as follows:</p>
+</div>
+<div class="paragraph">
+<p><strong>local boundaries (hierarchyLevel=3):</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>BF3.1 = C3.1=(P5,P6,P7,P8)</p>
+</li>
+<li>
+<p>BF3.2 = C3.2(P8,P5)</p>
+</li>
+<li>
+<p>BF3.3 = C3.3(P8,P3,P4,P9,P5)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Finally, the following associations between boundaries and administrative units have to be built:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>BOUNDARY &#8594; UNIT</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>UNIT &#8594; BOUNDARY</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">national boundaries:<br>
+BF1.1 &#8594; AU1 (boundary with AU-X)<br>
+BF1.2 &#8594; AU1 (boundary with AU-Y)<br>
+BF1.3 &#8594; AU1 (boundary with AU-Z)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">national units:<br>
+AU1 &#8594; BF1.1, BF1.2, BF1.3
+</p><p class="tableblock">regional boundaries:<br>
+BF2.3 &#8594; AU2, AU3<br>
+BF2.2 &#8594; AU2<br>
+BF2.1 &#8594; AU3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">regional units:<br>
+AU2 &#8594; BF2.1, BF2.2<br>
+AU3 &#8594; BF2.1, BF2.3
+</p><p class="tableblock">local boundaries:<br>
+BF3.1 &#8594; AU4<br>
+BF3.2 &#8594; AU4, AU5<br>
+BF3.3 &#8594; AU5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">local units:<br>
+AU4 &#8594; BF3.1, BF3.2<br>
+AU5 &#8594; BF3.2, BF3.3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_feature_catalogue">2.4.2. Feature catalogue</h4>
+<div class="paragraph">
+<p><a href="fc-au.html">Click here for the feature catalogue for the application schema "AdministrativeUnits"</a></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_application_schema_maritimeunits">2.5. Application schema MaritimeUnits</h3>
+<div class="sect3">
+<h4 id="_description_3">2.5.1. Description</h4>
+<div class="sect4">
+<h5 id="_narrative_description_3">Narrative description</h5>
+<div class="paragraph">
+<p>The application schema MaritimeUnits provides the means for common pan-European representation of delimitation of maritime jurisdiction between coastal States. The schema identifies spatial object types for describing key sea division concepts: MaritimeBoundary, MaritimeZone (zones of different types distinguished by an attribute) and Baseline.</p>
+</div>
+<div class="paragraph">
+<p>The MaritimeZone spatial object type represents any zone on the sea defined by international treaties and conventions, where a coastal State executes jurisdictional rights. MaritimeZone is further classified as a certain type of maritime zone by means of the zoneType attribute. The following zone types are distinguished: internal waters, territorial sea, contiguous zone, exclusive economic zone and continental shelf.</p>
+</div>
+<div class="paragraph">
+<p>Depending on the type of zone, the jurisdictional rights of a coastal State may concern an area of seabed, ocean floor, subsoil, resources, or even the air space over the sea. Once defined, the maritime zones are used, among others, for cadastral, administrative, economic (e.g. fishery, exploring and exploiting), security or safety purposes.</p>
+</div>
+<div class="paragraph">
+<p>Each maritime zone can belong exactly to one coastal State. At the same time a coastal State might have several maritime zones. The number of types of maritime zones established for a coastal State vary, depending on geographical and political characteristics, but each coastal State always has at least an internal waters and a territorial sea zone.</p>
+</div>
+<div class="paragraph">
+<p>The maritime zones are directly or indirectly defined in relation to a Baseline. According to the United Nations Convention on the Law of the Sea (UNCLOS), the “baseline” is a line established by a coastal State from which the outer limits of its territorial sea and certain other outer limits are measured. In particular, the territorial sea of a coastal State is a belt of sea of a defined breadth not exceeding 12 nautical miles measured from the baselines, whereas internal waters are the waters on the landward side of the baselines of the territorial sea of the coastal State. In turn, the contiguous zone, the exclusive economic zone and the continental shelf are defined as zones beyond and adjacent to the territorial sea of a coastal State.</p>
+</div>
+<div class="paragraph">
+<p>There can be more than one baseline determined by a State. For instance, France has two baselines: one in the north between Belgium to Spain, and the second in the south - between Spain and Italy.</p>
+</div>
+<div id="tg-au-conceptsMaritimeUnits" class="imageblock">
+<div class="content">
+<img src="images/conceptsMaritimeUnits.png" alt="Concepts MaritimeUnits application schema">
+</div>
+<div class="title">Figure 6. The concepts underlying definition of MaritimeUnits application schema</div>
+</div>
+<div class="paragraph">
+<p>Each zone must be delimited by MaritimeBoundary spatial objects. A MaritimeBoundary is a line that separates any type of maritime jurisdiction (i.e. fishery, petroleum and other resources of the sea as well as other uses of the sea). MaritimeBoundary may be twofold:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>it may define a seaward outer limit of certain maritime zone of a coastal State,</p>
+</li>
+<li>
+<p>it may represent a limit of the maritime zone of States with opposite or adjacent coasts.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A Maritime boundary is always subject to international treaties between the States and in a legal context it may be either agreed or in dispute. In case the maritime boundary is established between the adjacent coastal States, it shall be a natural prolongation of the administrative boundary on land.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_uml_overview_2">UML Overview</h5>
+<div class="paragraph">
+<p>The complete MaritimeUnits application schema is shown in <a href="#tg-au-classMUOverview">Figure 5</a>  and described in detail below.</p>
+</div>
+<div id="tg-au-classMUOverview" class="imageblock">
+<div class="content">
+<img src="images/classMUOverview.png" alt="UML class Overview Maritime Units">
+</div>
+<div class="title">Figure 7. UML class diagram: Overview of the MaritimeUnits application schema</div>
+</div>
+<div class="paragraph">
+<p>MaritimeZone is a spatial object type providing the common characteristics of all maritime zones that can be established by a coastal State on the sea. Each maritime zone is represented geometrically by the GM_MultiSurface data type and it can belong to exactly one coastal State. Information about the State executing jurisdictional rights over a certain zone is documented by the mandatory countryCode attribute.
+In some specific cases a maritime zone may be known under a specific unique geographical name. In order to support the depiction of zones using geographical names a voidable attribute name, of GeographicalName data type, is also provided.</p>
+</div>
+<div class="paragraph">
+<p>The specific type of maritime zone is classified and distinguished by means of the zoneType attribute of the MaritimeZone spatial object type. The values in the related code list (MaritimeZoneTypeValue) express the diversity of maritime zones available: internal waters (designated by the code list value <em>internalWaters</em>), territorial sea (<em>territorialSea</em>), contiguous zone (<em>contiguousZone</em>), exclusive economic zone (<em>exclusiveEconomicZone</em>) or continental shelf (<em>continentalShelf</em>).</p>
+</div>
+<div id="tg-au-classMUOverview" class="imageblock">
+<div class="content">
+<img src="images/classMaritimeZone.png" alt="MaritimeZone spatial object type">
+</div>
+<div class="title">Figure 8. MaritimeZone spatial object type</div>
+</div>
+<div id="Recommendation 3" class="admonitionblock permission">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-permission" title=""></i>
+</td>
+<td class="content">
+<div class="title">Recommendation 3</div>
+<div class="paragraph">
+<p>According to the UNCLOS, each coastal State is allowed to determine its territorial sea and internal waters. For this reason the representation of the territorial sea and the internal waters should always be present in a dataset providing data according to this application schema.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The territorialSea and internalWaters values of the MaritimeZoneTypeValue code list specifically represent these concepts.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Other kinds of maritime zones may be additionally provided depending on the geographical and political situation in a sea region. For this reason no absolute number of types of zones per State may be fixed.</p>
+</div>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>By definition there are well known topological relationships between the various types of zones. In particular (see also <a href="#tg-au-classMUOverview">Figure 7</a> and <a href="#tg-au-recommendationMaritimeUnits">following Recommendation</a>):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the internal waters of a coastal State shall be adjacent to the AdministrativeUnit spatial object representing the State (i.e. where the attribute nationalLevel is equal to ’1stOrder’).</p>
+</li>
+<li>
+<p>the territorial sea of a coastal State and its internal waters shall be adjacent on the Baseline.</p>
+</li>
+<li>
+<p>the contiguous zone, exclusive economic zone and continental shelf shall be adjacent to the territorial sea.</p>
+</li>
+<li>
+<p>the continental shelf shall include the exclusive economic zone.</p>
+</li>
+<li>
+<p>the exclusive economic zone shall include the contiguous zone.</p>
+</li>
+</ul>
+</div>
+<div id="Recommendation 4" class="admonitionblock permission">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-permission" title=""></i>
+</td>
+<td class="content">
+<div class="title">Recommendation 4</div>
+<div class="paragraph">
+<p>The following geometric and topological constraints are recommendations for this data specification:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the internal waters of a coastal State should be adjacent to the AdministrativeUnit spatial object representing the State (i.e. where the attribute nationalLevel is equal to ’1stOrder’).</p>
+</li>
+<li>
+<p>the territorial sea of a coastal State and its internal waters should be adjacent on the Baseline.</p>
+</li>
+<li>
+<p>the contiguous zone, exclusive economic zone and continental shelf should be adjacent to the territorial sea.</p>
+</li>
+<li>
+<p>the continental shelf should include the exclusive economic zone.</p>
+</li>
+<li>
+<p>the exclusive economic zone should include the contiguous zone.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The relationships mentioned above are not explicitly expressed in the UML model for simplicity, nevertheless they should be reflected in the data.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The Baseline spatial object type is a key notion to determine maritime zones. It serves as reference to calculate the breadth of territorial sea, as well as the outer limits of contiguous zones, exclusive economic zones and continental shelves. The baseline is composed of baseline segments (see the segment association role), and each baseline segment can be established based on different baseline calculation methods (see the segmentType attribute of the BaselineSegment data type). The rules for establishing baselines are provided in Article 5 of UNCLOS.</p>
+</div>
+<div id="tg-au-classBaseline" class="imageblock">
+<div class="content">
+<img src="images/classBaseline.png" alt="class Baseline">
+</div>
+<div class="title">Figure 9. Baseline spatial object type</div>
+</div>
+<div class="paragraph">
+<p>The instances of the MaritimeBoundary spatial object type represents the borders on sea between the coastal States. They may represent:
+* a seaward outer limit of certain maritime zone of a coastal State.
+* a limit of the maritime zone of States with opposite or adjacent coasts.</p>
+</div>
+<div class="paragraph">
+<p>If a MaritimeBoundary spatial object represents a boundary between adjacent coastal States, its start point shall be the same as the end point of the administrative boundary on land.</p>
+</div>
+<div class="paragraph">
+<p>Each instance of the MaritimeZone spatial object type provides the countryCode of a coastal State that executes jurisdictional right on it.</p>
+</div>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p>For purposes of multilingual support in the identification of maritime zones, their names are of data type GeographicalName.
+The MaritimeBoundary spatial object type supports the representation of the boundaries established on seas between the neighbouring coastal States. <a href="#tg-au-classMaritimeBoundary">Figure 10</a> shows this spatial object type in detail.</p>
+</div>
+<div id="tg-au-classMaritimeBoundary" class="imageblock">
+<div class="content">
+<img src="images/classMaritimeBoundary.png" alt="class Maritime Boundary">
+</div>
+<div class="title">Figure 10. MaritimeBoundary spatial object type</div>
+</div>
+<div class="paragraph">
+<p>MaritimeBoundary provides important information concerning sea division. In particular, it is labelled with a legal and a technical status of the boundary. The legal status refers to the political agreement between the units, whereas the technical status faces the edge-matching issues; the “edge-matched” value meaning that the boundary of neighbouring maritime zones have the same set of coordinates. In contrast, there are also cases where the maritime boundaries are not agreed. If available both indicators shall be provided</p>
+</div>
+<div class="paragraph">
+<p>The MaritimeUnits application schema defines a voidable association between the MaritimeZone and the MaritimeBoundary spatial object types to support the expression of topological and semantic relationships that may be used in queries to avoid geometric intersections.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_modelling_of_object_references_2">Modelling of object references</h5>
+<div class="paragraph">
+<p>No specific requirements or recommendations are defined for object references in the MaritimeUnits application schema.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_feature_catalogue_2">2.5.2. Feature catalogue</h4>
+<div class="paragraph">
+<p><a href="fc-mu.html">Click here for the feature catalogue for the application schema "MaritimeUnits"</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_data_quality">3. Data quality</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_data_quality_elements">3.1. Data quality elements</h3>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Data quality elements used in the spatial data theme <em>Administrative Units</em></caption>
+<colgroup>
+<col style="width: 21.7391%;">
+<col style="width: 14.7826%;">
+<col style="width: 24.3478%;">
+<col style="width: 26.0869%;">
+<col style="width: 13.0436%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Section</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Data quality element</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Data quality sub-element</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definition</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Evaluation Scope</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_completeness_comission">Completeness - Comission</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Completeness</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Commission</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Excess data present in the dataset, as described by the scope</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataset</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_completeness_omission">Completeness - Omission</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Completeness</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Omission</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data absent from the dataset, as described by the scope</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataset</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_logical_consistency_conceptual_consistency">Logical consistency - Conceptual consistency</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logical consistency</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conceptual consistency</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adherence to rules of the conceptual schema</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataset</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_logical_consistency_domain_consistency">Logical consistency - Domain consistency</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logical consistency</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Domain consistency</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adherence of values to the value domains</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataset</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_logical_consistency_topological_consistency">Logical consistency - Topological consistency</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logical consistency</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Topological consistency</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Correctness of the explicitly encoded topological characteristics of the dataset, as described by the scope</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataset</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_positional_accuracy_absolute_or_external_accuracy">Positional accuracy - Absolute or external accuracy</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Positional accuracy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Absolute or external accuracy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Closeness of reported coordinate values to values accepted as or being true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataset</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_completeness_comission">3.1.1. Completeness - Comission</h4>
+<div id="Recommendation 5" class="admonitionblock permission">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-permission" title=""></i>
+</td>
+<td class="content">
+<div class="title">Recommendation 5</div>
+<div class="paragraph">
+<p>Commission should be evaluated and documented using Rate of excess items, as specified in the table below.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Rate of excess items</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alternative name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data quality element</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Completeness</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data quality sub-element</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Commission</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data quality basic measure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error rate</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of excess items in the dataset in relation to the number of items that should have been present.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Evaluation scope</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data set</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reporting scope</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data set</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data quality value type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Real, Percentage, Ratio</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data quality value structure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single value</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Source reference</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISO/DIS 19157 Geographic information – Data quality</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Measure identifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_completeness_omission">3.1.2. Completeness - Omission</h4>
+<div id="Recommendation 6" class="admonitionblock permission">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-permission" title=""></i>
+</td>
+<td class="content">
+<div class="title">Recommendation 6</div>
+<div class="paragraph">
+<p>Omission should be evaluated and documented using Rate of missing items, as specified in the table below.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Rate of missing items</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alternative name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data quality element</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Completeness</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data quality sub-element</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Omission</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data quality basic measure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error rate</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of missing items in the dataset in relation to the number of items that should have been present.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Evaluation scope</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data set</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reporting scope</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data set</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data quality value type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Real, Percentage, Ratio</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data quality value structure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single value</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Source reference</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISO/DIS 19157 Geographic information – Data quality</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Measure identifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_logical_consistency_conceptual_consistency">3.1.3. Logical consistency - Conceptual consistency</h4>
+<div class="paragraph">
+<p>The Application Schema conformance class of the Abstract Test Suite in Annex I defines a number of tests to evaluate the conceptual consistency (tests A.1.1-A.1.9) of a data set.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_logical_consistency_domain_consistency">3.1.4. Logical consistency - Domain consistency</h4>
+<div class="paragraph">
+<p>The Application Schema conformance class of the Abstract Test Suite in Annex I defines a number of tests to evaluate the domain consistency (tests A1.10-A.1.12) of a data set.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_logical_consistency_topological_consistency">3.1.5. Logical consistency - Topological consistency</h4>
+<div id="Recommendation 7" class="admonitionblock permission">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-permission" title=""></i>
+</td>
+<td class="content">
+<div class="title">Recommendation 7</div>
+<div class="paragraph">
+<p>Topological consistency should be evaluated and documented using Number of faulty point-curve connections and Number of missing connections due to undershoots, as specified in the tables below.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Number of faulty point-curve connections</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alternative name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extraneous nodes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data quality element</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logical consistency</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data quality sub-element</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Topological consistency</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data quality basic measure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error count</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of faulty point-curve connections in the dataset.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A point-curve connection exists where different curves touch. These curves have an intrinsic topological relationship that has to reflect the true constellation. If the point-curve connection contradicts the universe of discourse, the point-curve connection is faulty with respect to this data quality measure. The data quality measure counts the number of errors of this kind.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Evaluation scope</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data set</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reporting scope</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data set</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data quality value type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data quality value structure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single value</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Source reference</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISO/DIS 19157 Geographic information – Data quality</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Measure identifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">21</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Number of missing connections due to undershoots</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alternative name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Undershoots</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data quality element</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logical consistency</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data quality sub-element</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Topological consistency</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data quality basic measure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error count</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Count of items in the dataset, within the parameter tolerance, that are mismatched due to undershoots.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Evaluation scope</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data set</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reporting scope</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data set</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Search distance from the end of a dangling line</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data quality value type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data quality value structure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single value</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Source reference</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISO/DIS 19157 Geographic information – Data quality</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Measure identifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">23</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_positional_accuracy_absolute_or_external_accuracy">3.1.6. Positional accuracy - Absolute or external accuracy</h4>
+<div id="Recommendation 8" class="admonitionblock permission">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-permission" title=""></i>
+</td>
+<td class="content">
+<div class="title">Recommendation 8</div>
+<div class="paragraph">
+<p>Absolute or external accuracy should be evaluated and documented using Mean value of positional uncertainties, as specified in the tables below.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Mean value of positional uncertainties (1D, 2D)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alternative name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data quality element</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Positional accuracy</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data quality sub-element</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Absolute or external accuracy</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data quality basic measure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not applicable</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mean value of the positional uncertainties for a set of positions where the positional uncertainties are defined as the distance between a measured position and what is considered as the corresponding true position.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For a number of points (N), the measured positions are given as xmi, and ymi coordinates depending on the dimension in which the position of the point is measured. A corresponding set of coordinates, xti and yti are considered to represent the true positions. The errors are calculated as
+</p><p class="tableblock"><a id="tg-au-calculationOne"></a>
+<span class="image"><img src="images/calculationOne.png" alt=""></span>
+</p><p class="tableblock">The mean positional uncertainties of the horizontal absolute or external positions are then calculated as
+</p><p class="tableblock"><a id="tg-au-calculationTwo"></a>
+<span class="image"><img src="images/calculationTwo.png" alt=""></span>
+</p><p class="tableblock">A criterion for the establishing of correspondence should also be stated (e.g. allowing for correspondence to the closest position, correspondence on vertices or along lines). The criterion/criteria for finding the corresponding points shall be reported with the data quality evaluation result.
+This data quality measure is different from the standard deviation.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Evaluation scope</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data set</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reporting scope</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data set</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data quality value type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Measure</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data quality value structure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single value</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Source reference</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISO/DIS 19157 Geographic information – Data quality</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Measure identifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">28</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_minimum_data_quality_requirements">3.2. Minimum data quality requirements</h3>
+<div class="paragraph">
+<p>No minimum data quality requirements are defined for the spatial data theme <em>Administrative Units</em>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_recommendation_on_data_quality">3.3. Recommendation on data quality</h3>
+<div id="Recommendation 9" class="admonitionblock permission">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-permission" title=""></i>
+</td>
+<td class="content">
+<div class="title">Recommendation 9</div>
+<div class="paragraph">
+<p>All spatial objects of the <em>Administrative Units</em> theme should be provided at the source accuracy where possible.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="Recommendation 10" class="admonitionblock permission">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-permission" title=""></i>
+</td>
+<td class="content">
+<div class="title">Recommendation 10</div>
+<div class="paragraph">
+<p>All spatial objects of the <em>Administrative Units</em> theme should have a positional accuracy of 50 meters or better.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>No other minimum data quality recommendations are defined</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dataset_level_metadata">4. Dataset-level metadata</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 2. Optional theme-specific metadata elements for the theme <em>Administrative Units</em></caption>
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 50%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Section</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Metadata element</strong></th>
+<th class="tableblock halign-left valign-middle"><strong>Multiplicity</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="long.html#_maintenance_information">Maintenance information</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maintenance Information</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"> 0..1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="long.html#_metadata_elements_for_reporting_data_quality">Metadata elements for reporting data quality</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logical Consistency – Conceptual Consistency</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"> 0..*</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="long.html#_metadata_elements_for_reporting_data_quality">Metadata elements for reporting data quality</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logical Consistency – Domain Consistency</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"> 0..*</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="long.html#_metadata_elements_for_reporting_data_quality">Metadata elements for reporting data quality</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logical consistency – Topological Consistency</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"> 0..*</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="long.html#_metadata_elements_for_reporting_data_quality">Metadata elements for reporting data quality</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Completeness – Commission</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"> 0..*</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="long.html#_metadata_elements_for_reporting_data_quality">Metadata elements for reporting data quality</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Completeness – Omission</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"> 0..*</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="long.html#_metadata_elements_for_reporting_data_quality">Metadata elements for reporting data quality</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Positional accuracy – Absolute or external accuracy</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"> 0..*</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_delivery">5. Delivery</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_encodings">5.1. Encodings</h3>
+<div class="sect3">
+<h4 id="_931">5.1.1. Default Encoding(s)</h4>
+<div id="TG Requirement 1" class="admonitionblock recommendation">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-recommendation" title=""></i>
+</td>
+<td class="content">
+<div class="title">TG Requirement 1</div>
+<div class="paragraph">
+<p>Data related to the theme Administrative Units shall be made available in at least the encodings specified in this section for the relevant application schemas.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_default_encoding_for_application_schema_administrativeunits">Default encoding for application schema AdministrativeUnits</h5>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Name</dt>
+<dd>
+<p>AdministrativeUnits GML Application Schema</p>
+</dd>
+<dt class="hdlist1">Version</dt>
+<dd>
+<p>version 3.1</p>
+</dd>
+<dt class="hdlist1">Specification</dt>
+<dd>
+<p>D2.8.I.4 Data Specification on Administrative Units – Technical Guidelines</p>
+</dd>
+<dt class="hdlist1">Character set</dt>
+<dd>
+<p>UTF-8</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>The XML schema document is available from: <a href="http://inspire.ec.europa.eu/schemas/au/3.1/AdministrativeUnits.xsd" class="bare">http://inspire.ec.europa.eu/schemas/au/3.1/AdministrativeUnits.xsd</a></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Open issue 1</div>
+<div class="paragraph">
+<p>In the amendment of the Implementing Rules, a number of changes have been introduced to the Annex I data models.</p>
+</div>
+<div class="paragraph">
+<p>In the Administrative Units data model, the multiplicity of NUTS elements changed and made optional.</p>
+</div>
+<div class="paragraph">
+<p>As a consequence, the AdministrativeUnits xml schema needs to be updated to reflect this change. These changes and the overall process for xml schema maintenance in INSPIRE are currently being discussed in the INSPIRE maintenance and implementation group (MIG). For further information on the status of these discussions, see <a href="https://ies-svn.jrc.ec.europa.eu/projects/mig-inspire" class="bare">https://ies-svn.jrc.ec.europa.eu/projects/mig-inspire</a>.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The encoding rule used for this encoding is specified in Annex B of [DS-D2.7].</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_default_encoding_for_application_schema_maritimeunits">Default encoding for application schema MaritimeUnits</h5>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Name</dt>
+<dd>
+<p>MaritimeUnits GML Application Schema</p>
+</dd>
+<dt class="hdlist1">Version</dt>
+<dd>
+<p>version 3.1</p>
+</dd>
+<dt class="hdlist1">Specification</dt>
+<dd>
+<p>D2.8.I.4 Data Specification on Administrative Units – Technical Guidelines</p>
+</dd>
+<dt class="hdlist1">Character set</dt>
+<dd>
+<p>UTF-8</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>The XML schema document is available from: <a href="http://inspire.ec.europa.eu/schemas/au-mu/3.1/MaritimeUnits.xsd" class="bare">http://inspire.ec.europa.eu/schemas/au-mu/3.1/MaritimeUnits.xsd</a></p>
+</div>
+<div class="paragraph">
+<p>The encoding rule used for this encoding is specified in Annex B of [DS-D2.7].</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_portrayal">6. Portrayal</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_layers_to_be_provided_by_inspire_view_services">6.1. Layers to be provided by INSPIRE view services</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Layer Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Layer Title</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Spatial object type(s)</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Keywords</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AU.AdministrativeUnit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Administrative unit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AdministrativeUnit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Administrative unit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AU.AdministrativeBoundary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Administrative boundary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AdministrativeBoundary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Administrative boundary, boundary</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AU.Condominium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Condominium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Condominium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Condominium</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AU.Baseline</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Baseline</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Baseline</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Baseline</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AU.MaritimeBoundary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maritime boundary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MaritimeBoundary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maritime boundary, boundary</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AU.&lt;CodelistValue&gt;<br>
+Example: AU.ContiguousZone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;human readable name&gt;<br>
+Example: Contiguous Zone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MaritimeZone (zoneType : MaritimeZoneTypeValue)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;human readable name&gt;</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The table above contains several layers for the spatial object type MaritimeZone, which can be further classified using a code list-valued attribute. Such sets of layers are specified as described in Article 14(3) of the IRs.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For convenience, the layers for all code list values are listed in the table below.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Layer Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Layer Title</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Spatial object type(s)</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Keywords</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AU.ContiguousZone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contiguous zone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MaritimeZone (zoneType = contiguousZone)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maritime zone, Contiguous zone</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AU.ContinentalShelf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Continental shelf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MaritimeZone (zoneType = continentalShelf)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maritime zone, Continental shelf</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AU.ExclusiveEconomicZone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exclusive economic zone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MaritimeZone (zoneType = exclusiveEconomicZone)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maritime zone, Exclusive economic zone</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AU.InternalWaters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Internal waters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MaritimeZone (zoneType = internalWaters)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maritime zone, Internal waters</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AU.TerritorialSea</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Territorial sea</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MaritimeZone (zoneType = territorialSea)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maritime zone, Territorial sea</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_layers_organisation">6.1.1. Layers organisation</h4>
+<div class="paragraph">
+<p>None.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_styles_required_to_be_supported_by_inspire_view_services">6.2. Styles required to be supported by INSPIRE view services</h3>
+<div class="sect3">
+<h4 id="_styles_for_the_layer_au_administrativeunit">6.2.1. Styles for the layer AU.AdministrativeUnit</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Style Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>AU.AdministrativeUnit.Default</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default Style</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>yes</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Style Title</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Administrative Unit Default Style</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Style Abstract</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The administrative unit is rendered using a yellow (#FFFF66) fill.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Symbology</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span class="tok-nt">&lt;sld:NamedLayer&gt;</span>
+	<span class="tok-nt">&lt;se:Name&gt;</span>AU.AdministrativeUnit<span class="tok-nt">&lt;/se:Name&gt;</span>
+	<span class="tok-nt">&lt;sld:UserStyle&gt;</span>
+		<span class="tok-nt">&lt;se:Name&gt;</span> AU.AdministrativeUnit.Default<span class="tok-nt">&lt;/se:Name&gt;</span>
+		<span class="tok-nt">&lt;sld:IsDefault&gt;</span>1<span class="tok-nt">&lt;/sld:IsDefault&gt;</span>
+		<span class="tok-nt">&lt;se:FeatureTypeStyle</span> <span class="tok-na">version=</span><span class="tok-s">&quot;1.1.0&quot;</span><span class="tok-nt">&gt;</span>
+			<span class="tok-nt">&lt;se:Description&gt;</span>
+				<span class="tok-nt">&lt;se:Title&gt;</span>Administrative Unit Default Style <span class="tok-nt">&lt;/se:Title&gt;</span>
+				<span class="tok-nt">&lt;se:Abstract&gt;</span>The administrative unit is rendered using a yellow (#FFFF66) fill.<span class="tok-nt">&lt;/se:Abstract&gt;</span>
+			<span class="tok-nt">&lt;/se:Description&gt;</span>
+			<span class="tok-nt">&lt;se:FeatureTypeName&gt;</span>AdministrativeUnit<span class="tok-nt">&lt;/se:FeatureTypeName&gt;</span>
+			<span class="tok-nt">&lt;se:Rule&gt;</span>
+				<span class="tok-nt">&lt;se:PolygonSymbolizer&gt;</span>
+					<span class="tok-nt">&lt;se:Geometry&gt;</span>
+						<span class="tok-nt">&lt;ogc:PropertyName&gt;</span>geometry<span class="tok-nt">&lt;/ogc:PropertyName&gt;</span>
+					<span class="tok-nt">&lt;/se:Geometry&gt;</span>
+					<span class="tok-nt">&lt;se:Fill&gt;</span>
+						<span class="tok-nt">&lt;se:SvgParameter</span> <span class="tok-na">name=</span><span class="tok-s">&quot;fill&quot;</span><span class="tok-nt">&gt;</span>#FFFF66<span class="tok-nt">&lt;/se:SvgParameter&gt;</span>
+					<span class="tok-nt">&lt;/se:Fill&gt;</span>
+					<span class="tok-nt">&lt;se:Stroke/&gt;</span>
+				<span class="tok-nt">&lt;/se:PolygonSymbolizer&gt;</span>
+			<span class="tok-nt">&lt;/se:Rule&gt;</span>
+		<span class="tok-nt">&lt;/se:FeatureTypeStyle&gt;</span>
+	<span class="tok-nt">&lt;/sld:UserStyle&gt;</span>
+<span class="tok-nt">&lt;/sld:NamedLayer&gt;</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum &amp; maximum scales</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><div><div id="tg-au-style12-2-1" class="paragraph">
+<p><span class="image"><img src="images/style12-2-1.png" alt=""></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_styles_for_the_layer_au_administrativeboundary">6.2.2. Styles for the layer AU.AdministrativeBoundary</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Style Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>AU.AdministrativeBoundary.Default</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default Style</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>yes</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Style Title</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Administrative Boundary Default Style</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Style Abstract</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Administrative boundaries are rendered using a red (#FF0033) line.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Symbology</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml">  <span class="tok-nt">&lt;sld:NamedLayer&gt;</span>
+    <span class="tok-nt">&lt;se:Name&gt;</span>AU.AdministrativeBoundary<span class="tok-nt">&lt;/se:Name&gt;</span>
+    <span class="tok-nt">&lt;sld:UserStyle&gt;</span>
+      <span class="tok-nt">&lt;se:Name&gt;</span> AU.AdministrativeBoundary.Default <span class="tok-nt">&lt;/se:Name&gt;</span>
+      <span class="tok-nt">&lt;sld:IsDefault&gt;</span>1<span class="tok-nt">&lt;/sld:IsDefault&gt;</span>
+      <span class="tok-nt">&lt;se:FeatureTypeStyle</span> <span class="tok-na">version=</span><span class="tok-s">&quot;1.1.0&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;se:Description&gt;</span>
+          <span class="tok-nt">&lt;se:Title&gt;</span> Administrative Boundary Default Style<span class="tok-nt">&lt;/se:Title&gt;</span>
+          <span class="tok-nt">&lt;se:Abstract&gt;</span> The administrative boundary is rendered using a red (#FF0033) line.<span class="tok-nt">&lt;/se:Abstract&gt;</span>
+        <span class="tok-nt">&lt;/se:Description&gt;</span>
+        <span class="tok-nt">&lt;se:FeatureTypeName&gt;</span>AdministrativeBoundary<span class="tok-nt">&lt;/se:FeatureTypeName&gt;</span>
+        <span class="tok-nt">&lt;se:Rule&gt;</span>
+          <span class="tok-nt">&lt;se:LineSymbolizer&gt;</span>
+            <span class="tok-nt">&lt;se:Geometry&gt;</span>
+             <span class="tok-nt">&lt;ogc:PropertyName&gt;</span>geometry<span class="tok-nt">&lt;/ogc:PropertyName&gt;</span>
+            <span class="tok-nt">&lt;/se:Geometry&gt;</span>
+            <span class="tok-nt">&lt;se:Stroke&gt;</span>
+				   <span class="tok-nt">&lt;se:SvgParameter</span> <span class="tok-na">name=</span><span class="tok-s">&quot;stroke&quot;</span><span class="tok-nt">&gt;</span>#FF0033<span class="tok-nt">&lt;/se:SvgParameter&gt;</span>
+				   <span class="tok-nt">&lt;se:SvgParameter</span> <span class="tok-na">name=</span><span class="tok-s">&quot;stroke-width&quot;</span><span class="tok-nt">&gt;</span>4<span class="tok-nt">&lt;/se:SvgParameter&gt;</span>
+				<span class="tok-nt">&lt;/se:Stroke&gt;</span>
+          <span class="tok-nt">&lt;/se:LineSymbolizer&gt;</span>
+        <span class="tok-nt">&lt;/se:Rule&gt;</span>
+      <span class="tok-nt">&lt;/se:FeatureTypeStyle&gt;</span>
+    <span class="tok-nt">&lt;/sld:UserStyle&gt;</span>
+  <span class="tok-nt">&lt;/sld:NamedLayer&gt;</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum &amp; maximum scales</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><div><div id="tg-au-style12-2-2" class="paragraph">
+<p><span class="image"><img src="images/style12-2-2.png" alt=""></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_styles_for_the_layer_au_condominium">6.2.3. Styles for the layer AU.Condominium</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Style Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>AU.Condominium.Default</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default Style</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>yes</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Style Title</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Condominium Default Style</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Style Abstract</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Condominiums are rendered using a violet (#FF99FF) fill.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Symbology</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml">  <span class="tok-nt">&lt;sld:NamedLayer&gt;</span>
+    <span class="tok-nt">&lt;se:Name&gt;</span>AU.Condominium<span class="tok-nt">&lt;/se:Name&gt;</span>
+    <span class="tok-nt">&lt;sld:UserStyle&gt;</span>
+      <span class="tok-nt">&lt;se:Name&gt;</span> AU.Condominium.Default<span class="tok-nt">&lt;/se:Name&gt;</span>
+      <span class="tok-nt">&lt;sld:IsDefault&gt;</span>1<span class="tok-nt">&lt;/sld:IsDefault&gt;</span>
+      <span class="tok-nt">&lt;se:FeatureTypeStyle</span> <span class="tok-na">version=</span><span class="tok-s">&quot;1.1.0&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;se:Description&gt;</span>
+          <span class="tok-nt">&lt;se:Title&gt;</span> Condominium Default Style<span class="tok-nt">&lt;/se:Title&gt;</span>
+          <span class="tok-nt">&lt;se:Abstract&gt;</span>Condominiums are rendered using a violet (#FF99FF) fill.<span class="tok-nt">&lt;/se:Abstract&gt;</span>
+        <span class="tok-nt">&lt;/se:Description&gt;</span>
+        <span class="tok-nt">&lt;se:FeatureTypeName&gt;</span>Condominium<span class="tok-nt">&lt;/se:FeatureTypeName&gt;</span>
+        <span class="tok-nt">&lt;se:Rule&gt;</span>
+          <span class="tok-nt">&lt;se:PolygonSymbolizer&gt;</span>
+            <span class="tok-nt">&lt;se:Geometry&gt;</span>
+             <span class="tok-nt">&lt;ogc:PropertyName&gt;</span>geometry<span class="tok-nt">&lt;/ogc:PropertyName&gt;</span>
+            <span class="tok-nt">&lt;/se:Geometry&gt;</span>
+            <span class="tok-nt">&lt;se:Fill&gt;</span>
+						<span class="tok-nt">&lt;se:SvgParameter</span> <span class="tok-na">name=</span><span class="tok-s">&quot;fill&quot;</span><span class="tok-nt">&gt;</span>#FF99FF<span class="tok-nt">&lt;/se:SvgParameter&gt;</span>
+			      <span class="tok-nt">&lt;/se:Fill&gt;</span>
+            <span class="tok-nt">&lt;se:Stroke/&gt;</span>
+          <span class="tok-nt">&lt;/se:PolygonSymbolizer&gt;</span>
+        <span class="tok-nt">&lt;/se:Rule&gt;</span>
+      <span class="tok-nt">&lt;/se:FeatureTypeStyle&gt;</span>
+    <span class="tok-nt">&lt;/sld:UserStyle&gt;</span>
+  <span class="tok-nt">&lt;/sld:NamedLayer&gt;</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum &amp; maximum scales</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><div><div id="tg-au-style12-2-3" class="paragraph">
+<p><span class="image"><img src="images/style12-2-3.png" alt=""></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_styles_for_the_layer_au_baseline">6.2.4. Styles for the layer AU.Baseline</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Style Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>AU.Baseline.Default</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default Style</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>yes</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Style Title</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Baseline Default Style</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Style Abstract</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Baselines are rendered using a dashed red (#DC143C) line.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Symbology</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml">  <span class="tok-nt">&lt;sld:NamedLayer&gt;</span>
+    <span class="tok-nt">&lt;se:Name&gt;</span>AU.Baseline<span class="tok-nt">&lt;/se:Name&gt;</span>
+    <span class="tok-nt">&lt;sld:UserStyle&gt;</span>
+      <span class="tok-nt">&lt;se:Name&gt;</span>AU.Baseline.Default <span class="tok-nt">&lt;/se:Name&gt;</span>
+      <span class="tok-nt">&lt;sld:IsDefault&gt;</span>1<span class="tok-nt">&lt;/sld:IsDefault&gt;</span>
+      <span class="tok-nt">&lt;se:FeatureTypeStyle</span> <span class="tok-na">version=</span><span class="tok-s">&quot;1.1.0&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;se:Description&gt;</span>
+          <span class="tok-nt">&lt;se:Title&gt;</span>Baseline  Default Style<span class="tok-nt">&lt;/se:Title&gt;</span>
+          <span class="tok-nt">&lt;se:Abstract&gt;</span> The Baseline is rendered using a dashed red (#DC143C) line.<span class="tok-nt">&lt;/se:Abstract&gt;</span>
+        <span class="tok-nt">&lt;/se:Description&gt;</span>
+        <span class="tok-nt">&lt;se:FeatureTypeName&gt;</span>Baseline<span class="tok-nt">&lt;/se:FeatureTypeName&gt;</span>
+        <span class="tok-nt">&lt;se:Rule&gt;</span>
+          <span class="tok-nt">&lt;se:LineSymbolizer&gt;</span>
+            <span class="tok-nt">&lt;se:Geometry&gt;</span>
+             <span class="tok-nt">&lt;ogc:PropertyName&gt;</span>segment:geometry<span class="tok-nt">&lt;/ogc:PropertyName&gt;</span>
+            <span class="tok-nt">&lt;/se:Geometry&gt;</span>
+            <span class="tok-nt">&lt;se:Stroke&gt;</span>
+				   <span class="tok-nt">&lt;se:SvgParameter</span> <span class="tok-na">name=</span><span class="tok-s">&quot;stroke&quot;</span><span class="tok-nt">&gt;</span>#DC143C<span class="tok-nt">&lt;/se:SvgParameter&gt;</span>
+				   <span class="tok-nt">&lt;se:SvgParameter</span> <span class="tok-na">name=</span><span class="tok-s">&quot;stroke-width&quot;</span><span class="tok-nt">&gt;</span>4<span class="tok-nt">&lt;/se:SvgParameter&gt;</span>
+<span class="tok-nt">&lt;sld:CssParameter</span> <span class="tok-na">name=</span><span class="tok-s">&quot;stroke-dasharray&quot;</span><span class="tok-nt">&gt;</span>10.0 10.0<span class="tok-nt">&lt;/sld:CssParameter&gt;</span>
+				<span class="tok-nt">&lt;/se:Stroke&gt;</span>
+          <span class="tok-nt">&lt;/se:LineSymbolizer&gt;</span>
+        <span class="tok-nt">&lt;/se:Rule&gt;</span>
+      <span class="tok-nt">&lt;/se:FeatureTypeStyle&gt;</span>
+    <span class="tok-nt">&lt;/sld:UserStyle&gt;</span>
+  <span class="tok-nt">&lt;/sld:NamedLayer&gt;</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum &amp; maximum scales</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><div><div id="tg-au-style12-2-4" class="paragraph">
+<p><span class="image"><img src="images/style12-2-4.png" alt=""></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_styles_for_the_layer_au_maritimeboundary">6.2.5. Styles for the layer AU.MaritimeBoundary</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Style Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>AU.MaritimeBoundary.Default</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default Style</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>yes</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Style Title</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Maritime Boundary Default Style</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Style Abstract</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Maritime boundaries are rendered using a red (#DC143C) line.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Symbology</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml">  <span class="tok-nt">&lt;sld:NamedLayer&gt;</span>
+    <span class="tok-nt">&lt;se:Name&gt;</span>AU.MaritimeBoundary<span class="tok-nt">&lt;/se:Name&gt;</span>
+    <span class="tok-nt">&lt;sld:UserStyle&gt;</span>
+      <span class="tok-nt">&lt;se:Name&gt;</span>AU.MaritimeBoundary.Default <span class="tok-nt">&lt;/se:Name&gt;</span>
+      <span class="tok-nt">&lt;sld:IsDefault&gt;</span>1<span class="tok-nt">&lt;/sld:IsDefault&gt;</span>
+      <span class="tok-nt">&lt;se:FeatureTypeStyle</span> <span class="tok-na">version=</span><span class="tok-s">&quot;1.1.0&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;se:Description&gt;</span>
+          <span class="tok-nt">&lt;se:Title&gt;</span>Maritime Boundary Default Style<span class="tok-nt">&lt;/se:Title&gt;</span>
+          <span class="tok-nt">&lt;se:Abstract&gt;</span> The Maritime boundary is rendered using a red (#DC143C) line.<span class="tok-nt">&lt;/se:Abstract&gt;</span>
+        <span class="tok-nt">&lt;/se:Description&gt;</span>
+        <span class="tok-nt">&lt;se:FeatureTypeName&gt;</span>MaritimeBoundary<span class="tok-nt">&lt;/se:FeatureTypeName&gt;</span>
+        <span class="tok-nt">&lt;se:Rule&gt;</span>
+          <span class="tok-nt">&lt;se:LineSymbolizer&gt;</span>
+            <span class="tok-nt">&lt;se:Geometry&gt;</span>
+             <span class="tok-nt">&lt;ogc:PropertyName&gt;</span>geometry<span class="tok-nt">&lt;/ogc:PropertyName&gt;</span>
+            <span class="tok-nt">&lt;/se:Geometry&gt;</span>
+            <span class="tok-nt">&lt;se:Stroke&gt;</span>
+				   <span class="tok-nt">&lt;se:SvgParameter</span> <span class="tok-na">name=</span><span class="tok-s">&quot;stroke&quot;</span><span class="tok-nt">&gt;</span>#DC143C<span class="tok-nt">&lt;/se:SvgParameter&gt;</span>
+				   <span class="tok-nt">&lt;se:SvgParameter</span> <span class="tok-na">name=</span><span class="tok-s">&quot;stroke-width&quot;</span><span class="tok-nt">&gt;</span>4<span class="tok-nt">&lt;/se:SvgParameter&gt;</span>
+				<span class="tok-nt">&lt;/se:Stroke&gt;</span>
+          <span class="tok-nt">&lt;/se:LineSymbolizer&gt;</span>
+        <span class="tok-nt">&lt;/se:Rule&gt;</span>
+      <span class="tok-nt">&lt;/se:FeatureTypeStyle&gt;</span>
+    <span class="tok-nt">&lt;/sld:UserStyle&gt;</span>
+  <span class="tok-nt">&lt;/sld:NamedLayer&gt;</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum &amp; maximum scales</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><div><div id="tg-au-style12-2-5" class="paragraph">
+<p><span class="image"><img src="images/style12-2-5.png" alt=""></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_styles_for_the_layer_au_contiguouszone">6.2.6. Styles for the layer AU.ContiguousZone</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Style Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>AU.ContiguousZone.Default</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default Style</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>yes</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Style Title</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Contiguous Zone Default Style</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Style Abstract</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The contiguous zone is rendered using a light red (#F0C6BA) fill.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Symbology</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml">  <span class="tok-nt">&lt;sld:NamedLayer&gt;</span>
+    <span class="tok-nt">&lt;se:Name&gt;</span>AU.ContiguousZone<span class="tok-nt">&lt;/se:Name&gt;</span>
+    <span class="tok-nt">&lt;sld:UserStyle&gt;</span>
+      <span class="tok-nt">&lt;se:Name&gt;</span>AU.ContiguousZone.Default<span class="tok-nt">&lt;/se:Name&gt;</span>
+      <span class="tok-nt">&lt;sld:IsDefault&gt;</span>1<span class="tok-nt">&lt;/sld:IsDefault&gt;</span>
+      <span class="tok-nt">&lt;se:FeatureTypeStyle</span> <span class="tok-na">version=</span><span class="tok-s">&quot;1.1.0&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;se:Description&gt;</span>
+          <span class="tok-nt">&lt;se:Title&gt;</span>Contiguous Zone Default Style <span class="tok-nt">&lt;/se:Title&gt;</span>
+          <span class="tok-nt">&lt;se:Abstract&gt;</span>The contiguous zone is rendered using a light red (#F0C6BA) fill<span class="tok-nt">&lt;/se:Abstract&gt;</span>
+        <span class="tok-nt">&lt;/se:Description&gt;</span>
+        <span class="tok-nt">&lt;se:FeatureTypeName&gt;</span>MaritimeZone<span class="tok-nt">&lt;/se:FeatureTypeName&gt;</span>
+        <span class="tok-nt">&lt;se:Rule&gt;</span>
+           <span class="tok-nt">&lt;ogc:Filter&gt;</span>
+              <span class="tok-nt">&lt;se:PropertyIsEqualTo&gt;</span>
+                 <span class="tok-nt">&lt;ogc:PropertyName&gt;</span>zoneType<span class="tok-nt">&lt;/ogc:PropertyName&gt;</span>
+                 <span class="tok-nt">&lt;ogc:Literal&gt;</span>contiguousZone<span class="tok-nt">&lt;/ogc:Literal&gt;</span>
+              <span class="tok-nt">&lt;/se:PropertyIsEqualTo&gt;</span>
+           <span class="tok-nt">&lt;/ogc:Filter&gt;</span>
+           <span class="tok-nt">&lt;se:PolygonSymbolizer&gt;</span>
+              <span class="tok-nt">&lt;se:Geometry&gt;</span>
+                 <span class="tok-nt">&lt;ogc:PropertyName&gt;</span>geometry<span class="tok-nt">&lt;/ogc:PropertyName&gt;</span>
+              <span class="tok-nt">&lt;/se:Geometry&gt;</span>
+              <span class="tok-nt">&lt;se:Fill&gt;</span>
+				 	 <span class="tok-nt">&lt;se:SvgParameter</span> <span class="tok-na">name=</span><span class="tok-s">&quot;fill&quot;</span><span class="tok-nt">&gt;</span>#F0C6BA<span class="tok-nt">&lt;/se:SvgParameter&gt;</span>
+			     <span class="tok-nt">&lt;/se:Fill&gt;</span>
+              <span class="tok-nt">&lt;se:Stroke&gt;</span>
+              <span class="tok-nt">&lt;/se:Stroke&gt;</span>
+           <span class="tok-nt">&lt;/se:PolygonSymbolizer&gt;</span>
+        <span class="tok-nt">&lt;/se:Rule&gt;</span>
+      <span class="tok-nt">&lt;/se:FeatureTypeStyle&gt;</span>
+    <span class="tok-nt">&lt;/sld:UserStyle&gt;</span>
+  <span class="tok-nt">&lt;/sld:NamedLayer&gt;</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum &amp; maximum scales</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><div><div id="tg-au-style12-2-6" class="paragraph">
+<p><span class="image"><img src="images/style12-2-6.png" alt=""></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_styles_for_the_layer_au_continentalshelf">6.2.7. Styles for the layer AU.ContinentalShelf</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Style Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>AU.ContinentalShelf.Default</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default Style</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>yes</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Style Title</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Continental Shelf Default Style</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Style Abstract</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The continental shelf is rendered using a green (#C9EAC4) fill.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Symbology</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml">  <span class="tok-nt">&lt;sld:NamedLayer&gt;</span>
+    <span class="tok-nt">&lt;se:Name&gt;</span>AU.ContinentalShelf<span class="tok-nt">&lt;/se:Name&gt;</span>
+    <span class="tok-nt">&lt;sld:UserStyle&gt;</span>
+      <span class="tok-nt">&lt;se:Name&gt;</span>AU.ContinentalShelf.Default<span class="tok-nt">&lt;/se:Name&gt;</span>
+      <span class="tok-nt">&lt;sld:IsDefault&gt;</span>1<span class="tok-nt">&lt;/sld:IsDefault&gt;</span>
+      <span class="tok-nt">&lt;se:FeatureTypeStyle</span> <span class="tok-na">version=</span><span class="tok-s">&quot;1.1.0&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;se:Description&gt;</span>
+          <span class="tok-nt">&lt;se:Title&gt;</span>Continental shelf  Default Style <span class="tok-nt">&lt;/se:Title&gt;</span>
+          <span class="tok-nt">&lt;se:Abstract&gt;</span>The continental shelf is rendered using a green (#C9EAC4) fill<span class="tok-nt">&lt;/se:Abstract&gt;</span>
+        <span class="tok-nt">&lt;/se:Description&gt;</span>
+        <span class="tok-nt">&lt;se:FeatureTypeName&gt;</span>MaritimeZone<span class="tok-nt">&lt;/se:FeatureTypeName&gt;</span>
+        <span class="tok-nt">&lt;se:Rule&gt;</span>
+           <span class="tok-nt">&lt;ogc:Filter&gt;</span>
+              <span class="tok-nt">&lt;se:PropertyIsEqualTo&gt;</span>
+                 <span class="tok-nt">&lt;ogc:PropertyName&gt;</span>zoneType<span class="tok-nt">&lt;/ogc:PropertyName&gt;</span>
+                 <span class="tok-nt">&lt;ogc:Literal&gt;</span>continentalShelf<span class="tok-nt">&lt;/ogc:Literal&gt;</span>
+              <span class="tok-nt">&lt;/se:PropertyIsEqualTo&gt;</span>
+           <span class="tok-nt">&lt;/ogc:Filter&gt;</span>
+          <span class="tok-nt">&lt;se:PolygonSymbolizer&gt;</span>
+            <span class="tok-nt">&lt;se:Geometry&gt;</span>
+             <span class="tok-nt">&lt;ogc:PropertyName&gt;</span>geometry<span class="tok-nt">&lt;/ogc:PropertyName&gt;</span>
+            <span class="tok-nt">&lt;/se:Geometry&gt;</span>
+            <span class="tok-nt">&lt;se:Fill&gt;</span>
+						<span class="tok-nt">&lt;se:SvgParameter</span> <span class="tok-na">name=</span><span class="tok-s">&quot;fill&quot;</span><span class="tok-nt">&gt;</span>#C9EAC4<span class="tok-nt">&lt;/se:SvgParameter&gt;</span>
+			   <span class="tok-nt">&lt;/se:Fill&gt;</span>
+            <span class="tok-nt">&lt;se:Stroke&gt;</span>
+            <span class="tok-nt">&lt;/se:Stroke&gt;</span>
+          <span class="tok-nt">&lt;/se:PolygonSymbolizer&gt;</span>
+        <span class="tok-nt">&lt;/se:Rule&gt;</span>
+      <span class="tok-nt">&lt;/se:FeatureTypeStyle&gt;</span>
+    <span class="tok-nt">&lt;/sld:UserStyle&gt;</span>
+  <span class="tok-nt">&lt;/sld:NamedLayer&gt;</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum &amp; maximum scales</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><div><div id="tg-au-style12-2-7" class="paragraph">
+<p><span class="image"><img src="images/style12-2-7.png" alt=""></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_styles_for_the_layer_au_exclusiveeconomiczone">6.2.8. Styles for the layer AU.ExclusiveEconomicZone</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Style Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>AU.ExclusiveEconomicZone.Default</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default Style</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>yes</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Style Title</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Exclusive Economic Zone Default Style</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Style Abstract</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The exclusive economic zone is rendered using a pink (#E4B2DD) fill.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Symbology</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml">  <span class="tok-nt">&lt;sld:NamedLayer&gt;</span>
+    <span class="tok-nt">&lt;se:Name&gt;</span>AU.ExclusiveEconomicZone<span class="tok-nt">&lt;/se:Name&gt;</span>
+    <span class="tok-nt">&lt;sld:UserStyle&gt;</span>
+      <span class="tok-nt">&lt;se:Name&gt;</span>
+         AU.ExclusiveEconomicZone.Default
+      <span class="tok-nt">&lt;/se:Name&gt;</span>
+      <span class="tok-nt">&lt;sld:IsDefault&gt;</span>1<span class="tok-nt">&lt;/sld:IsDefault&gt;</span>
+      <span class="tok-nt">&lt;se:FeatureTypeStyle</span> <span class="tok-na">version=</span><span class="tok-s">&quot;1.1.0&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;se:Description&gt;</span>
+          <span class="tok-nt">&lt;se:Title&gt;</span>Exclusive Economic Zone Default Style <span class="tok-nt">&lt;/se:Title&gt;</span>
+          <span class="tok-nt">&lt;se:Abstract&gt;</span>The exclusive economic zone is rendered using a pink (#E4B2DD) fill<span class="tok-nt">&lt;/se:Abstract&gt;</span>
+        <span class="tok-nt">&lt;/se:Description&gt;</span>
+        <span class="tok-nt">&lt;se:FeatureTypeName&gt;</span>MaritimeZone<span class="tok-nt">&lt;/se:FeatureTypeName&gt;</span>
+        <span class="tok-nt">&lt;se:Rule&gt;</span>
+           <span class="tok-nt">&lt;ogc:Filter&gt;</span>
+              <span class="tok-nt">&lt;se:PropertyIsEqualTo&gt;</span>
+                 <span class="tok-nt">&lt;ogc:PropertyName&gt;</span>zoneType<span class="tok-nt">&lt;/ogc:PropertyName&gt;</span>
+                 <span class="tok-nt">&lt;ogc:Literal&gt;</span>exclusiveEconomicZone<span class="tok-nt">&lt;/ogc:Literal&gt;</span>
+              <span class="tok-nt">&lt;/se:PropertyIsEqualTo&gt;</span>
+           <span class="tok-nt">&lt;/ogc:Filter&gt;</span>
+          <span class="tok-nt">&lt;se:PolygonSymbolizer&gt;</span>
+            <span class="tok-nt">&lt;se:Geometry&gt;</span>
+             <span class="tok-nt">&lt;ogc:PropertyName&gt;</span>geometry<span class="tok-nt">&lt;/ogc:PropertyName&gt;</span>
+            <span class="tok-nt">&lt;/se:Geometry&gt;</span>
+            <span class="tok-nt">&lt;se:Fill&gt;</span>
+						<span class="tok-nt">&lt;se:SvgParameter</span> <span class="tok-na">name=</span><span class="tok-s">&quot;fill&quot;</span><span class="tok-nt">&gt;</span>#E4B2DD<span class="tok-nt">&lt;/se:SvgParameter&gt;</span>
+			   <span class="tok-nt">&lt;/se:Fill&gt;</span>
+            <span class="tok-nt">&lt;se:Stroke&gt;</span>
+            <span class="tok-nt">&lt;/se:Stroke&gt;</span>
+          <span class="tok-nt">&lt;/se:PolygonSymbolizer&gt;</span>
+        <span class="tok-nt">&lt;/se:Rule&gt;</span>
+      <span class="tok-nt">&lt;/se:FeatureTypeStyle&gt;</span>
+    <span class="tok-nt">&lt;/sld:UserStyle&gt;</span>
+  <span class="tok-nt">&lt;/sld:NamedLayer&gt;</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum &amp; maximum scales</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><div><div id="tg-au-style12-2-8" class="paragraph">
+<p><span class="image"><img src="images/style12-2-8.png" alt=""></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_styles_for_the_layer_au_internalwaters">6.2.9. Styles for the layer AU.InternalWaters</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Style Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>AU.InternalWaters.Default</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default Style</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>yes</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Style Title</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Internal Waters Default Style</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Style Abstract</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The internal waters is rendered using a green (#66CDAA) fill.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Symbology</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml">  <span class="tok-nt">&lt;sld:NamedLayer&gt;</span>
+    <span class="tok-nt">&lt;se:Name&gt;</span>AU.InternalWaters<span class="tok-nt">&lt;/se:Name&gt;</span>
+    <span class="tok-nt">&lt;sld:UserStyle&gt;</span>
+      <span class="tok-nt">&lt;se:Name&gt;</span>
+         AU.InternalWaters.Default
+      <span class="tok-nt">&lt;/se:Name&gt;</span>
+      <span class="tok-nt">&lt;sld:IsDefault&gt;</span>1<span class="tok-nt">&lt;/sld:IsDefault&gt;</span>
+      <span class="tok-nt">&lt;se:FeatureTypeStyle</span> <span class="tok-na">version=</span><span class="tok-s">&quot;1.1.0&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;se:Description&gt;</span>
+          <span class="tok-nt">&lt;se:Title&gt;</span>Internal Waters  Default Style <span class="tok-nt">&lt;/se:Title&gt;</span>
+          <span class="tok-nt">&lt;se:Abstract&gt;</span>The internal waters is rendered using a green (#66CDAA) fill<span class="tok-nt">&lt;/se:Abstract&gt;</span>
+        <span class="tok-nt">&lt;/se:Description&gt;</span>
+        <span class="tok-nt">&lt;se:FeatureTypeName&gt;</span>MaritimeZone<span class="tok-nt">&lt;/se:FeatureTypeName&gt;</span>
+        <span class="tok-nt">&lt;se:Rule&gt;</span>
+           <span class="tok-nt">&lt;ogc:Filter&gt;</span>
+              <span class="tok-nt">&lt;se:PropertyIsEqualTo&gt;</span>
+                 <span class="tok-nt">&lt;ogc:PropertyName&gt;</span>zoneType<span class="tok-nt">&lt;/ogc:PropertyName&gt;</span>
+                 <span class="tok-nt">&lt;ogc:Literal&gt;</span>internalWaters<span class="tok-nt">&lt;/ogc:Literal&gt;</span>
+              <span class="tok-nt">&lt;/se:PropertyIsEqualTo&gt;</span>
+           <span class="tok-nt">&lt;/ogc:Filter&gt;</span>
+          <span class="tok-nt">&lt;se:PolygonSymbolizer&gt;</span>
+            <span class="tok-nt">&lt;se:Geometry&gt;</span>
+             <span class="tok-nt">&lt;ogc:PropertyName&gt;</span>geometry<span class="tok-nt">&lt;/ogc:PropertyName&gt;</span>
+            <span class="tok-nt">&lt;/se:Geometry&gt;</span>
+            <span class="tok-nt">&lt;se:Fill&gt;</span>
+						<span class="tok-nt">&lt;se:SvgParameter</span> <span class="tok-na">name=</span><span class="tok-s">&quot;fill&quot;</span><span class="tok-nt">&gt;</span>#66CDAA<span class="tok-nt">&lt;/se:SvgParameter&gt;</span>
+			   <span class="tok-nt">&lt;/se:Fill&gt;</span>
+            <span class="tok-nt">&lt;se:Stroke&gt;</span>
+            <span class="tok-nt">&lt;/se:Stroke&gt;</span>
+          <span class="tok-nt">&lt;/se:PolygonSymbolizer&gt;</span>
+        <span class="tok-nt">&lt;/se:Rule&gt;</span>
+      <span class="tok-nt">&lt;/se:FeatureTypeStyle&gt;</span>
+    <span class="tok-nt">&lt;/sld:UserStyle&gt;</span>
+  <span class="tok-nt">&lt;/sld:NamedLayer&gt;</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum &amp; maximum scales</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><div><div id="tg-au-style12-2-9" class="paragraph">
+<p><span class="image"><img src="images/style12-2-9.png" alt=""></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_styles_for_the_layer_au_territorialsea">6.2.10. Styles for the layer AU.TerritorialSea</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Style Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>AU.TerritorialSea.Default</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default Style</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>yes</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Style Title</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Territorial Sea Default Style</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Style Abstract</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The territorial sea is rendered using a blue f(#B5B5FD) fill.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Symbology</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml">  <span class="tok-nt">&lt;sld:NamedLayer&gt;</span>
+    <span class="tok-nt">&lt;se:Name&gt;</span>AU.TerritorialSea<span class="tok-nt">&lt;/se:Name&gt;</span>
+    <span class="tok-nt">&lt;sld:UserStyle&gt;</span>
+      <span class="tok-nt">&lt;se:Name&gt;</span>
+         AU.TerritorialSea.Default
+      <span class="tok-nt">&lt;/se:Name&gt;</span>
+      <span class="tok-nt">&lt;sld:IsDefault&gt;</span>1<span class="tok-nt">&lt;/sld:IsDefault&gt;</span>
+      <span class="tok-nt">&lt;se:FeatureTypeStyle</span> <span class="tok-na">version=</span><span class="tok-s">&quot;1.1.0&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;se:Description&gt;</span>
+          <span class="tok-nt">&lt;se:Title&gt;</span>Territorial Sea Default Style <span class="tok-nt">&lt;/se:Title&gt;</span>
+          <span class="tok-nt">&lt;se:Abstract&gt;</span>The territorial sea is rendered using a blue (#B5B5FD) fill<span class="tok-nt">&lt;/se:Abstract&gt;</span>
+        <span class="tok-nt">&lt;/se:Description&gt;</span>
+        <span class="tok-nt">&lt;se:FeatureTypeName&gt;</span>MaritimeZone<span class="tok-nt">&lt;/se:FeatureTypeName&gt;</span>
+        <span class="tok-nt">&lt;se:Rule&gt;</span>
+           <span class="tok-nt">&lt;ogc:Filter&gt;</span>
+              <span class="tok-nt">&lt;se:PropertyIsEqualTo&gt;</span>
+                 <span class="tok-nt">&lt;ogc:PropertyName&gt;</span>zoneType<span class="tok-nt">&lt;/ogc:PropertyName&gt;</span>
+                 <span class="tok-nt">&lt;ogc:Literal&gt;</span>territorialSea<span class="tok-nt">&lt;/ogc:Literal&gt;</span>
+              <span class="tok-nt">&lt;/se:PropertyIsEqualTo&gt;</span>
+           <span class="tok-nt">&lt;/ogc:Filter&gt;</span>
+          <span class="tok-nt">&lt;se:PolygonSymbolizer&gt;</span>
+            <span class="tok-nt">&lt;se:Geometry&gt;</span>
+             <span class="tok-nt">&lt;ogc:PropertyName&gt;</span>geometry<span class="tok-nt">&lt;/ogc:PropertyName&gt;</span>
+            <span class="tok-nt">&lt;/se:Geometry&gt;</span>
+            <span class="tok-nt">&lt;se:Fill&gt;</span>
+						<span class="tok-nt">&lt;se:SvgParameter</span> <span class="tok-na">name=</span><span class="tok-s">&quot;fill&quot;</span><span class="tok-nt">&gt;</span>#B5B5FD<span class="tok-nt">&lt;/se:SvgParameter&gt;</span>
+			   <span class="tok-nt">&lt;/se:Fill&gt;</span>
+            <span class="tok-nt">&lt;se:Stroke&gt;</span>
+            <span class="tok-nt">&lt;/se:Stroke&gt;</span>
+          <span class="tok-nt">&lt;/se:PolygonSymbolizer&gt;</span>
+        <span class="tok-nt">&lt;/se:Rule&gt;</span>
+      <span class="tok-nt">&lt;/se:FeatureTypeStyle&gt;</span>
+    <span class="tok-nt">&lt;/sld:UserStyle&gt;</span>
+  <span class="tok-nt">&lt;/sld:NamedLayer&gt;</span></code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum &amp; maximum scales</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><div><div id="tg-au-style12-2-10" class="paragraph">
+<p><span class="image"><img src="images/style12-2-10.png" alt=""></span></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_styles_recommended_to_be_supported_by_inspire_view_services">6.3. Styles recommended to be supported by INSPIRE view services</h3>
+<div class="paragraph">
+<p>No other styles are recommended for the spatial data theme Administrative Units.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_annex_a_normative_abstract_test_suite_data_specification_on_administrative_units">Annex A (normative) Abstract Test Suite: Data Specification on Administrative Units</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="http://inspire.ec.europa.eu/id/ats/data-au/3.1/">Click here for the Abstract Test Suite</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_annex_c_normative_code_list_values">Annex C (normative) Code list values</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <a href="https://inspire.ec.europa.eu/codelist">INSPIRE code list register</a> contains the code lists and their values, as defined in the INSPIRE implementing rules on interoperability of spatial data sets and services (Commission Regulation (EU) No 1089/2010).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+It does not yet include references to external code lists and the additional code lists and extended values proposed in the Data Specification Technical Guidelines.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnote_1">
+<a href="#_footnoteref_1">1</a>. Statistical units, such as NUTS (Nomenclature of Territorial Statistical Units) regions, are defined in the <em>Statistical units</em> data theme, which is part of INSPIRE Annex III.
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2017-07-26 20:42:53 CEST
+</div>
+</div>
+</body>
+</html>

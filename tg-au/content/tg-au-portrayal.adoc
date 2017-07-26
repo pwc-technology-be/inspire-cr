@@ -1,0 +1,528 @@
+# tag::tg-au-portrayal-title[]
+= Portrayal
+# end::tg-au-portrayal-title[]
+
+# tag::tg-au-portrayal-layers-start[]
+
+==	Layers to be provided by INSPIRE view services
+
+|===
+|*Layer Name* |*Layer Title* |*Spatial object type(s)* |*Keywords*
+
+|AU.AdministrativeUnit |Administrative unit |AdministrativeUnit |Administrative unit
+|AU.AdministrativeBoundary |Administrative boundary |AdministrativeBoundary |Administrative boundary, boundary
+|AU.Condominium |Condominium |Condominium |Condominium
+|AU.Baseline |Baseline |Baseline |Baseline
+|AU.MaritimeBoundary |Maritime boundary |MaritimeBoundary |Maritime boundary, boundary
+|AU.<CodelistValue> +
+Example: AU.ContiguousZone
+|<human readable name> +
+Example: Contiguous Zone
+|MaritimeZone (zoneType : MaritimeZoneTypeValue)
+|<human readable name>
+|===
+
+NOTE: The table above contains several layers for the spatial object type MaritimeZone, which can be further classified using a code list-valued attribute. Such sets of layers are specified as described in Article 14(3) of the IRs.
+
+# end::tg-au-portrayal-layers-start[]
+
+# tag::tg-au-portrayal-layers-end[]
+
+For convenience, the layers for all code list values are listed in the table below.
+
+|===
+|*Layer Name* |*Layer Title* |*Spatial object type(s)* |*Keywords*
+
+|AU.ContiguousZone
+|Contiguous zone
+|MaritimeZone (zoneType = contiguousZone)
+|Maritime zone, Contiguous zone
+
+|AU.ContinentalShelf
+|Continental shelf
+|MaritimeZone (zoneType = continentalShelf)
+|Maritime zone, Continental shelf
+
+|AU.ExclusiveEconomicZone
+|Exclusive economic zone
+|MaritimeZone (zoneType = exclusiveEconomicZone)
+|Maritime zone, Exclusive economic zone
+
+|AU.InternalWaters
+|Internal waters
+|MaritimeZone (zoneType = internalWaters)
+|Maritime zone, Internal waters
+
+|AU.TerritorialSea
+|Territorial sea
+|MaritimeZone (zoneType = territorialSea)
+|Maritime zone, Territorial sea
+|===
+
+===	Layers organisation
+
+None.
+
+# end::tg-au-portrayal-layers-end[]
+
+# tag::tg-au-portrayal-styles[]
+
+== Styles required to be supported by INSPIRE view services
+
+=== Styles for the layer AU.AdministrativeUnit
+
+[cols="20,80a"]
+|===
+|*Style Name* |*AU.AdministrativeUnit.Default*
+
+|Default Style |yes
+|Style Title |Administrative Unit Default Style
+|Style Abstract |The administrative unit is rendered using a yellow (#FFFF66) fill.
+|Symbology |
+```xml
+<sld:NamedLayer>
+	<se:Name>AU.AdministrativeUnit</se:Name>
+	<sld:UserStyle>
+		<se:Name> AU.AdministrativeUnit.Default</se:Name>
+		<sld:IsDefault>1</sld:IsDefault>
+		<se:FeatureTypeStyle version="1.1.0">
+			<se:Description>
+				<se:Title>Administrative Unit Default Style </se:Title>
+				<se:Abstract>The administrative unit is rendered using a yellow (#FFFF66) fill.</se:Abstract>
+			</se:Description>
+			<se:FeatureTypeName>AdministrativeUnit</se:FeatureTypeName>
+			<se:Rule>
+				<se:PolygonSymbolizer>
+					<se:Geometry>
+						<ogc:PropertyName>geometry</ogc:PropertyName>
+					</se:Geometry>
+					<se:Fill>
+						<se:SvgParameter name="fill">#FFFF66</se:SvgParameter>
+					</se:Fill>
+					<se:Stroke/>
+				</se:PolygonSymbolizer>
+			</se:Rule>
+		</se:FeatureTypeStyle>
+	</sld:UserStyle>
+</sld:NamedLayer>
+```
+|Minimum & maximum scales |None
+|Example |include::images/tg-au-images.adoc[tags=tg-au-style12-2-1]
+|===
+
+=== Styles for the layer AU.AdministrativeBoundary
+
+[cols="20,80a"]
+|===
+|*Style Name* |*AU.AdministrativeBoundary.Default*
+
+|Default Style |yes
+|Style Title |Administrative Boundary Default Style
+|Style Abstract |Administrative boundaries are rendered using a red (#FF0033) line.
+|Symbology |
+```xml
+  <sld:NamedLayer>
+    <se:Name>AU.AdministrativeBoundary</se:Name>
+    <sld:UserStyle>
+      <se:Name> AU.AdministrativeBoundary.Default </se:Name>
+      <sld:IsDefault>1</sld:IsDefault>
+      <se:FeatureTypeStyle version="1.1.0">
+        <se:Description>
+          <se:Title> Administrative Boundary Default Style</se:Title>
+          <se:Abstract> The administrative boundary is rendered using a red (#FF0033) line.</se:Abstract>
+        </se:Description>
+        <se:FeatureTypeName>AdministrativeBoundary</se:FeatureTypeName>
+        <se:Rule>
+          <se:LineSymbolizer>
+            <se:Geometry>
+             <ogc:PropertyName>geometry</ogc:PropertyName>
+            </se:Geometry>
+            <se:Stroke>
+				   <se:SvgParameter name="stroke">#FF0033</se:SvgParameter>
+				   <se:SvgParameter name="stroke-width">4</se:SvgParameter>
+				</se:Stroke>
+          </se:LineSymbolizer>
+        </se:Rule>
+      </se:FeatureTypeStyle>
+    </sld:UserStyle>
+  </sld:NamedLayer>
+```
+|Minimum & maximum scales |None
+|Example |include::images/tg-au-images.adoc[tags=tg-au-style12-2-2]
+|===
+
+=== Styles for the layer AU.Condominium
+
+[cols="20,80a"]
+|===
+|*Style Name* |*AU.Condominium.Default*
+
+|Default Style |yes
+|Style Title |Condominium Default Style
+|Style Abstract |Condominiums are rendered using a violet (#FF99FF) fill.
+|Symbology |
+```xml
+  <sld:NamedLayer>
+    <se:Name>AU.Condominium</se:Name>
+    <sld:UserStyle>
+      <se:Name> AU.Condominium.Default</se:Name>
+      <sld:IsDefault>1</sld:IsDefault>
+      <se:FeatureTypeStyle version="1.1.0">
+        <se:Description>
+          <se:Title> Condominium Default Style</se:Title>
+          <se:Abstract>Condominiums are rendered using a violet (#FF99FF) fill.</se:Abstract>
+        </se:Description>
+        <se:FeatureTypeName>Condominium</se:FeatureTypeName>
+        <se:Rule>
+          <se:PolygonSymbolizer>
+            <se:Geometry>
+             <ogc:PropertyName>geometry</ogc:PropertyName>
+            </se:Geometry>
+            <se:Fill>
+						<se:SvgParameter name="fill">#FF99FF</se:SvgParameter>
+			      </se:Fill>
+            <se:Stroke/>
+          </se:PolygonSymbolizer>
+        </se:Rule>
+      </se:FeatureTypeStyle>
+    </sld:UserStyle>
+  </sld:NamedLayer>
+```
+|Minimum & maximum scales |None
+|Example |include::images/tg-au-images.adoc[tags=tg-au-style12-2-3]
+|===
+
+===	Styles for the layer AU.Baseline
+
+[cols="20,80a"]
+|===
+|*Style Name* |*AU.Baseline.Default*
+
+|Default Style |yes
+|Style Title |Baseline Default Style
+|Style Abstract |Baselines are rendered using a dashed red (#DC143C) line.
+|Symbology |
+```xml
+  <sld:NamedLayer>
+    <se:Name>AU.Baseline</se:Name>
+    <sld:UserStyle>
+      <se:Name>AU.Baseline.Default </se:Name>
+      <sld:IsDefault>1</sld:IsDefault>
+      <se:FeatureTypeStyle version="1.1.0">
+        <se:Description>
+          <se:Title>Baseline  Default Style</se:Title>
+          <se:Abstract> The Baseline is rendered using a dashed red (#DC143C) line.</se:Abstract>
+        </se:Description>
+        <se:FeatureTypeName>Baseline</se:FeatureTypeName>
+        <se:Rule>
+          <se:LineSymbolizer>
+            <se:Geometry>
+             <ogc:PropertyName>segment:geometry</ogc:PropertyName>
+            </se:Geometry>
+            <se:Stroke>
+				   <se:SvgParameter name="stroke">#DC143C</se:SvgParameter>
+				   <se:SvgParameter name="stroke-width">4</se:SvgParameter>
+<sld:CssParameter name="stroke-dasharray">10.0 10.0</sld:CssParameter>
+				</se:Stroke>
+          </se:LineSymbolizer>
+        </se:Rule>
+      </se:FeatureTypeStyle>
+    </sld:UserStyle>
+  </sld:NamedLayer>
+```
+|Minimum & maximum scales |None
+|Example |include::images/tg-au-images.adoc[tags=tg-au-style12-2-4]
+|===
+
+===	Styles for the layer AU.MaritimeBoundary
+
+[cols="20,80a"]
+|===
+|*Style Name* |*AU.MaritimeBoundary.Default*
+
+|Default Style |yes
+|Style Title |Maritime Boundary Default Style
+|Style Abstract |Maritime boundaries are rendered using a red (#DC143C) line.
+|Symbology |
+```xml
+  <sld:NamedLayer>
+    <se:Name>AU.MaritimeBoundary</se:Name>
+    <sld:UserStyle>
+      <se:Name>AU.MaritimeBoundary.Default </se:Name>
+      <sld:IsDefault>1</sld:IsDefault>
+      <se:FeatureTypeStyle version="1.1.0">
+        <se:Description>
+          <se:Title>Maritime Boundary Default Style</se:Title>
+          <se:Abstract> The Maritime boundary is rendered using a red (#DC143C) line.</se:Abstract>
+        </se:Description>
+        <se:FeatureTypeName>MaritimeBoundary</se:FeatureTypeName>
+        <se:Rule>
+          <se:LineSymbolizer>
+            <se:Geometry>
+             <ogc:PropertyName>geometry</ogc:PropertyName>
+            </se:Geometry>
+            <se:Stroke>
+				   <se:SvgParameter name="stroke">#DC143C</se:SvgParameter>
+				   <se:SvgParameter name="stroke-width">4</se:SvgParameter>
+				</se:Stroke>
+          </se:LineSymbolizer>
+        </se:Rule>
+      </se:FeatureTypeStyle>
+    </sld:UserStyle>
+  </sld:NamedLayer>
+```
+|Minimum & maximum scales |None
+|Example |include::images/tg-au-images.adoc[tags=tg-au-style12-2-5]
+|===
+
+===	Styles for the layer AU.ContiguousZone
+
+[cols="20,80a"]
+|===
+|*Style Name* |*AU.ContiguousZone.Default*
+
+|Default Style |yes
+|Style Title |Contiguous Zone Default Style
+|Style Abstract |The contiguous zone is rendered using a light red (#F0C6BA) fill.
+|Symbology |
+```xml
+  <sld:NamedLayer>
+    <se:Name>AU.ContiguousZone</se:Name>
+    <sld:UserStyle>
+      <se:Name>AU.ContiguousZone.Default</se:Name>
+      <sld:IsDefault>1</sld:IsDefault>
+      <se:FeatureTypeStyle version="1.1.0">
+        <se:Description>
+          <se:Title>Contiguous Zone Default Style </se:Title>
+          <se:Abstract>The contiguous zone is rendered using a light red (#F0C6BA) fill</se:Abstract>
+        </se:Description>
+        <se:FeatureTypeName>MaritimeZone</se:FeatureTypeName>
+        <se:Rule>
+           <ogc:Filter>
+              <se:PropertyIsEqualTo>
+                 <ogc:PropertyName>zoneType</ogc:PropertyName>
+                 <ogc:Literal>contiguousZone</ogc:Literal>
+              </se:PropertyIsEqualTo>
+           </ogc:Filter>
+           <se:PolygonSymbolizer>
+              <se:Geometry>
+                 <ogc:PropertyName>geometry</ogc:PropertyName>
+              </se:Geometry>
+              <se:Fill>
+				 	 <se:SvgParameter name="fill">#F0C6BA</se:SvgParameter>
+			     </se:Fill>
+              <se:Stroke>
+              </se:Stroke>
+           </se:PolygonSymbolizer>
+        </se:Rule>
+      </se:FeatureTypeStyle>
+    </sld:UserStyle>
+  </sld:NamedLayer>
+```
+|Minimum & maximum scales |None
+|Example |include::images/tg-au-images.adoc[tags=tg-au-style12-2-6]
+|===
+
+===	Styles for the layer AU.ContinentalShelf
+
+[cols="20,80a"]
+|===
+|*Style Name* |*AU.ContinentalShelf.Default*
+
+|Default Style |yes
+|Style Title |Continental Shelf Default Style
+|Style Abstract |The continental shelf is rendered using a green (#C9EAC4) fill.
+|Symbology |
+```xml
+  <sld:NamedLayer>
+    <se:Name>AU.ContinentalShelf</se:Name>
+    <sld:UserStyle>
+      <se:Name>AU.ContinentalShelf.Default</se:Name>
+      <sld:IsDefault>1</sld:IsDefault>
+      <se:FeatureTypeStyle version="1.1.0">
+        <se:Description>
+          <se:Title>Continental shelf  Default Style </se:Title>
+          <se:Abstract>The continental shelf is rendered using a green (#C9EAC4) fill</se:Abstract>
+        </se:Description>
+        <se:FeatureTypeName>MaritimeZone</se:FeatureTypeName>
+        <se:Rule>
+           <ogc:Filter>
+              <se:PropertyIsEqualTo>
+                 <ogc:PropertyName>zoneType</ogc:PropertyName>
+                 <ogc:Literal>continentalShelf</ogc:Literal>
+              </se:PropertyIsEqualTo>
+           </ogc:Filter>
+          <se:PolygonSymbolizer>
+            <se:Geometry>
+             <ogc:PropertyName>geometry</ogc:PropertyName>
+            </se:Geometry>
+            <se:Fill>
+						<se:SvgParameter name="fill">#C9EAC4</se:SvgParameter>
+			   </se:Fill>
+            <se:Stroke>
+            </se:Stroke>
+          </se:PolygonSymbolizer>
+        </se:Rule>
+      </se:FeatureTypeStyle>
+    </sld:UserStyle>
+  </sld:NamedLayer>
+```
+|Minimum & maximum scales |None
+|Example |include::images/tg-au-images.adoc[tags=tg-au-style12-2-7]
+|===
+
+===	Styles for the layer AU.ExclusiveEconomicZone
+
+[cols="20,80a"]
+|===
+|*Style Name* |*AU.ExclusiveEconomicZone.Default*
+
+|Default Style |yes
+|Style Title |Exclusive Economic Zone Default Style
+|Style Abstract |The exclusive economic zone is rendered using a pink (#E4B2DD) fill.
+|Symbology |
+```xml
+  <sld:NamedLayer>
+    <se:Name>AU.ExclusiveEconomicZone</se:Name>
+    <sld:UserStyle>
+      <se:Name>
+         AU.ExclusiveEconomicZone.Default
+      </se:Name>
+      <sld:IsDefault>1</sld:IsDefault>
+      <se:FeatureTypeStyle version="1.1.0">
+        <se:Description>
+          <se:Title>Exclusive Economic Zone Default Style </se:Title>
+          <se:Abstract>The exclusive economic zone is rendered using a pink (#E4B2DD) fill</se:Abstract>
+        </se:Description>
+        <se:FeatureTypeName>MaritimeZone</se:FeatureTypeName>
+        <se:Rule>
+           <ogc:Filter>
+              <se:PropertyIsEqualTo>
+                 <ogc:PropertyName>zoneType</ogc:PropertyName>
+                 <ogc:Literal>exclusiveEconomicZone</ogc:Literal>
+              </se:PropertyIsEqualTo>
+           </ogc:Filter>
+          <se:PolygonSymbolizer>
+            <se:Geometry>
+             <ogc:PropertyName>geometry</ogc:PropertyName>
+            </se:Geometry>
+            <se:Fill>
+						<se:SvgParameter name="fill">#E4B2DD</se:SvgParameter>
+			   </se:Fill>
+            <se:Stroke>
+            </se:Stroke>
+          </se:PolygonSymbolizer>
+        </se:Rule>
+      </se:FeatureTypeStyle>
+    </sld:UserStyle>
+  </sld:NamedLayer>
+```
+|Minimum & maximum scales |None
+|Example |include::images/tg-au-images.adoc[tags=tg-au-style12-2-8]
+|===
+
+===	Styles for the layer AU.InternalWaters
+
+[cols="20,80a"]
+|===
+|*Style Name* |*AU.InternalWaters.Default*
+
+|Default Style |yes
+|Style Title |Internal Waters Default Style
+|Style Abstract |The internal waters is rendered using a green (#66CDAA) fill.
+|Symbology |
+```xml
+  <sld:NamedLayer>
+    <se:Name>AU.InternalWaters</se:Name>
+    <sld:UserStyle>
+      <se:Name>
+         AU.InternalWaters.Default
+      </se:Name>
+      <sld:IsDefault>1</sld:IsDefault>
+      <se:FeatureTypeStyle version="1.1.0">
+        <se:Description>
+          <se:Title>Internal Waters  Default Style </se:Title>
+          <se:Abstract>The internal waters is rendered using a green (#66CDAA) fill</se:Abstract>
+        </se:Description>
+        <se:FeatureTypeName>MaritimeZone</se:FeatureTypeName>
+        <se:Rule>
+           <ogc:Filter>
+              <se:PropertyIsEqualTo>
+                 <ogc:PropertyName>zoneType</ogc:PropertyName>
+                 <ogc:Literal>internalWaters</ogc:Literal>
+              </se:PropertyIsEqualTo>
+           </ogc:Filter>
+          <se:PolygonSymbolizer>
+            <se:Geometry>
+             <ogc:PropertyName>geometry</ogc:PropertyName>
+            </se:Geometry>
+            <se:Fill>
+						<se:SvgParameter name="fill">#66CDAA</se:SvgParameter>
+			   </se:Fill>
+            <se:Stroke>
+            </se:Stroke>
+          </se:PolygonSymbolizer>
+        </se:Rule>
+      </se:FeatureTypeStyle>
+    </sld:UserStyle>
+  </sld:NamedLayer>
+```
+|Minimum & maximum scales |None
+|Example |include::images/tg-au-images.adoc[tags=tg-au-style12-2-9]
+|===
+
+===	Styles for the layer AU.TerritorialSea
+
+[cols="20,80a"]
+|===
+|*Style Name* |*AU.TerritorialSea.Default*
+
+|Default Style |yes
+|Style Title |Territorial Sea Default Style
+|Style Abstract |The territorial sea is rendered using a blue f(#B5B5FD) fill.
+|Symbology |
+```xml
+  <sld:NamedLayer>
+    <se:Name>AU.TerritorialSea</se:Name>
+    <sld:UserStyle>
+      <se:Name>
+         AU.TerritorialSea.Default
+      </se:Name>
+      <sld:IsDefault>1</sld:IsDefault>
+      <se:FeatureTypeStyle version="1.1.0">
+        <se:Description>
+          <se:Title>Territorial Sea Default Style </se:Title>
+          <se:Abstract>The territorial sea is rendered using a blue (#B5B5FD) fill</se:Abstract>
+        </se:Description>
+        <se:FeatureTypeName>MaritimeZone</se:FeatureTypeName>
+        <se:Rule>
+           <ogc:Filter>
+              <se:PropertyIsEqualTo>
+                 <ogc:PropertyName>zoneType</ogc:PropertyName>
+                 <ogc:Literal>territorialSea</ogc:Literal>
+              </se:PropertyIsEqualTo>
+           </ogc:Filter>
+          <se:PolygonSymbolizer>
+            <se:Geometry>
+             <ogc:PropertyName>geometry</ogc:PropertyName>
+            </se:Geometry>
+            <se:Fill>
+						<se:SvgParameter name="fill">#B5B5FD</se:SvgParameter>
+			   </se:Fill>
+            <se:Stroke>
+            </se:Stroke>
+          </se:PolygonSymbolizer>
+        </se:Rule>
+      </se:FeatureTypeStyle>
+    </sld:UserStyle>
+  </sld:NamedLayer>
+```
+|Minimum & maximum scales |None
+|Example |include::images/tg-au-images.adoc[tags=tg-au-style12-2-10]
+|===
+
+== Styles recommended to be supported by INSPIRE view services
+
+No other styles are recommended for the spatial data theme {theme}.
+
+# end::tg-au-portrayal-styles[]

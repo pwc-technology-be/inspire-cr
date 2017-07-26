@@ -40,9 +40,8 @@ toc::[]
 
 include::content/tg-au-executiveSummary.adoc[]
 
-include::content/tg-au-acknowledgements.adoc[tags=tg-au-title]
-
-include::content/tg-au-acknowledgements.adoc[tags=tg-au-thematicWorkingGroup]
+//include::content/tg-au-acknowledgements.adoc[tags=tg-au-title]
+//include::content/tg-au-acknowledgements.adoc[tags=tg-au-thematicWorkingGroup]
 
 :numbered:
 
@@ -54,11 +53,11 @@ include::content/tg-au-overview.adoc[tags=tg-au-normativeReferencesTitle]
 
 include::content/tg-au-overview.adoc[tags=tg-au-normativeReferencesTable]
 
-include::content/tg-au-overview.adoc[tags=tg-au-termsAndDefinitionsTitle]
+//include::content/tg-au-overview.adoc[tags=tg-au-termsAndDefinitionsTitle]
 
 include::content/tg-au-overview.adoc[tags=tg-au-symbolsAndAbbreviations]
 
-include::content/tg-au-identificationInformation.adoc[]
+//include::content/tg-au-identificationInformation.adoc[]
 
 include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-applicationSchemasOverview]
 
@@ -70,19 +69,23 @@ include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-consistencyBetwee
 
 include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-identifierManagement]
 
-include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-temporalityRepresentation]
+//include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-temporalityRepresentation]
 
 include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-applicationSchemas]
 
 include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-applicationSchemaAU]
 
-include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-featureCatalogueAU]
+=== Feature catalogue
+link:fc-au.html[Click here for the feature catalogue for the application schema "AdministrativeUnits"]
 
 include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-applicationSchemaMU]
 
-include::content/tg-au-dataContentAndStructure.adoc[tags=tg-au-featureCatalogueMU]
+=== Feature catalogue
+link:fc-mu.html[Click here for the feature catalogue for the application schema "MaritimeUnits"]
 
 include::content/tg-au-dataQuality.adoc[tags=tg-au-dataQualityTitle]
+
+include::content/tg-au-dataQuality.adoc[tags=tg-au-dataQualityElementsTitle]
 
 include::content/tg-au-dataQuality.adoc[tags=tg-au-dataQualityElements]
 
@@ -92,25 +95,41 @@ include::content/tg-au-dataQuality.adoc[tags=tg-au-logicalConsistencyDomain]
 
 include::content/tg-au-dataQuality.adoc[tags=tg-au-logicalConsistencyTopological]
 
-= Dataset-level metadata
+include::content/tg-au-datasetlevelMetadata.adoc[tags=tg-au-datasetlevelMetadataTitle]
 
-= Delivery
+include::content/tg-au-datasetlevelMetadata.adoc[tags=tg-recommended-metadata-elements-table]
 
-= Data Capture
+include::content/tg-au-delivery.adoc[tags=tg-au-delivery-title]
 
-= Portrayal
+include::content/tg-au-delivery.adoc[tags=tg-au-encodings-title]
+
+include::content/tg-au-delivery.adoc[tags=tg-au-default-encodings-title]
+
+include::content/tg-au-delivery.adoc[tags=tg-au-gml]
+
+include::content/tg-au-delivery.adoc[tags=tg-au-gml-au]
+
+include::content/tg-au-delivery.adoc[tags=tg-au-gml-mu]
+
+include::content/tg-au-portrayal.adoc[tags=tg-au-portrayal-title]
+
+include::content/tg-au-portrayal.adoc[tags=tg-au-portrayal-layers-start]
+
+include::content/tg-au-portrayal.adoc[tags=tg-au-portrayal-layers-end]
+
+include::content/tg-au-portrayal.adoc[tags=tg-au-portrayal-styles]
 
 :numbered!:
 
- = Bibliography
+= Annex A (normative) Abstract Test Suite: Data Specification on Administrative Units
+link:http://inspire.ec.europa.eu/id/ats/data-au/3.1/[Click here for the Abstract Test Suite].
 
-include::https://raw.githubusercontent.com/pwc-technology-be/data-au/master/README.adoc[]
-
-include::content/tg-au-annexB.adoc[]
+//include::content/tg-au-annexB.adoc[]
 
 include::content/tg-au-annexC.adoc[]
 
-include::content/tg-au-annexD.adoc[]
+//include::content/tg-au-annexD.adoc[]
 
-include::content/tg-au-annexE.adoc[]
+//include::content/tg-au-annexE.adoc[]
+
 :leveloffset: -1

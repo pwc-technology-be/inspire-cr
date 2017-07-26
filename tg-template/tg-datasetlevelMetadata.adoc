@@ -1,0 +1,570 @@
+# tag::tg-intro[]
+
+This section specifies dataset-level metadata elements, which should be used for documenting metadata for a complete dataset or dataset series.
+
+[NOTE]
+Metadata can also be reported for each individual spatial object (spatial object-level metadata). Spatial object-level metadata is fully described in the application schema(s) (section <<_data_content_and_structure, Data content and Structure>>).
+
+For some dataset-level metadata elements, in particular those for reporting data quality and maintenance, a more specific scope can be specified. This allows the definition of metadata at sub-dataset level, e.g. separately for each spatial object type (see instructions for the relevant metadata element).
+
+==	Metadata elements defined in INSPIRE Metadata Regulation
+
+The following table gives an overview of the metadata elements specified in Regulation 1205/2008/EC (implementing Directive 2007/2/EC of the European Parliament and of the Council as regards metadata).
+
+The table contains the following information:
+
+*	The first column provides a reference to the relevant section in the Metadata Regulation, which contains a more detailed description.
+*	The second column specifies the name of the metadata element.
+*	The third column specifies the multiplicity.
+*	The fourth column specifies the condition, under which the given element becomes mandatory.
+
+.Metadata for spatial datasets and spatial dataset series specified in Regulation 1205/2008/EC
+[cols=".<15,.<30,.^15,.<40"]
+|===
+|*Metadata Regulation Section* |*Metadata element* |*Multiplicity* |*Condition*
+|1.1 |Resource title |1 |
+|1.2 |Resource abstract |1 |
+|1.3 |Resource type |1 |
+|1.4 |Resource locator |0..* |Mandatory if a URL is available to obtain more information on the resource, and/or access related services.
+|1.5 |Unique resource identifier |1..* |
+|1.7 |Resource language |0..* |Mandatory if the resource includes textual information.
+|2.1 |Topic category |1..* |
+|3 |Keyword |1..* |
+|4.1 |Geographic bounding box |1..* |
+|5 |Temporal reference |1..* |
+|6.1 |Lineage |1 |
+|6.2 |Spatial resolution |0..* |Mandatory for data sets and data set series if an equivalent scale or a resolution distance can be specified.
+|7 |Conformity |1..* |
+|8.1 |Conditions for access and use |1..* |
+|8.2 |Limitations on public access |1..* |
+|9 |Responsible organisation |1..* |
+|10.1 |Metadata point of contact |1..* |
+|10.2 |Metadata date |1 |
+|10.3 |Metadata language |1 |
+|===
+
+Generic guidelines for implementing these elements using ISO 19115 and 19119 are available at http://inspire.jrc.ec.europa.eu/index.cfm/pageid/101. The following sections describe additional theme-specific recommendations and requirements for implementing these elements.
+
+=== Conformity
+
+The _Conformity_ metadata element defined in Regulation 1205/2008/EC requires to report the conformance with the Implementing Rule for interoperability of spatial data sets and services. In addition, it may be used also to document the conformance to another specification.
+
+[PERMISSION, id="Recommendation {counter:rec-id}"]
+======
+Dataset metadata should include a statement on the overall conformance of the dataset with this data specification (i.e. conformance with all requirements).
+======
+
+[PERMISSION, id="Recommendation {counter:rec-id}"]
+======
+The Conformity metadata element should be used to document conformance with this data specification (as a whole), with a specific conformance class defined in the Abstract Test Suite in <<ATS, Annex A>> and/or with another specification.
+======
+
+The _Conformity_ element includes two sub-elements, the _Specification_ (a citation of the Implementing Rule for interoperability of spatial data sets and services or other specification), and the _Degree of conformity_. The _Degree_ can be _Conformant_ (if the dataset is fully conformant with the cited specification), _Not Conformant_ (if the dataset does not conform to the cited specification) or _Not Evaluated_ (if the conformance has not been evaluated).
+
+[PERMISSION, id="Recommendation {counter:rec-id}"]
+======
+If a dataset is not yet conformant with all requirements of this data specification, it is recommended to include information on the conformance with the individual conformance classes specified in the Abstract Test Suite in Annex <<ATS, Annex A>>.
+======
+
+[PERMISSION, id="Recommendation {counter:rec-id}"]
+======
+If a dataset is produced or transformed according to an external specification that includes specific quality assurance procedures, the conformity with this specification should be documented using the Conformity metadata element.
+======
+
+[PERMISSION, id="Recommendation {counter:rec-id}"]
+======
+If minimum data quality recommendations are defined then the statement on the conformity with these requirements should be included using the Conformity metadata element and referring to the relevant data quality conformance class in the Abstract Test Suite.
+======
+
+[NOTE]
+Currently no minimum data quality requirements are included in the IRs. The recommendation above should be included as a requirement in the IRs if minimum data quality requirements are defined at some point in the future.
+
+[PERMISSION, id="Recommendation {counter:rec-id}"]
+======
+When documenting conformance with this data specification or one of the conformance classes defined in the Abstract Test Suite, the Specification sub-element should be given using the http URI identifier of the conformance class or using a citation including the following elements:
+
+* title: “INSPIRE Data Specification on Administrative Units – Draft Guidelines – <name of the conformance class>”
+* date:
+** dateType: publication
+** date: 2013-05-17
+======
+
+.:
+====
+The XML snippets below show how to fill the Specification sub-element for documenting conformance with the whole data specification on Addresses v3.0.1.
+
+```xml
+<gmd:DQ_ConformanceResult>
+	<gmd:specification href="http://inspire.ec.europa.eu/conformanceClass/ad/3.0.1/tg" />
+	<gmd:explanation> (...) </gmd:explanation>
+	<gmd:pass> (...) </gmd:pass>
+</gmd:DQ_ConformanceResult>
+```
+
+or (using a citation):
+
+```xml
+<gmd:DQ_ConformanceResult>
+	<gmd:specification>
+		<gmd:CI_Citation>
+			<gmd:title>
+				<gco:CharacterString>INSPIRE Data Specification on Administrative Units – Draft Guidelines</gco:CharacterString>
+			</gmd:title>
+			<gmd:date>
+				<gmd:date>
+					<gco:Date>2013-05-17</gco:Date>
+				</gmd:date>
+				<gmd:dateType>
+					<gmd:CI_DateTypeCode codelist="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CI_DateTypeCode" codelistValue="publication">publication</gmd:CI_DateTypeCode>
+				</gmd:dateType>
+			</gmd:date>
+		</gmd:CI_Citation>
+	</gmd:specification>
+	<gmd:explanation> (...) </gmd:explanation>
+	<gmd:pass> (...) </gmd:pass>
+</gmd:DQ_ConformanceResult>
+```
+====
+
+.:
+====
+The XML snippets below show how to fill the Specification sub-element for documenting conformance with the CRS conformance class of the data specification on Addresses v3.0.1.
+
+```xml
+<gmd:DQ_ConformanceResult>
+	<gmd:specification href="http://inspire.ec.europa.eu/conformanceClass/ad/3.0.1/crs" />
+	<gmd:explanation> (...) </gmd:explanation>
+	<gmd:pass> (...) </gmd:pass>
+</gmd:DQ_ConformanceResult>
+```
+
+or (using a citation):
+
+```xml
+<gmd:DQ_ConformanceResult>
+	<gmd:specification>
+		<gmd:CI_Citation>
+			<gmd:title>
+				<gco:CharacterString>INSPIRE Data Specification on Administrative Units – Draft Guidelines – CRS</gco:CharacterString>
+			</gmd:title>
+			<gmd:date>
+				<gmd:date>
+					<gco:Date>2013-05-17</gco:Date>
+				</gmd:date>
+				<gmd:dateType>
+					<gmd:CI_DateTypeCode codelist="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CI_DateTypeCode" codelistValue="publication">publication</gmd:CI_DateTypeCode>
+				</gmd:dateType>
+			</gmd:date>
+		</gmd:CI_Citation>
+	</gmd:specification>
+	<gmd:explanation> (...) </gmd:explanation>
+	<gmd:pass> (...) </gmd:pass>
+</gmd:DQ_ConformanceResult>
+```
+====
+
+===	Lineage
+
+[PERMISSION, id="Recommendation {counter:rec-id}"]
+======
+Following the ISO/DIS 19157 Quality principles, if a data provider has a procedure for the quality management of their spatial data sets then the appropriate data quality elements and measures defined in ISO/DIS 19157 should be used to evaluate and report (in the metadata) the results. If not, the Lineage metadata element (defined in Regulation 1205/2008/EC) should be used to describe the overall quality of a spatial data set.
+======
+
+According to Regulation 1205/2008/EC, lineage “is a statement on process history and/or overall quality of the spatial data set. Where appropriate it may include a statement whether the data set has been validated or quality assured, whether it is the official version (if multiple versions exist), and whether it has legal validity. The value domain of this metadata element is free text”.
+
+The Metadata Technical Guidelines based on EN ISO 19115 and EN ISO 19119 specifies that the statement sub-element of LI_Lineage (EN ISO 19115) should be used to implement the lineage metadata element.
+
+[PERMISSION, id="Recommendation {counter:rec-id}"]
+======
+To describe the transformation steps and related source data, it is recommended to use the following sub-elements of LI_Lineage:
+
+* For the description of the transformation process of the local to the common INSPIRE data structures, the LI_ProcessStep sub-element should be used.
+* For the description of the source data the LI_Source sub-element should be used.
+======
+
+NOTE:	In order to improve the interoperability, domain templates and instructions for using these free text elements (descriptive statements) may be specified here and/or in an Annex of this data specification.
+
+===	Temporal reference
+
+According to Regulation 1205/2008/EC, at least one of the following temporal reference metadata sub-elements shall be provided: temporal extent, date of publication, date of last revision, date of creation.
+
+[PERMISSION, id="Recommendation {counter:rec-id}"]
+======
+It is recommended that at least the date of the last revision of a spatial data set should be reported using the Date of last revision metadata sub-element.
+======
+
+==	Metadata elements for interoperability
+
+[REQUIREMENT, id="IR Requirement"]
+======
+__Article 13__ +
+*Metadata required for Interoperability*
+
+The metadata describing a spatial data set shall include the following metadata elements required for interoperability:
+
+.	Coordinate Reference System: Description of the coordinate reference system(s) used in the data set.
+.	Temporal Reference System: Description of the temporal reference system(s) used in the data set.
++
+This element is mandatory only if the spatial data set contains temporal information that does not refer to the default temporal reference system.
+
+.	Encoding: Description of the computer language construct(s) specifying the representation of data objects in a record, file, message, storage device or transmission channel.
+.	Topological Consistency: Correctness of the explicitly encoded topological characteristics of the data set as described by the scope.
++
+This element is mandatory only if the data set includes types from the Generic Network Model and does not assure centreline topology (connectivity of centrelines) for the network.
+
+.	Character Encoding: The character encoding used in the data set.
++
+This element is mandatory only if an encoding is used that is not based on UTF-8.
+
+.	Spatial Representation Type: The method used to spatially represent geographic information.
+======
+
+These Technical Guidelines propose to implement the required metadata elements based on ISO 19115 and ISO/TS 19139.
+
+The following TG requirements need to be met in order to be conformant with the proposed encoding.
+
+[RECOMMENDATION, id="TG Requirement {counter:tgreq-id}"]
+======
+Metadata instance (XML) documents shall validate without error against the used ISO 19139 XML schema.
+======
+
+NOTE:	Section 2.1.2 of the Metadata Technical Guidelines discusses the different ISO 19139 XML schemas that are currently available.
+
+[RECOMMENDATION, id="TG Requirement {counter:tgreq-id}"]
+======
+Metadata instance (XML) documents shall contain the elements and meet the INSPIRE multiplicity specified in the sections below.
+======
+
+[RECOMMENDATION, id="TG Requirement {counter:tgreq-id}"]
+======
+The elements specified below shall be available in the specified ISO/TS 19139 path.
+======
+
+[PERMISSION, id="Recommendation {counter:rec-id}"]
+======
+The metadata elements for interoperability should be made available together with the metadata elements defined in the Metadata Regulation through an INSPIRE discovery service.
+======
+
+NOTE:	While this not explicitly required by any of the INSPIRE Implementing Rules, making all metadata of a data set available together and through one service simplifies implementation and usability.
+
+===	Coordinate Reference System
+
+[cols="33%,67%a"]
+|===
+|*Metadata element name* |*Coordinate Reference System*
+|Definition |Description of the coordinate reference system used in the dataset.
+|ISO 19115 number and name |{empty}13. referenceSystemInfo
+|ISO/TS 19139 path |referenceSystemInfo
+|INSPIRE obligation / condition |mandatory
+|INSPIRE multiplicity |1..*
+|Data type (and ISO 19115 no.) |{empty}186. MD_ReferenceSystem
+|Domain |To identify the reference system, the referenceSystemIdentifier (RS_Identifier) shall be provided.
+
+NOTE: More specific instructions, in particular on pre-defined values for filling the referenceSystemIdentifier attribute should be agreed among Member States during the implementation phase to support interoperability.
+
+|Implementing instructions |
+|Example |
+```
+referenceSystemIdentifier:
+  code: ETRS_89
+  codeSpace: INSPIRE RS registry
+```
+|Example XML encoding |
+```xml
+<gmd:referenceSystemInfo>
+		<gmd:MD_ReferenceSystem>
+			<gmd:referenceSystemIdentifier>
+				<gmd:RS_Identifier>
+					<gmd:code>
+						<gco:CharacterString>ETRS89</gco:CharacterString>
+					</gmd:code>
+					<gmd:codeSpace>
+						<gco:CharacterString>INSPIRE RS registry</gco:CharacterString>
+					</gmd:codeSpace>
+				</gmd:RS_Identifier>
+			</gmd:referenceSystemIdentifier>
+		</gmd:MD_ReferenceSystem>
+</gmd:referenceSystemInfo>
+```
+|Comments |
+|===
+
+===	Temporal Reference System
+
+[cols="33%,67%a"]
+|===
+|*Metadata element name* |*Temporal Reference System*
+|Definition |Description of the temporal reference systems used in the dataset.
+|ISO 19115 number and name |{empty}13. referenceSystemInfo
+|ISO/TS 19139 path |referenceSystemInfo
+|INSPIRE obligation / condition |Mandatory, if the spatial data set or one of its feature types contains temporal information that does not refer to the Gregorian Calendar or the Coordinated Universal Time.
+|INSPIRE multiplicity |0..*
+|Data type (and ISO 19115 no.) |{empty}186. MD_ReferenceSystem
+|Domain |No specific type is defined in ISO 19115 for temporal reference systems. Thus, the generic MD_ReferenceSystem element and its reference SystemIdentifier (RS_Identifier) property shall be provided.
+
+NOTE:	More specific instructions, in particular on pre-defined values for filling the referenceSystemIdentifier attribute should be agreed among Member States during the implementation phase to support interoperability.
+
+|Implementing instructions |
+|Example |
+```
+referenceSystemIdentifier:
+	code: GregorianCalendar
+	codeSpace: INSPIRE RS registry
+```
+|Example XML encoding |
+```xml
+<gmd:referenceSystemInfo>
+	<gmd:MD_ReferenceSystem>
+		<gmd:referenceSystemIdentifier>
+			<gmd:RS_Identifier>
+				<gmd:code>
+			<gco:CharacterString>GregorianCalendar </gco:CharacterString>
+				</gmd:code>
+				<gmd:codeSpace>
+					<gco:CharacterString>INSPIRE RS registry</gco:CharacterString>
+				</gmd:codeSpace>
+			</gmd:RS_Identifier>
+		</gmd:referenceSystemIdentifier>
+	</gmd:MD_ReferenceSystem>
+</gmd:referenceSystemInfo>
+```
+|Comments |
+|===
+
+===	Encoding
+
+[cols="33%,67%a"]
+|===
+|*Metadata element name* |*Encoding*
+|Definition |Description of the computer language construct that specifies the representation of data objects in a record, file, message, storage device or transmission channel
+|ISO 19115 number and name |{empty}271. distributionFormat
+|ISO/TS 19139 path |distributionInfo/MD_Distribution/distributionFormat
+|INSPIRE obligation / condition |mandatory
+|INSPIRE multiplicity |1..*
+|Data type (and ISO 19115 no.) |{empty}284. MD_Format
+|Domain |See B.2.10.4. The property values (name, version, specification) specified in section <<_delivery, Delivery>> shall be used to document the default and alternative encodings.
+|Implementing instructions |
+|Example |
+```
+name: <Application schema name> GML application schema
+version: version 3.1rc1
+specification: D2.8.I.4 Data Specification on Administrative Units – Technical Guidelines
+```
+|Example XML encoding |
+```xml
+<gmd:MD_Format>
+	<gmd:name>
+		<gco:CharacterString>SomeApplicationSchema GML application schema</gco:CharacterString>
+	</gmd:name>
+	<gmd:version>
+		<gco:CharacterString>3.1rc1</gco:CharacterString>
+	</gmd:version>
+	<gmd:specification>
+		<gco:CharacterString>D2.8.I.4 Data Specification on Administrative Units – Technical Guidelines</gco:CharacterString>
+	</gmd:specification>
+</gmd:MD_Format>
+```
+|Comments |
+|===
+
+===	Character Encoding
+
+[cols="33%,67%a"]
+|===
+|*Metadata element name* |*Character Encoding*
+|Definition |The character encoding used in the data set.
+|ISO 19115 number and name |
+|ISO/TS 19139 path |
+|INSPIRE obligation / condition |Mandatory, if an encoding is used that is not based on UTF-8.
+|INSPIRE multiplicity |0..*
+|Data type (and ISO 19115 no.) |
+|Domain |
+|Implementing instructions |
+|Example |{empty}-
+|Example XML encoding |
+```xml
+<gmd:characterSet>
+	<gmd:MD_CharacterSetCode codelistValue="8859part2" codelist="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CharacterSetCode">8859-2</gmd:MD_CharacterSetCode>
+</gmd:characterSet>
+```
+|Comments |
+|===
+
+===	Spatial representation type
+
+[cols="33%,67%a"]
+|===
+|*Metadata element name* |*Spatial representation type*
+|Definition |The method used to spatially represent geographic information.
+|ISO 19115 number and name |{empty}37. spatialRepresentationType
+|ISO/TS 19139 path |
+|INSPIRE obligation / condition |Mandatory
+|INSPIRE multiplicity |1..*
+|Data type (and ISO 19115 no.) |B.5.26 MD_SpatialRepresentationTypeCode
+|Domain |
+|Implementing instructions |Of the values included in the code list in ISO 19115 (vector, grid, textTable, tin, stereoModel, video), only vector, grid and tin should be used.
+
+NOTE:	Additional code list values may be defined based on feedback from implementation.
+
+|Example |{empty}-
+|Example XML encoding |
+|Comments |
+|===
+
+===	Data Quality – Logical Consistency – Topological Consistency
+
+See section 8.3.2!!! for instructions on how to implement metadata elements for reporting data quality.
+
+# end::tg-intro[]
+
+
+# tag::tg-recommended-metadata-elements-head[]
+
+==	Recommended theme-specific metadata elements
+
+[PERMISSION, id="Recommendation {counter:rec-id}"]
+======
+The metadata describing a spatial data set or a spatial data set series related to the theme Administrative Units should comprise the theme-specific metadata elements specified in the table below.
+======
+
+The table contains the following information:
+
+* The first column provides a reference to a more detailed description.
+* The second column specifies the name of the metadata element.
+* The third column specifies the multiplicity.
+
+# end::tg-recommended-metadata-elements-head[]
+
+# tag::tg-recommended-metadata-elements-tail[]
+
+[PERMISSION, id="Recommendation {counter:rec-id}"]
+======
+For implementing the metadata elements included in this section using ISO 19115, ISO/DIS 19157 and ISO/TS 19139, the instructions included in the relevant sub-sections should be followed.
+======
+
+===	Maintenance Information
+
+[cols="33%,67%a"]
+|===
+|*Metadata element name* |*Maintenance information*
+|Definition |Information about the scope and frequency of updating
+|ISO 19115 number and name |{empty}30. resourceMaintenance
+|ISO/TS 19139 path |identificationInfo/MD_Identification/resourceMaintenance
+|INSPIRE obligation / condition |optional
+|INSPIRE multiplicity |0..1
+|Data type (and ISO 19115 no.) |{empty}142. MD_MaintenanceInformation
+|Domain |This is a complex type (lines 143-148 from ISO 19115).
+
+At least the following elements should be used (the multiplicity according to ISO 19115 is shown in parentheses):
+
+*	maintenanceAndUpdateFrequency [1]: frequency with which changes and additions are made to the resource after the initial resource is completed / domain value: MD_MaintenanceFrequencyCode:
+*	updateScope [0..*]: scope of data to which maintenance is applied / domain value: MD_ScopeCode
+*	maintenanceNote [0..*]: information regarding specific requirements for maintaining the resource / domain value: free text
+
+|Implementing instructions |
+|Example |
+|Example XML encoding|
+|Comments |
+|===
+
+===	Metadata elements for reporting data quality
+
+[PERMISSION, id="Recommendation {counter:rec-id}"]
+======
+For reporting the results of the data quality evaluation, the data quality elements, sub-elements and (for quantitative evaluation) measures defined in chapter <<_data_quality>> should be used.
+======
+
+[PERMISSION, id="Recommendation {counter:rec-id}"]
+======
+The metadata elements specified in the following sections should be used to report the results of the data quality evaluation. At least the information included in the row “Implementation instructions” should be provided.
+======
+
+The first section applies to reporting quantitative results (using the element DQ_QuantitativeResult), while the second section applies to reporting non-quantitative results (using the element  DQ_DescriptiveResult).
+
+[PERMISSION, id="Recommendation {counter:rec-id}"]
+======
+If a dataset does not pass the tests of the Application schema conformance class (defined in Annex A), the results of each test should be reported using one of the options described in the sections <<_8321>> and <<_8322>>.
+======
+
+NOTE:	If using non-quantitative description, the results of several tests do not have to be reported separately, but may be combined into one descriptive statement.
+
+NOTE:	The sections <<_8321>> and <<_8322>> may need to be updated once the XML schemas for ISO 19157 have been finalised.
+
+The scope for reporting may be different from the scope for evaluating data quality (see section 7). If data quality is reported at the data set or spatial object type level, the results are usually derived or aggregated.
+
+[PERMISSION, id="Recommendation {counter:rec-id}"]
+======
+The scope element (of type DQ_Scope) of the DQ_DataQuality subtype should be used to encode the reporting scope.
+
+Only the following values should be used for the level element of DQ_Scope: Series, Dataset, featureType.
+
+If the level is featureType the levelDescription/MDScopeDescription/features element (of type Set< GF_FeatureType>) shall be used to list the feature type names.
+======
+
+NOTE:	In the level element of DQ_Scope, the value featureType is used to denote spatial object type.
+
+[[_8321]]
+====	Guidelines for reporting quantitative results of the data quality evaluation
+
+[cols="33%,67%a"]
+|===
+|*Metadata element name* |*See chapter 7*
+|Definition |See chapter 7
+|ISO/DIS 19157 number and name |{empty}3. report
+|ISO/TS 19139 path |dataQualityInfo/*/report
+|INSPIRE obligation / condition |optional
+|INSPIRE multiplicity |0..*
+|Data type (and ISO/DIS 19157 no.) |Corresponding DQ_xxx subelement from ISO/DIS 19157, e.g. 12. DQ_CompletenessCommission
+|Domain |Lines 7-9 from ISO/DIS 19157
+
+{empty}7. DQ_MeasureReference (C.2.1.3)
+
+{empty}8. DQ_EvaluationMethod (C.2.1.4.)
+
+{empty}9. DQ_Result (C2.1.5.)
+|Implementing instructions |{empty}39. nameOfMeasure
+
+NOTE:	This should be the name as defined in Chapter 7.
+
+{empty}42. evaluationMethodType
+
+{empty}43. evaluationMethodDescription
+
+NOTE: If the reported data quality results are derived or aggregated (i.e. the scope levels for evaluation and reporting are different), the derivation or aggregation should also be specified using this property.
+
+{empty}46. dateTime
+
+NOTE: This should be data or range of dates on which the data quality measure was applied.
+
+{empty}63. DQ_QuantitativeResult / 64. value
+
+NOTE: The DQ_Result type should be DQ_QuantitativeResult and the value(s) represent(s) the application of the data quality measure (39.) using the specified evaluation method (42-43.)
+
+|Example |See Table E.12 — Reporting commission as metadata (ISO/DIS 19157)
+|Example XML encoding |
+|===
+
+[[_8322]]
+==== Guidelines for reporting descriptive results of the Data Quality evaluation
+
+[cols="33%,67%a"]
+|===
+|*Metadata element name* |*See chapter 7*
+|Definition |See chapter 7
+|ISO/DIS 19157 number and name |{empty}3. report
+|ISO/TS 19139 path |dataQualityInfo/*/report
+|INSPIRE obligation / condition |optional
+|INSPIRE multiplicity |0..*
+|Data type (and ISO/DIS 19157 no.) |Corresponding DQ_xxx subelement from ISO/DIS 19157, e.g. 12. DQ_CompletenessCommission
+|Domain |Line 9 from ISO/DIS 19157
+
+{empty}9. DQ_Result (C2.1.5.)
+|Implementing instructions |{empty}67. DQ_DescripitveResult / 68. statement
+
+NOTE: The DQ_Result type should be DQ_DescriptiveResult and in the statement (68.) the evaluation of the selected DQ sub-element should be expressed in a narrative way.
+
+|Example |See Table E.15 — Reporting descriptive result as metadata (ISO/DIS 19157)
+|Example XML encoding |
+|===
+
+# end::tg-recommended-metadata-elements-tail[]

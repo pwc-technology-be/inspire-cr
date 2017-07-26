@@ -1,1 +1,9 @@
-= Dataset-level metadata
+include::content/tg-au-datasetlevelMetadata.adoc[tags=tg-au-datasetlevelMetadataTitle]
+
+include::../tg-template/tg-datasetlevelMetadata.adoc[tags=tg-intro]
+
+include::../tg-template/tg-datasetlevelMetadata.adoc[tags=tg-recommended-metadata-elements-head]
+
+include::content/tg-au-datasetlevelMetadata.adoc[tags=tg-recommended-metadata-elements-table]
+
+include::../tg-template/tg-datasetlevelMetadata.adoc[tags=tg-recommended-metadata-elements-tail]

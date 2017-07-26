@@ -1,1 +1,1 @@
-= Bibliography
+include::content/tg-au-bibliography.adoc[]

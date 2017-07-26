@@ -1,1 +1,21 @@
-= Delivery
+include::content/tg-au-delivery.adoc[tags=tg-au-delivery-title]
+
+include::../tg-template/tg-delivery.adoc[tags=tg-delivery-intro]
+
+include::content/tg-au-delivery.adoc[tags=tg-au-encodings-title]
+
+include::../tg-template/tg-delivery.adoc[tags=tg-encodings-intro]
+
+include::content/tg-au-delivery.adoc[tags=tg-au-default-encodings-title]
+
+include::../tg-template/tg-delivery.adoc[tags=tg-default-encodings-intro]
+
+include::content/tg-au-delivery.adoc[tags=tg-au-gml]
+
+include::content/tg-au-delivery.adoc[tags=tg-au-gml-au]
+
+include::../tg-template/tg-delivery.adoc[tags=tg-default-encoding-rule-note]
+
+include::content/tg-au-delivery.adoc[tags=tg-au-gml-mu]
+
+include::../tg-template/tg-delivery.adoc[tags=tg-default-encoding-rule-note]

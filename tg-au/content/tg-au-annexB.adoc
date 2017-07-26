@@ -4,7 +4,7 @@ This annex describes the use cases that were used as a basis for the development
 
 One of the main uses of administrative units, as described below in B.1 and B.2 is to discover the authorities responsible and competent for the particular area or object in a particular situation. Such authorities may deal with public administration, emergency rescue, health care, nature protection, statistical, building, utility, financial, insurance, and other services. In any e-Government application and any ‘real-life’ situation administrative units are the key to get relevant solution for public authorities, citizens, entrepreneurs, and the services themselves. Therefore, fast discovery of relevant authorities and service providers together with their contact information is indispensable for effective functioning of economy and administration.
 
-== B1 Filtering data
+== B.1 Filtering data
 
 .Use Case Description
 [cols="30%,70%"]
@@ -13,13 +13,13 @@ One of the main uses of administrative units, as described below in B.1 and B.2 
 | *Name* | *Filtering or selecting data using an administrative unit.*
 
 |Goal
-|Retrieving data from other themes corresponding to the geographical scope of one or several administrative units and display this data. 
+|Retrieving data from other themes corresponding to the geographical scope of one or several administrative units and display this data.
 
 |Importance
 |High
 
 |Description
-|This use case includes filtering (selecting) geographic information with respect to administrative unit. User selects regions by clicking or enters a name (or code) to highlight unit and display data for this unit. The geometry of administrative units is used to create filter expressions for retrieving data from other themes. Such filtering should be possible not only for one, but for multiple administrative units. 
+|This use case includes filtering (selecting) geographic information with respect to administrative unit. User selects regions by clicking or enters a name (or code) to highlight unit and display data for this unit. The geometry of administrative units is used to create filter expressions for retrieving data from other themes. Such filtering should be possible not only for one, but for multiple administrative units.
 
 |Pre-condition
 
@@ -42,7 +42,7 @@ One of the main uses of administrative units, as described below in B.1 and B.2 
 
 |===
 
-== B2 Discovery of unit related data
+== B.2 Discovery of unit related data
 
 .Use Case Description
 [cols="30%,70%"]
@@ -56,14 +56,14 @@ One of the main uses of administrative units, as described below in B.1 and B.2 
 |High
 
 |Description
-|This use-case includes searching catalogues to discover available data sets with respect to administrative unit geometry or name (or code). The geometry of administrative unit is used to create filter expressions for catalogue query. The output of this use-case is a list of resources. 
+|This use-case includes searching catalogues to discover available data sets with respect to administrative unit geometry or name (or code). The geometry of administrative unit is used to create filter expressions for catalogue query. The output of this use-case is a list of resources.
 
 |Pre-condition
 |The use-case can be implemented only in case of: +
 - Established system for public administration of administrative units within the MS; +
 - Existing map database (interface for selection); +
 - Existing gazetteer or web map services that provides administrative data; +
-- Existing catalogue services. 
+- Existing catalogue services.
 
 |Infrastructural aspects
 |In this use-case administrative units support catalogue clients (for selection of administrative units), and also make part of the catalogue service for retrieving metadata.
@@ -80,7 +80,7 @@ One of the main uses of administrative units, as described below in B.1 and B.2 
 
 |===
 
-== B3 Linking thematic information
+== B.3 Linking thematic information
 
 .Use Case Description
 [cols="30%,70%"]
@@ -88,7 +88,7 @@ One of the main uses of administrative units, as described below in B.1 and B.2 
 | *Name* | *Linking thematic information to its corresponding administrative unit. *
 
 |Goal
-|Present thematic results by administrative unit area. 
+|Present thematic results by administrative unit area.
 
 |Importance
 |High
@@ -109,7 +109,7 @@ One of the main uses of administrative units, as described below in B.1 and B.2 
 - Code (for linking).
 |===
 
-== B4 Disaster and environmental management
+== B.4 Disaster and environmental management
 
 .Use Case Description
 [cols="30%,70%"]
@@ -117,13 +117,13 @@ One of the main uses of administrative units, as described below in B.1 and B.2 
 | *Name* | *Disaster and environmental management by administrative unit area .*
 
 |Goal
-|Select administrative units affected by environmental phenomena or disaster. 
+|Select administrative units affected by environmental phenomena or disaster.
 
 |Importance
 |High
 
 |Description
-|The purpose of this use-case is to select administrative units affected by environmental phenomena or disaster. 
+|The purpose of this use-case is to select administrative units affected by environmental phenomena or disaster.
 
 |Infrastructural aspects
 |This use-case requires functioning download service (for retrieving administrative unit data), and GIS-application to compute the intersections and display the affected administrative units. As such, demonstrate the collaboration of different components of SDI.
@@ -136,23 +136,23 @@ One of the main uses of administrative units, as described below in B.1 and B.2 
 - Geometry of administrative units (for spatial computing the intersection.
 |===
 
-== B5 Boundary based analysis
+== B.5 Boundary based analysis
 
 .Use Case Description
 [cols="30%,70%"]
 |===
 |Name
-|Analysis of cross-border features based on administrative boundaries. 
+|Analysis of cross-border features based on administrative boundaries.
 
 |Goal
-|Check and correct edge-matching of features in cross-border areas /  Analyse properties relevant to the environment at both sides of a boundary. 
+|Check and correct edge-matching of features in cross-border areas /  Analyse properties relevant to the environment at both sides of a boundary.
 
 |Importance
 |High / Medium
 
 |Description
 |There are two main aspects of this use-case. Firstly the boundaries of administrative units can be used for verification of data of thematic features located at the boundaries of administrative units, which covers checking the semantic classification of the objects as well as their edge-matching.
-On the other hand administrative boundaries may become the limit for rights, duties, and/or restrictions of any kind, which is especially relevant to environment. 
+On the other hand administrative boundaries may become the limit for rights, duties, and/or restrictions of any kind, which is especially relevant to environment.
 
 |Infrastructural aspects
 |Improving cross-border consistency as required in Art 8(2) of the Directive.

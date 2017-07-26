@@ -78,7 +78,7 @@ Usually, a single administrative unit is administered by only one administrative
 
 In very rare cases a single administrative area is administered by two or more countries. Such an area is named condominium and supported in this application schema by the Condominium spatial object type. The correspondence between the condominium and the countries administering it are represented by a relationship between the AdministrativeUnit and Condominium spatial object types.
 
-NOTE Previous versions of the data specification on _Administrative Units_ contained a candidate type called NUTSRegion to accommodate requirements raised by INSPIRE stakeholders to include an explicit connection to statistical units defined by the EU-administration in the application schema AdministrativeUnits in order to link statistical information to administrative units. This candidate type was considered during the development of the data specification on Statistical Units, where it is included as an informative example of a Statistical Units data set.
+NOTE: Previous versions of the data specification on _Administrative Units_ contained a candidate type called NUTSRegion to accommodate requirements raised by INSPIRE stakeholders to include an explicit connection to statistical units defined by the EU-administration in the application schema AdministrativeUnits in order to link statistical information to administrative units. This candidate type was considered during the development of the data specification on Statistical Units, where it is included as an informative example of a Statistical Units data set.
 
 In some existing implementations for administrative units data (e.g. EuroBoundaryMap), the spatial extent of administrative units is further decomposed into sub-areas, like land areas, islands, inland water or coastal water areas. The reason for this decomposition of administrative units into areas comes from the natural need for combining administrative information with other thematic information. This application schema does not differentiate between the sub-areas of administrative units because it is out of its scope. Considering the INSPIRE harmonization objectives, the correlation of administrative units with elements of other division systems can be derived from cross-theme analysis of thematic spatial objects. In the case described above, the information on decomposition of administrative units into sub-areas can be derived performing spatial analyses with data from other INSPIRE themes (e.g. Land Use theme from Annex II). See also Annex E for further information.
 
@@ -170,6 +170,8 @@ _Annex II, Section 4.4_ +
 [PERMISSION, id="Recommendation {counter:rec-id}"]
 ======
 The following geometric and topological constraints are recommendations for this data specification:
+
+[loweralpha]
 . Adjacent administrative units should not overlap, i.e. their boundaries should not intersect with each other.
 . There should be no gaps between adjacent administrative units.
 . Unintended gaps between administrative units due to geometrical inconsistencies are in principle not allowed. Boundaries of neighboring administrative units shall have the same set of coordinates, within the specified resolution.
@@ -224,7 +226,7 @@ In this technical specification two alternative geometric structures of boundary
 
 Both structures fully comply with the AdministrativeUnits and MaritimeUnits application schemas. Users may decide to implement the structure that fits the best their individual purposes.
 
-NOTE The following two sections explain the mentioned structures applied to the AdministrativeUnits application schema, but they are equally valid for the MaritimeUnits application schema, except for the hierarchical relationships, which are not defined for this schema.
+NOTE: The following two sections explain the mentioned structures applied to the AdministrativeUnits application schema, but they are equally valid for the MaritimeUnits application schema, except for the hierarchical relationships, which are not defined for this schema.
 
 ===== Flat model of boundary feature geometry
 
@@ -235,10 +237,8 @@ In this geometric model, AdministrativeBoundary feature is represented as follow
 . Each AdministrativeUnit feature associates to all touching AdministrativeBoundary features.
 . Each AdministrativeBoundary feature associates to all touching administrative units from all the levels of administrative hierarchy.
 
-The geometric model is explained by the following example.
-
-[underline]#EXAMPLE#
-
+.Explanation of the flat model
+====
 Assume the following situation for the area features (instances of AdministrativeUnit):
 
 include::../images/tg-au-images.adoc[tags=tg-au-geometryRepresentationExample1]
@@ -278,7 +278,7 @@ with nationalLevel=3
 
 Finally, the following associations between boundaries and administrative units have to be built:
 
-|=== 
+|===
 
 | *BOUNDARY -> UNIT* | *UNIT -> BOUNDARY*
 
@@ -294,6 +294,7 @@ AU4 -> BF3, BF4, BF6 +
 AU5 -> BF2, BF5, BF6
 
 |===
+====
 
 ===== Multi-layer model of boundary features geometry
 
@@ -309,15 +310,14 @@ In this geometric model, AdministrativeBoundary feature is represented as follow
 
 . Each AdministrativeBoundary feature associates only to admisnitrative units that are separated by this boundary and have the same administrative level as the level of this boundary.
 
-The geometric model is explained by the following example.
-
-[underline]#EXAMPLE#
-
+.Explanation of the multi-layer model
+====
 This example considers exactly the same situation, as discussed in the case of flat geometric model.
 
 include::../images/tg-au-images.adoc[tags=tg-au-geometryRepresentationExample4]
 
 The polygons represent Administrative Units at three levels:
+
 . national level 1: AU1 polygon represents a country;
 . national level 2: AU2 and AU3 polygons represent regions; AU2 + AU3 topologically equal to AU1
 . national level 3: AU4 and AU5 represent lowest level units; AU4 + AU5 topologically equal to AU2
@@ -326,7 +326,7 @@ Level 2 is topologically equivalent to level1 of administrative hierarchy. Level
 
 Additionally, the polygons representing the countries adjacent to AU1 have been introduced to evidence the fact that begin and end nodes of country level boundaries do not necessarily meet the begin/end node of some regional boundary. These are labeled AU-X, AU-Y, and AU-Z.
 
-The AdministrativeBoundary features are determined independentyly at each level, and are based on the topological structure established separatelly for each level national administrative hierarchy. Each AdministrativeBoundary is geometrically represented by single Curve \(C), that is defined for a selected subset of nodes representing the line of demercation between the two units.
+The AdministrativeBoundary features are determined independently at each level, and are based on the topological structure established separatelly for each level national administrative hierarchy. Each AdministrativeBoundary is geometrically represented by single Curve \(C), that is defined for a selected subset of nodes representing the line of demarcation between the two units.
 
 The nationalLevel of the AdministrativeBoundary feature (BF) corresponds to the level at which this boundary was established.
 
@@ -374,7 +374,7 @@ The AdministrativeBoundary features are built as follows:
 
 Finally, the following associations between boundaries and administrative units have to be built:
 
-|=== 
+|===
 
 | *BOUNDARY -> UNIT* | *UNIT -> BOUNDARY*
 
@@ -399,19 +399,26 @@ local boundaries: +
 BF3.1 -> AU4 +
 BF3.2 -> AU4, AU5 +
 BF3.3 -> AU5
-| 
+|
 local units: +
 AU4 -> BF3.1, BF3.2 +
 AU5 -> BF3.2, BF3.3
 
 |===
-
+====
 
 # end::tg-au-applicationSchemaAU[]
+
 # tag::tg-au-featureCatalogueAU[]
 === Feature catalogue
 
-http://inspire-twg.jrc.ec.europa.eu/data-model/approved/r937/fc/#_P367[Click here for the Application Schema: AdministrativeUnits Feature Catalogue.]
+:leveloffset: +2
+
+include::tg-au-fc-au.adoc[]
+
+// http://inspire-twg.jrc.ec.europa.eu/data-model/approved/r937/fc/#_P367[Click here for the Application Schema: AdministrativeUnits Feature Catalogue.]
+
+:leveloffset: -2
 
 # end::tg-au-featureCatalogueAU[]
 # tag::tg-au-applicationSchemaMU[]
@@ -425,30 +432,30 @@ The application schema MaritimeUnits provides the means for common pan-European 
 
 The MaritimeZone spatial object type represents any zone on the sea defined by international treaties and conventions, where a coastal State executes jurisdictional rights. MaritimeZone is further classified as a certain type of maritime zone by means of the zoneType attribute. The following zone types are distinguished: internal waters, territorial sea, contiguous zone, exclusive economic zone and continental shelf.
 
-Depending on the type of zone, the jurisdictional rights of a coastal State may concern an area of seabed, ocean floor, subsoil, resources, or even the air space over the sea. Once defined, the maritime zones are used, among others, for cadastral, administrative, economic (e.g. fishery, exploring and exploiting), security or safety purposes. 
+Depending on the type of zone, the jurisdictional rights of a coastal State may concern an area of seabed, ocean floor, subsoil, resources, or even the air space over the sea. Once defined, the maritime zones are used, among others, for cadastral, administrative, economic (e.g. fishery, exploring and exploiting), security or safety purposes.
 
-Each maritime zone can belong exactly to one coastal State. At the same time a coastal State might have several maritime zones. The number of types of maritime zones established for a coastal State vary, depending on geographical and political characteristics, but each coastal State always has at least an internal waters and a territorial sea zone.  
+Each maritime zone can belong exactly to one coastal State. At the same time a coastal State might have several maritime zones. The number of types of maritime zones established for a coastal State vary, depending on geographical and political characteristics, but each coastal State always has at least an internal waters and a territorial sea zone.
 
 The maritime zones are directly or indirectly defined in relation to a Baseline. According to the United Nations Convention on the Law of the Sea (UNCLOS), the “baseline” is a line established by a coastal State from which the outer limits of its territorial sea and certain other outer limits are measured. In particular, the territorial sea of a coastal State is a belt of sea of a defined breadth not exceeding 12 nautical miles measured from the baselines, whereas internal waters are the waters on the landward side of the baselines of the territorial sea of the coastal State. In turn, the contiguous zone, the exclusive economic zone and the continental shelf are defined as zones beyond and adjacent to the territorial sea of a coastal State.
 
 There can be more than one baseline determined by a State. For instance, France has two baselines: one in the north between Belgium to Spain, and the second in the south - between Spain and Italy.
- 
+
 include::../images/tg-au-images.adoc[tags=tg-au-conceptsMaritimeUnits]
 
 Each zone must be delimited by MaritimeBoundary spatial objects. A MaritimeBoundary is a line that separates any type of maritime jurisdiction (i.e. fishery, petroleum and other resources of the sea as well as other uses of the sea). MaritimeBoundary may be twofold:
 
-* it may define a seaward outer limit of certain maritime zone of a coastal State, 
+* it may define a seaward outer limit of certain maritime zone of a coastal State,
 * it may represent a limit of the maritime zone of States with opposite or adjacent coasts.
 
 A Maritime boundary is always subject to international treaties between the States and in a legal context it may be either agreed or in dispute. In case the maritime boundary is established between the adjacent coastal States, it shall be a natural prolongation of the administrative boundary on land.
 
 ==== UML Overview
 
-The complete MaritimeUnits application schema is shown in <<tg-au-classMUOverview, Figure {counter:pic-id}>>  and described in detail below. 
+The complete MaritimeUnits application schema is shown in <<tg-au-classMUOverview, Figure {counter:pic-id}>>  and described in detail below.
 
 include::../images/tg-au-images.adoc[tags=tg-au-classMUOverview]
 
-MaritimeZone is a spatial object type providing the common characteristics of all maritime zones that can be established by a coastal State on the sea. Each maritime zone is represented geometrically by the GM_MultiSurface data type and it can belong to exactly one coastal State. Information about the State executing jurisdictional rights over a certain zone is documented by the mandatory countryCode attribute. 
+MaritimeZone is a spatial object type providing the common characteristics of all maritime zones that can be established by a coastal State on the sea. Each maritime zone is represented geometrically by the GM_MultiSurface data type and it can belong to exactly one coastal State. Information about the State executing jurisdictional rights over a certain zone is documented by the mandatory countryCode attribute.
 In some specific cases a maritime zone may be known under a specific unique geographical name. In order to support the depiction of zones using geographical names a voidable attribute name, of GeographicalName data type, is also provided.
 
 The specific type of maritime zone is classified and distinguished by means of the zoneType attribute of the MaritimeZone spatial object type. The values in the related code list (MaritimeZoneTypeValue) express the diversity of maritime zones available: internal waters (designated by the code list value _internalWaters_), territorial sea (_territorialSea_), contiguous zone (_contiguousZone_), exclusive economic zone (_exclusiveEconomicZone_) or continental shelf (_continentalShelf_).
@@ -457,7 +464,7 @@ include::../images/tg-au-images.adoc[tags=tg-au-classMaritimeZone]
 
 [PERMISSION, id="Recommendation {counter:rec-id}"]
 ======
-According to the UNCLOS, each coastal State is allowed to determine its territorial sea and internal waters. For this reason the representation of the territorial sea and the internal waters should always be present in a dataset providing data according to this application schema. 
+According to the UNCLOS, each coastal State is allowed to determine its territorial sea and internal waters. For this reason the representation of the territorial sea and the internal waters should always be present in a dataset providing data according to this application schema.
 ======
 
 [NOTE]
@@ -465,13 +472,13 @@ The territorialSea and internalWaters values of the MaritimeZoneTypeValue code l
 
 Other kinds of maritime zones may be additionally provided depending on the geographical and political situation in a sea region. For this reason no absolute number of types of zones per State may be fixed.
 
-{counter2:pic-id} 
+{counter2:pic-id}
 
 By definition there are well known topological relationships between the various types of zones. In particular (see also <<tg-au-classMUOverview, Figure {counter:pic-id}>> and <<tg-au-recommendationMaritimeUnits, following Recommendation>>):
 
 * the internal waters of a coastal State shall be adjacent to the AdministrativeUnit spatial object representing the State (i.e. where the attribute nationalLevel is equal to ’1stOrder’).
 * the territorial sea of a coastal State and its internal waters shall be adjacent on the Baseline.
-* the contiguous zone, exclusive economic zone and continental shelf shall be adjacent to the territorial sea. 
+* the contiguous zone, exclusive economic zone and continental shelf shall be adjacent to the territorial sea.
 * the continental shelf shall include the exclusive economic zone.
 * the exclusive economic zone shall include the contiguous zone.
 
@@ -482,7 +489,7 @@ The following geometric and topological constraints are recommendations for this
 
 * the internal waters of a coastal State should be adjacent to the AdministrativeUnit spatial object representing the State (i.e. where the attribute nationalLevel is equal to ’1stOrder’).
 * the territorial sea of a coastal State and its internal waters should be adjacent on the Baseline.
-* the contiguous zone, exclusive economic zone and continental shelf should be adjacent to the territorial sea. 
+* the contiguous zone, exclusive economic zone and continental shelf should be adjacent to the territorial sea.
 * the continental shelf should include the exclusive economic zone.
 * the exclusive economic zone should include the contiguous zone.
 ======
@@ -495,10 +502,10 @@ The Baseline spatial object type is a key notion to determine maritime zones. It
 include::../images/tg-au-images.adoc[tags=tg-au-classBaseline]
 
 The instances of the MaritimeBoundary spatial object type represents the borders on sea between the coastal States. They may represent:
-* a seaward outer limit of certain maritime zone of a coastal State. 
+* a seaward outer limit of certain maritime zone of a coastal State.
 * a limit of the maritime zone of States with opposite or adjacent coasts.
 
-If a MaritimeBoundary spatial object represents a boundary between adjacent coastal States, its start point shall be the same as the end point of the administrative boundary on land. 
+If a MaritimeBoundary spatial object represents a boundary between adjacent coastal States, its start point shall be the same as the end point of the administrative boundary on land.
 
 Each instance of the MaritimeZone spatial object type provides the countryCode of a coastal State that executes jurisdictional right on it.
 
@@ -510,7 +517,7 @@ The MaritimeBoundary spatial object type supports the representation of the boun
 
 include::../images/tg-au-images.adoc[tags=tg-au-classMaritimeBoundary]
 
-MaritimeBoundary provides important information concerning sea division. In particular, it is labelled with a legal and a technical status of the boundary. The legal status refers to the political agreement between the units, whereas the technical status faces the edge-matching issues; the “edge-matched” value meaning that the boundary of neighbouring maritime zones have the same set of coordinates. In contrast, there are also cases where the maritime boundaries are not agreed. If available both indicators shall be provided 
+MaritimeBoundary provides important information concerning sea division. In particular, it is labelled with a legal and a technical status of the boundary. The legal status refers to the political agreement between the units, whereas the technical status faces the edge-matching issues; the “edge-matched” value meaning that the boundary of neighbouring maritime zones have the same set of coordinates. In contrast, there are also cases where the maritime boundaries are not agreed. If available both indicators shall be provided
 
 The MaritimeUnits application schema defines a voidable association between the MaritimeZone and the MaritimeBoundary spatial object types to support the expression of topological and semantic relationships that may be used in queries to avoid geometric intersections.
 
@@ -522,6 +529,12 @@ No specific requirements or recommendations are defined for object references in
 # tag::tg-au-featureCatalogueMU[]
 === Feature catalogue
 
-http://inspire.ec.europa.eu/data-model/approved/r4618/fc/#_P3467[Click here for the Application Schema: MaritimeUnits Feature Catalogue.]
+:leveloffset: +2
+
+include::tg-au-fc-mu.adoc[]
+
+// http://inspire.ec.europa.eu/data-model/approved/r4618/fc/#_P3467[Click here for the Application Schema: MaritimeUnits Feature Catalogue.]
+
+:leveloffset: -2
 
 # end::tg-au-featureCatalogueMU[]

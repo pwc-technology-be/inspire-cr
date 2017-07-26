@@ -1,0 +1,5 @@
+= Data capture
+
+No data capture rules specified, except that national administrative data of best available quality should be provided according to this specification after it has been edge matched at international boundaries between responsible organizations of neighbouring countries.
+
+It could be useful to consider the experiences (results) from EuroGeographics concerning the edge matching of international boundaries, which has been done by BKG together with the EBM project partners of 39 European National Mapping and Cadastral Agencies for creation of the seamless EuroBoundaryMap reference geo database.
