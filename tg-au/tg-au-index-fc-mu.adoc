@@ -1,0 +1,41 @@
+:doctype: book
+
+:stylesdir: ../stylesheets/
+:stylesheet: inspire.css
+:linkcss:
+
+:toc: macro
+:toc-title: Table of contents
+:toclevels: 3
+:toc-position: left
+:appendix-caption: Annex
+
+:icons: font
+
+:source-highlighter: pygments
+:pygments-style: autumn
+:pygments-linenums-mode: inline
+
+:rec-id: 0
+:tgreq-id: 0
+:pic-id: 0
+
+
+WARNING: WORK IN PROGRESS
+
+include::tg-au-index-config.adoc[]
+
+:schema: MaritimeUnits
+include::content/tg-au-metadata-fc.adoc[]
+
+<<<
+
+toc::[]
+
+<<<
+
+:numbered:
+
+==	Overview
+
+include::content/tg-au-fc-mu.adoc[]

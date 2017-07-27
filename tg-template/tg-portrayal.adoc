@@ -1,0 +1,70 @@
+# tag::tg-portrayal-intro[]
+
+This clause defines the rules for layers and styles to be used for portrayal of the spatial object types defined for this theme. Portrayal is regulated in Article 14 of the IRs.
+
+[REQUIREMENT, id="IR Requirement"]
+======
+__Article 14__ +
+*Portrayal*
+
+. For the portrayal of spatial data sets using a view network service as specified in Commission Regulation No 976/2009 footnote:[OJ L 274, 20.10.2009, p. 9.], the following shall be available:
+[loweralpha]
+.. the layers specified in Annex II for the theme or themes the data set is related to;
+.. for each layer at least a default portrayal style, with as a minimum an associated title and a unique identifier.
+. For each layer, Annex II defines the following:
+[loweralpha]
+..  human readable title of the layer to be used for display in user interface;
+.. the spatial object type(s), or sub-set thereof, that constitute(s) the content of the layer.
+======
+
+In section <<_layers_to_be_provided_by_inspire_view_services>>, the types of layers are defined that are to be used for the portrayal of the spatial object types defined in this specification. A view service may offer several layers of the same type, one for each dataset that it offers data on a specific topic.
+
+NOTE: The layer specification in the IRs only contains the name, a human readable title and the (subset(s) of) spatial object type(s), that constitute(s) the content of the layer. In addition, this TG documents suggests keywords for describing the layer.
+
+[RECOMMENDATION, id="TG Requirement {counter:tgreq-id}"]
+======
+It is recommended to use the keywords specified in section <<_layers_to_be_provided_by_inspire_view_services>> in the Layers Metadata parameters of the INSPIRE View service (see Annex III, Part A, section 2.2.4 in Commission Regulation (EC) No 976/2009).
+======
+
+Section <<_styles_required_to_be_supported_by_inspire_view_services>> specifies one style for each of these layers. It is proposed that INSPIRE view services support this style as the default style required by Article 14(1b).
+
+[RECOMMENDATION, id="TG Requirement {counter:tgreq-id}"]
+======
+For each layer specified in this section, the styles defined in section <<_styles_required_to_be_supported_by_inspire_view_services>> shall be available.
+======
+
+NOTE: The default style should be used for portrayal by the view network service if no user-defined style is specified in a portrayal request for a specific layer.
+
+In section <<_styles_recommended_to_be_supported_by_inspire_view_services>>, further styles can be specified that represent examples of styles typically used in a thematic domain. It is recommended that also these styles should be supported by INSPIRE view services, where applicable.
+
+[RECOMMENDATION, id="TG Requirement {counter:tgreq-id}"]
+======
+In addition, it is recommended that, where applicable, INSPIRE view services also support the styles defined in section <<_styles_recommended_to_be_supported_by_inspire_view_services>>.
+======
+
+Where XML fragments are used in the following sections, the following namespace prefixes apply:
+
+* sld="http://www.opengis.net/sld" (WMS/SLD 1.1)
+* se="http://www.opengis.net/se" (SE 1.1)
+* ogc="http://www.opengis.net/ogc" (FE 1.1)
+
+# end::tg-portrayal-intro[]
+
+# tag::tg-portrayal-layers-req[]
+
+[REQUIREMENT, id="IR Requirement"]
+======
+__Article 14__ +
+*Portrayal*
+
+(…)
+
+{empty}3.	For spatial object types whose objects can be further classified using a code list-valued attribute, several layers may be defined. Each of these layers shall include the spatial objects corresponding to one specific code list value. In the definition of such sets of layers in Annexes II-IV,
+[loweralpha]
+.. the placeholder <CodelistValue> shall represent the values of the relevant code list, with the first letter in upper case,
+..	the placeholder <human-readable name> shall represent the human-readable name of the code list values;
+.. the spatial object type shall include the relevant attribute and code list, in parentheses;
+.. one example of a layer shall be given.
+======
+
+# end::tg-portrayal-layers-req[]

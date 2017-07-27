@@ -1,0 +1,58 @@
+# tag::tg-au-delivery-title[]
+= Delivery
+# end::tg-au-delivery-title[]
+
+# tag::tg-au-encodings-title[]
+== Encodings
+# end::tg-au-encodings-title[]
+
+# tag::tg-au-default-encodings-title[]
+[[_931]]
+=== Default Encoding(s)
+# end::tg-au-default-encodings-title[]
+
+# tag::tg-au-gml[]
+[RECOMMENDATION, id="TG Requirement {counter:tgreq-id}"]
+======
+Data related to the theme {theme} shall be made available in at least the encodings specified in this section for the relevant application schemas.
+======
+# end::tg-au-gml[]
+
+# tag::tg-au-gml-au[]
+
+==== Default encoding for application schema AdministrativeUnits
+
+Name:: AdministrativeUnits GML Application Schema
+Version:: version 3.1
+Specification:: D2.8.I.4 Data Specification on Administrative Units – Technical Guidelines
+Character set::  UTF-8
+
+The XML schema document is available from: http://inspire.ec.europa.eu/schemas/au/3.1/AdministrativeUnits.xsd
+
+.Open issue 1
+****
+In the amendment of the Implementing Rules, a number of changes have been introduced to the Annex I data models.
+
+In the Administrative Units data model, the multiplicity of NUTS elements changed and made optional.
+
+As a consequence, the AdministrativeUnits xml schema needs to be updated to reflect this change. These changes and the overall process for xml schema maintenance in INSPIRE are currently being discussed in the INSPIRE maintenance and implementation group (MIG). For further information on the status of these discussions, see https://ies-svn.jrc.ec.europa.eu/projects/mig-inspire.
+****
+
+The encoding rule used for this encoding is specified in Annex B of [DS-D2.7].
+
+# end::tg-au-gml-au[]
+
+# tag::tg-au-gml-mu[]
+
+==== Default encoding for application schema MaritimeUnits
+
+Name:: MaritimeUnits GML Application Schema
+Version:: version 3.1
+Specification:: D2.8.I.4 Data Specification on Administrative Units – Technical Guidelines
+Character set:: UTF-8
+
+The XML schema document is available from: http://inspire.ec.europa.eu/schemas/au-mu/3.1/MaritimeUnits.xsd
+
+The encoding rule used for this encoding is specified in Annex B of [DS-D2.7].
+
+# end::tg-au-gml-mu[]

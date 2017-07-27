@@ -25,34 +25,35 @@ _Annex II, Section 1.3_ +
 
 Spatial data sets shall be made available using at least one of the coordinate reference systems specified in sections 1.3.1, 1.3.2 and 1.3.3, unless one of the conditions specified in section 1.3.4 holds.
 
-1.3.1.	Three-dimensional Coordinate Reference Systems
-* Three-dimensional Cartesian coordinates based on a datum specified in 1.2 and using the parameters of the Geodetic Reference System 1980 (GRS80) ellipsoid. 
+1.3.1.	Three-dimensional Coordinate Reference Systems::
+
+* Three-dimensional Cartesian coordinates based on a datum specified in 1.2 and using the parameters of the Geodetic Reference System 1980 (GRS80) ellipsoid.
 * Three-dimensional geodetic coordinates (latitude, longitude and ellipsoidal height) based on a datum specified in 1.2 and using the parameters of the GRS80 ellipsoid.
 
-1.3.2.	Two-dimensional Coordinate Reference Systems
+1.3.2.	Two-dimensional Coordinate Reference Systems::
 
-* Two-dimensional geodetic coordinates (latitude and longitude) based on a datum specified in 1.2 and using the parameters of the GRS80 ellipsoid. 
+* Two-dimensional geodetic coordinates (latitude and longitude) based on a datum specified in 1.2 and using the parameters of the GRS80 ellipsoid.
 * Plane coordinates using the ETRS89 Lambert Azimuthal Equal Area coordinate reference system.
-* Plane coordinates using the ETRS89 Lambert Conformal Conic coordinate reference system. 
-* Plane coordinates using the ETRS89 Transverse Mercator coordinate reference system. 
+* Plane coordinates using the ETRS89 Lambert Conformal Conic coordinate reference system.
+* Plane coordinates using the ETRS89 Transverse Mercator coordinate reference system.
 
-1.3.3.	Compound Coordinate Reference Systems
+1.3.3.	Compound Coordinate Reference Systems::
 
 . For the horizontal component of the compound coordinate reference system, one of the coordinate reference systems specified in section 1.3.2 shall be used.
 . For the vertical component, one of the following coordinate reference systems shall be used:
+** For the vertical component on land, the European Vertical Reference System (EVRS) shall be used to express gravity-related heights within its geographical scope. Other vertical reference systems related to the Earth gravity field shall be used to express gravity-related heights in areas that are outside the geographical scope of EVRS.
+** For the vertical component in the free atmosphere, barometric pressure, converted to height using ISO 2533:1975 International Standard Atmosphere, or other linear or parametric reference systems shall be used. Where other parametric reference systems are used, these shall be described in an accessible reference using EN ISO 19111-2:2012.
+** For the vertical component in marine areas where there is an appreciable tidal range (tidal waters), the Lowest Astronomical Tide (LAT) shall be used as the reference surface.
+** For the vertical component in marine areas without an appreciable tidal range, in open oceans and effectively in waters that are deeper than 200 meters, the Mean Sea Level (MSL) or a well-defined reference level close to the MSL shall be used as the reference surface.
 
-* For the vertical component on land, the European Vertical Reference System (EVRS) shall be used to express gravity-related heights within its geographical scope. Other vertical reference systems related to the Earth gravity field shall be used to express gravity-related heights in areas that are outside the geographical scope of EVRS.
-* For the vertical component in the free atmosphere, barometric pressure, converted to height using ISO 2533:1975 International Standard Atmosphere, or other linear or parametric reference systems shall be used. Where other parametric reference systems are used, these shall be described in an accessible reference using EN ISO 19111-2:2012.
-* For the vertical component in marine areas where there is an appreciable tidal range (tidal waters), the Lowest Astronomical Tide (LAT) shall be used as the reference surface.
-* For the vertical component in marine areas without an appreciable tidal range, in open oceans and effectively in waters that are deeper than 200 meters, the Mean Sea Level (MSL) or a well-defined reference level close to the MSL shall be used as the reference surface.
-
-1.3.4.	Other Coordinate Reference Systems
+1.3.4.	Other Coordinate Reference Systems::
 
 Exceptions, where other coordinate reference systems than those listed in 1.3.1, 1.3.2 or 1.3.3 may be used, are:
 
 .	Other coordinate reference systems may be specified for specific spatial data themes in this Annex.
-.	For regions outside of continental Europe, Member States may define suitable coordinate reference systems. 
+.	For regions outside of continental Europe, Member States may define suitable coordinate reference systems.
 
++
 The geodetic codes and parameters needed to describe these coordinate reference systems and to allow conversion and transformation operations shall be documented and an identifier shall be created, according to EN ISO 19111 and ISO 19127.
 ======
 
@@ -77,7 +78,7 @@ _Annex II, Section 1.4_ +
 . Only identifiers contained in a common register shall be used for referring to the coordinate reference systems listed in this Section.
 ======
 
-These Technical Guidelines propose to use the http URIs provided by the Open Geospatial Consortium as coordinate reference system identifiers (see identifiers for the default CRSs below). These are based on and redirect to the definition in the EPSG Geodetic Parameter Registry (http://www.epsg-registry.org/). 
+These Technical Guidelines propose to use the http URIs provided by the Open Geospatial Consortium as coordinate reference system identifiers (see identifiers for the default CRSs below). These are based on and redirect to the definition in the EPSG Geodetic Parameter Registry (http://www.epsg-registry.org/).
 
 [RECOMMENDATION, id="TG Requirement {counter:tgreq-id}"]
 ======
@@ -201,8 +202,12 @@ Point 5 of part B of the Annex to Commission Regulation (EC) No 1205/2008 (the I
 [NOTE]
 ISO 8601 Data elements and interchange formats – Information interchange – Representation of dates and times is an international standard covering the exchange of date and time-related data. The purpose of this standard is to provide an unambiguous and well-defined method of representing dates and times, so as to avoid misinterpretation of numeric representations of dates and times, particularly when data is transferred between countries with different conventions for writing numeric dates and times. The standard organizes the data so the largest temporal term (the year) appears first in the data string and progresses to the smallest term (the second). It also provides for a standardized method of communicating time-based information across time zones by attaching an offset to Coordinated Universal Time (UTC).
 
-EXAMPLE: + 
-1997 (the year 1997), 1997-07-16 (16th July 1997), 1997-07-16T19:20:30+01:00 (16th July 1997, 19h 20’ 30’’, time zone: UTC+1)
+.Some date and date/time values
+====
+1997:: the year 1997
+1997-07-16:: 16th July 1997
+1997-07-16T19:20:30+01:00:: 16th July 1997, 19h 20’ 30’’, time zone: UTC+1
+====
 
 === Units of measure
 
@@ -214,5 +219,5 @@ _Article 12_ +
 (…)
 
 [start=2]
-.	All measurement values shall be expressed using SI units or non-SI units accepted for use with the International System of Units, unless specified otherwise for a specific spatial data theme or type. 
+.	All measurement values shall be expressed using SI units or non-SI units accepted for use with the International System of Units, unless specified otherwise for a specific spatial data theme or type.
 ======

@@ -5,7 +5,7 @@ INSPIRE data specification for the theme _{theme}_.
 # end::tg-name[]
 
 # tag::tg-normativeReferences[]
-[cols="25%,75%", frame="none", grid="none"]
+[cols="25%,75%a", frame="none", grid="none"]
 |===
 |[Directive 2007/2/EC]
 |Directive 2007/2/EC of the European Parliament and of the Council of 14 March 2007 establishing an Infrastructure for Spatial Information in the European Community (INSPIRE)
@@ -13,7 +13,7 @@ INSPIRE data specification for the theme _{theme}_.
 |[ISO 19107]
 |EN ISO 19107:2005, Geographic Information – Spatial Schema
 
-|[ISO 19108] 
+|[ISO 19108]
 |EN ISO 19108:2005, Geographic Information – Temporal Schema
 
 |[ISO 19108-c]
@@ -27,10 +27,10 @@ INSPIRE data specification for the theme _{theme}_.
 
 |[ISO 19115]
 |EN ISO 19115:2005, Geographic information – Metadata (ISO 19115:2003)
- 
+
 |[ISO 19118]
 |EN ISO 19118:2006, Geographic information – Encoding (ISO 19118:2005)
- 
+
 |[ISO 19123]
 |EN ISO 19123:2007, Geographic Information – Schema for coverage geometry and functions
 
@@ -39,7 +39,7 @@ INSPIRE data specification for the theme _{theme}_.
 
 |[ISO 19135]
 |EN ISO 19135:2007 Geographic information – Procedures for item registration (ISO 19135:2005)
- 
+
 |[ISO 19138]
 |ISO/TS 19138:2006, Geographic Information – Data quality measures
 
@@ -53,8 +53,9 @@ INSPIRE data specification for the theme _{theme}_.
 |EN ISO 3166-1:2006, Codes for the representation of names of countries and their subdivisions – Part 1: Country codes
 
 |[OGC 06-103r4]
-|Implementation Specification for Geographic Information - Simple feature access – Part 1: Common Architecture v1.2.1 +
-NOTE	This is an updated version of "EN ISO 19125-1:2004, Geographic information – Simple feature access – Part 1: Common architecture".
+|Implementation Specification for Geographic Information - Simple feature access – Part 1: Common Architecture v1.2.1
+
+NOTE:	This is an updated version of "EN ISO 19125-1:2004, Geographic information – Simple feature access – Part 1: Common architecture".
 
 |[Regulation 1205/2008/EC]
 |Regulation 1205/2008/EC implementing Directive 2007/2/EC of the European Parliament and of the Council as regards metadata
@@ -86,12 +87,12 @@ _Article / Annex / Section no._ +
 This style is used for requirements contained in the Implementing Rules on interoperability of spatial data sets and services (Commission Regulation (EU) No 1089/2010).
 ======
 
-For each of these IR requirements, these Technical Guidelines contain additional explanations and examples. 
+For each of these IR requirements, these Technical Guidelines contain additional explanations and examples.
 
 [NOTE]
 The Abstract Test Suite (ATS) in Annex A contains conformance tests that directly check conformance with these IR requirements.
 
-Furthermore, these Technical Guidelines may propose a specific technical implementation for satisfying an IR requirement. In such cases, these Technical Guidelines may contain additional technical requirements that need to be met in order to be conformant with the corresponding IR requirement _when using this proposed implementation_. These technical requirements are highlighted as follows:    
+Furthermore, these Technical Guidelines may propose a specific technical implementation for satisfying an IR requirement. In such cases, these Technical Guidelines may contain additional technical requirements that need to be met in order to be conformant with the corresponding IR requirement _when using this proposed implementation_. These technical requirements are highlighted as follows:
 
 [RECOMMENDATION, id="TG Requirement X"]
 ======
@@ -106,7 +107,7 @@ In addition to the requirements included in the Implementing Rules on interopera
 
 === Recommendations
 
-In addition to IR and TG requirements, these Technical Guidelines may also include a number of recommendations for facilitating implementation or for further and coherent development of an interoperable infrastructure. 
+In addition to IR and TG requirements, these Technical Guidelines may also include a number of recommendations for facilitating implementation or for further and coherent development of an interoperable infrastructure.
 
 [PERMISSION, id="Recommendation X"]
 ======

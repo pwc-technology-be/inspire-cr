@@ -1,0 +1,98 @@
+# tag::tg-delivery-intro[]
+
+==	Updates
+
+[REQUIREMENT, id="IR Requirement"]
+======
+__Article 8__ +
+*Updates*
+
+.	Member States shall make available updates of data on a regular basis.
+.	All updates shall be made available at the latest 6 months after the change was applied in the source data set, unless a different period is specified for a specific spatial data theme in Annex II.
+======
+
+NOTE:	In this data specification, no exception is specified, so all updates shall be made available at the latest 6 months after the change was applied in the source data set.
+
+==	Delivery medium
+
+According to Article 11(1) of the INSPIRE Directive, Member States shall establish and operate a network of services for INSPIRE spatial data sets and services. The relevant network service types for making spatial data available are:
+
+*	view services making it possible, as a minimum, to display, navigate, zoom in/out, pan, or overlay viewable spatial data sets and to display legend information and any relevant content of metadata;
+*	download services, enabling copies of spatial data sets, or parts of such sets, to be downloaded and, where practicable, accessed directly;
+*	transformation services, enabling spatial data sets to be transformed with a view to achieving interoperability.
+
+NOTE: For the relevant requirements and recommendations for network services, see the relevant Implementing Rules and Technical Guidelines.
+
+.Download using a download service
+====
+Through the Get Spatial Objects function, a download service can either download a pre-defined data set or pre-defined part of a data set (non-direct access download service), or give direct access to the spatial objects contained in the data set, and download selections of spatial objects based upon a query (direct access download service). To execute such a request, some of the following information might be required:
+
+* the list of spatial object types and/or predefined data sets that are offered by the download service (to be provided through the Get Download Service Metadata operation),
+* and the query capabilities section advertising the types of predicates that may be used to form a query expression (to be provided through the Get Download Service Metadata operation, where applicable),
+* a description of spatial object types offered by a download service instance (to be provided through the Describe Spatial Object Types operation).
+====
+
+.Download using a transformation service
+====
+Through the Transform function, a transformation service carries out data content transformations from native data forms to the INSPIRE-compliant form and vice versa. If this operation is directly called by an application to transform source data (e.g. obtained through a download service) that is not yet conformant with this data specification, the following parameters are required:
+
+* Input data (mandatory). The data set to be transformed.
+* Source model (mandatory, if cannot be determined from the input data). The model in which the input data is provided.
+* Target model (mandatory). The model in which the results are expected.
+* Model mapping (mandatory, unless a default exists). Detailed description of how the transformation is to be carried out.
+====
+
+# end::tg-delivery-intro[]
+
+# tag::tg-encodings-intro[]
+
+The IRs contain the following two requirements for the encoding to be used to make data available.
+
+[REQUIREMENT, id="IR Requirement"]
+======
+__Article 7__ +
+*Encoding*
+
+.	Every encoding rule used to encode spatial data shall conform to EN ISO 19118. In particular, it shall specify schema conversion rules for all spatial object types and all attributes and association roles and the output data structure used.
+.	Every encoding rule used to encode spatial data shall be made available.
+======
+
+[NOTE]
+====
+ISO 19118:2011 specifies the requirements for defining encoding rules used for interchange of geographic data within the set of International Standards known as the “ISO 19100 series”. An encoding rule allows geographic information defined by application schemas and standardized schemas to be coded into a system-independent data structure suitable for transport and storage. The encoding rule specifies the types of data being coded and the syntax, structure and coding schemes used in the resulting data structure. Specifically, ISO 19118:2011 includes
+
+* requirements for creating encoding rules based on UML schemas,
+* requirements for creating encoding services, and
+* requirements for XML-based encoding rules for neutral interchange of data.
+====
+
+While the IRs do not oblige the usage of a specific encoding, these Technical Guidelines propose to make data related to the spatial data theme Administrative Units available at least in the default encoding(s) specified in section <<_931>>. In this section, a number of TG requirements are listed that need to be met in order to be conformant with the default encoding(s).
+
+The proposed default encoding(s) meet the requirements in Article 7 of the IRs, i.e. they are conformant with ISO 19118 and (since they are included in this specification) publicly available.
+
+# end::tg-encodings-intro[]
+
+# tag::tg-default-encodings-intro[]
+
+==== Specific requirements for GML encoding
+
+This data specification proposes the use of GML as the default encoding, as recommended in sections 7.2 and 7.3 of [DS-D2.7]. GML is an XML encoding in compliance with ISO 19118, as required in Article 7(1). For details, see [ISO 19136], and in particular Annex E (UML-to-GML application schema encoding rules).
+
+The following TG requirements need to be met in order to be conformant with GML encodings.
+
+[RECOMMENDATION, id="TG Requirement {counter:tgreq-id}"]
+======
+Data instance (XML) documents shall validate without error against the provided XML schema.
+======
+
+NOTE: Not all constraints defined in the application schemas can be mapped to XML. Therefore, the following requirement is necessary.
+
+NOTE: The obligation to use only the allowed code list values specified for attributes and most of the constraints defined in the application schemas *cannot* be mapped to the XML schema. They can therefore *not* be enforced through schema validation. It may be possible to express some of these constraints using other schema or rule languages (e.g. Schematron), in order to enable automatic validation.
+
+# end::tg-default-encodings-intro[]
+
+# tag::tg-default-encoding-rule-note[]
+
+NOTE: Annex B of [DS-D2.7], version 3.3rc3, requires that the “encoding rule specified in ISO 19136 Annex E with the extensions in GML 3.3 shall be applied with the additional rules stated in this Annex. For types within the scope of the ISO/TS 19139 encoding rule, the encoding rule of ISO/TS 19139 shall be applied.”
+
+# end::tg-default-encoding-rule-note[]

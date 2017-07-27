@@ -124,3 +124,53 @@ image:images/exampleNorway.png[""]
 [[tg-au-limitations]]
 image:images/limitations.png[""]
 # end::tg-au-limitations[]
+
+# tag::tg-au-style12-2-1[]
+[[tg-au-style12-2-1]]
+image:images/style12-2-1.png[""]
+# end::tg-au-style12-2-1[]
+
+# tag::tg-au-style12-2-2[]
+[[tg-au-style12-2-2]]
+image:images/style12-2-2.png[""]
+# end::tg-au-style12-2-2[]
+
+# tag::tg-au-style12-2-3[]
+[[tg-au-style12-2-3]]
+image:images/style12-2-3.png[""]
+# end::tg-au-style12-2-3[]
+
+# tag::tg-au-style12-2-4[]
+[[tg-au-style12-2-4]]
+image:images/style12-2-4.png[""]
+# end::tg-au-style12-2-4[]
+
+# tag::tg-au-style12-2-5[]
+[[tg-au-style12-2-5]]
+image:images/style12-2-5.png[""]
+# end::tg-au-style12-2-5[]
+
+# tag::tg-au-style12-2-6[]
+[[tg-au-style12-2-6]]
+image:images/style12-2-6.png[""]
+# end::tg-au-style12-2-6[]
+
+# tag::tg-au-style12-2-7[]
+[[tg-au-style12-2-7]]
+image:images/style12-2-7.png[""]
+# end::tg-au-style12-2-7[]
+
+# tag::tg-au-style12-2-8[]
+[[tg-au-style12-2-8]]
+image:images/style12-2-8.png[""]
+# end::tg-au-style12-2-8[]
+
+# tag::tg-au-style12-2-9[]
+[[tg-au-style12-2-9]]
+image:images/style12-2-9.png[""]
+# end::tg-au-style12-2-9[]
+
+# tag::tg-au-style12-2-10[]
+[[tg-au-style12-2-10]]
+image:images/style12-2-10.png[""]
+# end::tg-au-style12-2-10[]

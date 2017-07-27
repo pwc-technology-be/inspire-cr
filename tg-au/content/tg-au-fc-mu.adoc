@@ -1,0 +1,417 @@
+.Feature catalogue metadata
+[horizontal]
+Application Schema:: INSPIRE Application Schema MaritimeUnits
+Version number:: 3.0
+
+.Types defined in the feature catalogue
+[cols="40,35,25"]
+|===
+|*Type name* |*Package* |*Stereotype*
+
+|<<Baseline>> |MaritimeUnits |«featureType»
+|<<BaselineSegment>> |MaritimeUnits |«dataType»
+|<<BaselineSegmentTypeValue>> |MaritimeUnits |«codelist»
+|<<MaritimeBoundary>> |MaritimeUnits |«featureType»
+|<<MaritimeZone>> |MaritimeUnits |«featureType»
+|<<MaritimeZoneTypeValue>> |MaritimeUnits |«codelist»
+|===
+
+==	Spatial object types
+
+[[Baseline]]
+.Baseline
+[cols="1a", options="header"]
+|===
+|*Baseline*
+
+|[horizontal]
+Name:: baseline
+Definition:: The line from which the outer limits of the territorial sea and certain other outer limits are measured.
+Description:: SOURCE IHO Dictionary, S-32, Fifth Edition. +
+NOTE The baseline comprises of one or more baseline segments.
+According to United Nations Convention on the Law of the Sea (UNCLOS), the baseline segment can be normal, straight or archipelagic depending on the method used to determine the baseline segment. +
+COMMENT: For this moment there is no clearly identified use-case that would require Baseline spatial object types, therefore it is not strictly necessary to include these objects in the dataset.
+Stereotypes:: «featureType»
+
+|*Attribute: beginLifespanVersion* +
+[horizontal]
+Name:: begin lifespan version
+Value type:: <<DateTime>>
+Definition:: Date and time at which this version of the spatial object was inserted or changed in the spatial data set.
+Multiplicity:: 1
+Stereotypes:: «lifeCycleInfo»
+
+|*Attribute: endLifespanVersion* +
+[horizontal]
+Name:: end lifespan version
+Value type:: <<DateTime>>
+Definition:: Date and time at which this version of the spatial object was superseded or retired in the spatial data set.
+Multiplicity:: 0..1
+Stereotypes:: «lifeCycleInfo»
+
+|*Attribute: inspireId* +
+[horizontal]
+Name:: inspire id
+Value type:: <<Identifier>>
+Definition:: External object identifier of the spatial object.
+Description:: NOTE An external object identifier is a unique object identifier published by the responsible body, which may be used by external applications to reference the spatial object. The identifier is an identifier of the spatial object, not an identifier of the real-world phenomenon.
+Multiplicity:: 1
+
+|*Association role: segment* +
+[horizontal]
+Name:: segment
+Value type:: <<BaselineSegment>>
+Definition:: Segment of a baseline.
+Multiplicity:: 1..*
+|===
+
+[[MaritimeBoundary]]
+.MaritimeBoundary
+[cols="1a", options="header"]
+|===
+|*MaritimeBoundary*
+
+|[horizontal]
+Name:: maritime boundary
+Definition:: A line depicting the separation of any type of maritime jurisdiction.
+Description:: SOURCE IHO Dictionary, S-32, Fifth Edition. +
+NOTE 1 Maritime boundary represents either: +
+1) the seaward outer limits of the maritime zones of a coastal State, such as territorial sea, contiguous zone, exclusive economic zone and continental shelf; +
+2) the limits of the maritime zones of States with opposite or adjacent coasts. +
+Maritime boundaries are a politically sensitive subject, because it affects coastal State's jurisdiction concerning fishery, petroleum and other resources of the sea as well as other uses of the sea. [Source: "Maritime Boundary", S.P. Jagota]
+Stereotypes:: «featureType»
+
+|*Attribute: beginLifespanVersion* +
+[horizontal]
+Name:: begin lifespan version
+Value type:: <<DateTime>>
+Definition:: Date and time at which this version of the spatial object was inserted or changed in the spatial data set.
+Multiplicity:: 1
+Stereotypes:: «lifeCycleInfo»
+
+|*Attribute: country* +
+[horizontal]
+Name:: country
+Value type:: <<CountryCode>>
+Definition: The country that the maritime zone of this boundary belongs to.
+Description:: NOTE If the boundary divides two maritime zones belonging to the same country, only this country should be specified. If the boundary divides maritime zones belonging to neigbouring countries, both countries should be specified.
+Multiplicity:: 1..2
+
+|*Attribute: endLifespanVersion* +
+[horizontal]
+Name:: end lifespan version
+Value type:: <<DateTime>>
+Definition:: Date and time at which this version of the spatial object was superseded or retired in the spatial data set.
+Multiplicity:: 0..1
+Stereotypes:: «lifeCycleInfo»
+
+|*Attribute: geometry* +
+[horizontal]
+Name:: geometry
+Value type:: <<GM_Curve>>
+Definition:: Geometric representation of the maritime boundary.
+Multiplicity:: 1
+
+|*Attribute: inspireId* +
+[horizontal]
+Name:: inspire id
+Value type:: <<Identifier>>
+Definition:: External object identifier of the spatial object.
+Description:: NOTE An external object identifier is a unique object identifier published by the responsible body, which may be used by external applications to reference the spatial object. The identifier is an identifier of the spatial object, not an identifier of the real-world phenomenon.
+Multiplicity:: 1
+
+|*Attribute: legalStatus* +
+[horizontal]
+Name:: legal status
+Value type:: <<LegalStatusValue>>
+Definition:: Legal status of this maritime boundary.
+Description:: NOTE The legal status is considered in terms of political agreement or disagreement of the maritime boundary.
+Multiplicity:: 1
+Stereotypes:: «voidable»
+
+|*Attribute: technicalStatus* +
+[horizontal]
+Name:: technical status
+Value type:: TechnicalStatusValue
+Definition:: The technical status of the maritime boundary.
+Description:: NOTE The technical status of the maritime boundary is considered in terms of its topological matching or not-matching with the borders of maritime zones separated by this boundary. Edge-matched means that the same set of coordinates is used.
+Multiplicity:: 1
+Stereotypes:: «voidable»
+|===
+
+[[MaritimeZone]]
+.MaritimeZone
+[cols="1a", options="header"]
+|===
+|*MaritimeZone*
+
+|[horizontal]
+Name:: maritime zone
+Definition:: A belt of sea defined by international treaties and conventions, where coastal State executes jurisdictional rights.
+Description:: NOTE 1 The zone is established for e.g. cadastral, administrative, economic, security or safety purposes. It is not established for environmental management or regulation, which is covered by the theme Area management/restriction/regulation zones and reporting areas, or for environmental protection, which is covered by the theme Protected sites. +
+NOTE 2 The maritime zone can be either internal waters, territorial sea, contiguous zone, exclusive economic zone or continental shelf.
+Stereotypes:: «featureType»
+
+|*Attribute: beginLifespanVersion* +
+[horizontal]
+Name:: begin lifespan version
+Value type:: <<DateTime>>
+Definition:: Date and time at which this version of the spatial object was inserted or changed in the spatial data set.
+Multiplicity:: 1
+Stereotypes:: «lifeCycleInfo,voidable»
+
+|*Attribute: country* +
+[horizontal]
+Name:: country
+Value type:: <<CountryCode>>
+Definition: The country that this maritime zone belongs to.
+Multiplicity:: 1
+
+|*Attribute: endLifespanVersion* +
+[horizontal]
+Name:: end lifespan version
+Value type:: <<DateTime>>
+Definition:: Date and time at which this version of the spatial object was superseded or retired in the spatial data set.
+Multiplicity:: 0..1
+Stereotypes:: «lifeCycleInfo,voidable»
+
+|*Attribute: geometry* +
+[horizontal]
+Name:: geometry
+Value type:: <<GM_MultiSurface>>
+Definition:: Geometric representation of spatial area covered by this maritime zone.
+Multiplicity:: 1
+
+|*Attribute: inspireId* +
+[horizontal]
+Name:: inspire id
+Value type:: <<Identifier>>
+Definition:: External object identifier of the spatial object.
+Description:: NOTE An external object identifier is a unique object identifier published by the responsible body, which may be used by external applications to reference the spatial object. The identifier is an identifier of the spatial object, not an identifier of the real-world phenomenon.
+Multiplicity:: 1
+
+|*Attribute: name* +
+[horizontal]
+Name:: name
+Value type:: <<GeographicalName>>
+Definition:: Name(s) of the maritime zone.
+Multiplicity:: 0..*
+Stereotypes:: «voidable»
+
+|*Attribute: zoneType* +
+[horizontal]
+Name:: zone type
+Value type:: <<MaritimeZoneTypeValue>>
+Definition:: Type of maritime zone.
+Multiplicity:: 1
+
+|*Association role: boundary* +
+[horizontal]
+Name:: boundary
+Value type:: <<MaritimeBoundary>>
+Definition:: The boundary or boundaries of this maritime zone.
+Multiplicity:: 1..*
+Stereotypes:: «voidable»
+
+|*Association role: seaArea* +
+[horizontal]
+Value type:: SeaArea
+Multiplicity:: {empty}
+
+|*Association role: baseline* +
+[horizontal]
+Value type:: <<Shoreline>>
+Multiplicity:: {empty}
+
+|*Association role: baseline* +
+[horizontal]
+Name:: baseline
+Value type:: <<Baseline>>
+Definition:: Baseline or baselines used for the delineation of this maritime zone.
+Multiplicity:: 1..*
+Stereotypes:: «voidable»
+|===
+
+==	Data types
+
+[[BaselineSegment]]
+.BaselineSegment
+[cols="1a", options="header"]
+|===
+|*BaselineSegment*
+
+|[horizontal]
+Name:: baseline segment
+Definition:: Segment of the baseline from which the outer limits of the territorial sea and certain other outer limits are measured.
+Stereotypes:: «dataType»
+
+|*Attribute: geometry* +
+[horizontal]
+Name:: geometry
+Value type:: <<GM_Curve>>
+Definition:: Geometric representation of the baseline segment.
+Multiplicity:: 1
+
+|*Attribute: segmentType* +
+[horizontal]
+Name:: segment type
+Value type:: <<BaselineSegmentTypeValue>>
+Definition:: The baseline type used for this segment.
+Description:: The type can be 'normal', 'straight' or 'archipelagic'.
+Multiplicity:: 1
+|===
+
+==	Code lists
+
+[[BaselineSegmentTypeValue]]
+.BaselineSegmentTypeValue
+[cols="1a", options="header"]
+|===
+|*BaselineSegmentTypeValue*
+
+|[horizontal]
+Name:: baseline segment type value
+Definition:: The types of baselines used to measure the breadth of the territorial sea.
+Extensibility:: none
+Identifier:: http://inspire.ec.europa.eu/codelist/BaselineSegmentTypeValue
+Values:: The allowed values for this code list comprise only the values specified in <<_annex_c_normative_code_list_values,Annex C>>.
+|===
+
+[[MaritimeZoneTypeValue]]
+.MaritimeZoneTypeValue
+[cols="1a", options="header"]
+|===
+|*MaritimeZoneTypeValue*
+
+|[horizontal]
+Name:: maritime zone type value
+Definition:: Type of maritime zone.
+Extensibility:: none
+Identifier:: http://inspire.ec.europa.eu/codelist/MaritimeZoneTypeValue
+Values:: The allowed values for this code list comprise only the values specified in <<_annex_c_normative_code_list_values,Annex C>>.
+|===
+
+==	Imported types (informative)
+
+This section lists definitions for feature types, data types and enumerations and code lists that are defined in other application schemas. The section is purely informative and should help the reader understand the feature catalogue presented in the previous sections. For the normative documentation of these types, see the given references.
+
+[[CountryCode]]
+.CountryCode
+[cols="1a", options="header"]
+|===
+|*CountryCode*
+
+|[horizontal]
+Package:: Base Types 2
+Reference:: INSPIRE Generic Conceptual Model, version 3.4 [DS-D2.5]
+|===
+
+[[DateTime]]
+.DateTime
+[cols="1a", options="header"]
+|===
+|*DateTime*
+
+|[horizontal]
+Package:: DateTime
+Reference:: Geographic information -- Conceptual schema language [ISO/TS 19103:2005]
+|===
+
+[[GM_Curve]]
+.GM_Curve
+[cols="1a", options="header"]
+|===
+|*GM_Curve*
+
+|[horizontal]
+Package:: Geometric primitive
+Reference:: Geographic information -- Spatial schema [ISO 19107:2003]
+|===
+
+[[GM_MultiSurface]]
+.GM_MultiSurface
+[cols="1a", options="header"]
+|===
+|*GM_MultiSurface*
+
+|[horizontal]
+Package:: Geometric aggregates
+Reference:: Geographic information -- Spatial schema [ISO 19107:2003]
+|===
+
+[[GeographicalName]]
+.GeographicalName
+[cols="1a", options="header"]
+|===
+|*GeographicalName*
+
+|[horizontal]
+Package:: Geographical Names
+Reference:: INSPIRE Data specification on Geographical Names [DS-D2.8.I.3]
+Definition:: Proper noun applied to a real world entity.
+|===
+
+[[Identifier]]
+.Identifier
+[cols="1a", options="header"]
+|===
+|*Identifier*
+
+|[horizontal]
+Package:: Base Types
+Reference:: INSPIRE Generic Conceptual Model, version 3.4 [DS-D2.5]
+Definition:: External unique object identifier published by the responsible body, which may be used by external applications to reference the spatial object.
+Description:: NOTE1 External object identifiers are distinct from thematic object identifiers. +
+NOTE 2 The voidable version identifier attribute is not part of the unique identifier of a spatial object and may be used to distinguish two versions of the same spatial object. +
+NOTE 3 The unique identifier will not change during the life-time of a spatial object.
+|===
+
+[[LegalStatusValue]]
+.LegalStatusValue
+[cols="1a", options="header"]
+|===
+|*LegalStatusValue*
+
+|[horizontal]
+Package:: AdministrativeUnits
+Reference:: INSPIRE Data specification on Administrative Units [DS-D2.8.I.4]
+Definition:: Description of the legal status of administrative boundaries.
+|===
+
+[[SeaArea]]
+.SeaArea
+[cols="1a", options="header"]
+|===
+|*SeaArea*
+
+|[horizontal]
+Package:: Sea Regions
+Reference:: INSPIRE Data specification on Sea Regions [DS-D2.8.III.16]
+Definition:: An area of sea defined according to its physical and chemical characteristics. It may have multiple geometries (extent) to represent different tidal states.
+Description:: A SeaArea is a type of HydroObject as described in the Annex1 theme Hydrography. It has geometry described by one or more GM_MultiSurfaces. Multiple geometries are allowed to enable a SeaArea to be described according to different tidal states.
+Typically however, specialisations of SeaArea will restrict the geometry to a particular tidal state or set of tidal states. SeaAreas include named seas such as ‘Baltic Sea’ and also un-named areas of sea that have particular chemical and physical characteristics. SeaAreas are 2D objects and carry no explicit information about the depth of the sea, this is specified in the INSPIRE Elevation Theme.
+|===
+
+[[Shoreline]]
+.Shoreline
+[cols="1a", options="header"]
+|===
+|*Shoreline*
+
+|[horizontal]
+Package:: Sea Regions
+Reference:: INSPIRE Data specification on Sea Regions [DS-D2.8.III.16]
+Definition:: Any Boundary between a Sea Area and land.
+|===
+
+[[TechnicalStatusValue]]
+.TechnicalStatusValue
+[cols="1a", options="header"]
+|===
+|*TechnicalStatusValue*
+
+|[horizontal]
+Package:: AdministrativeUnits
+Reference:: INSPIRE Data specification on Administrative Units [DS-D2.8.I.4]
+Definition:: Description of the technical status of administrative boundaries.
+|===

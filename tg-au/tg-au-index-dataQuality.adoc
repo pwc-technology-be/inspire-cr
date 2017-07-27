@@ -2,6 +2,10 @@ include::content/tg-au-dataQuality.adoc[tags=tg-au-dataQualityTitle]
 
 include::../tg-template/tg-dataQuality.adoc[tags=tg-intro]
 
+include::content/tg-au-dataQuality.adoc[tags=tg-au-dataQualityElementsTitle]
+
+include::../tg-template/tg-dataQuality.adoc[tags=tg-dataQualityElements-intro]
+
 include::content/tg-au-dataQuality.adoc[tags=tg-au-dataQualityElements]
 
 include::../tg-template/tg-dataQuality.adoc[tags=tg-recommendation]

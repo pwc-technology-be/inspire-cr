@@ -1,0 +1,21 @@
+# tag::tg-au-datasetlevelMetadataTitle[]
+= Dataset-level metadata
+# end::tg-au-datasetlevelMetadataTitle[]
+
+# tag::tg-recommended-metadata-elements-table[]
+
+.Optional theme-specific metadata elements for the theme _{theme}_
+[cols=".<4,.<5,.^1"]
+|===
+| *Section* | *Metadata element* | *Multiplicity*
+
+|<<long.html#_maintenance_information,Maintenance information>> |Maintenance Information | 0..1
+|<<long.html#_metadata_elements_for_reporting_data_quality,Metadata elements for reporting data quality>> |Logical Consistency – Conceptual Consistency | 0..*
+|<<long.html#_metadata_elements_for_reporting_data_quality,Metadata elements for reporting data quality>> |Logical Consistency – Domain Consistency | 0..*
+|<<long.html#_metadata_elements_for_reporting_data_quality,Metadata elements for reporting data quality>> |Logical consistency – Topological Consistency | 0..*
+|<<long.html#_metadata_elements_for_reporting_data_quality,Metadata elements for reporting data quality>> |Completeness – Commission | 0..*
+|<<long.html#_metadata_elements_for_reporting_data_quality,Metadata elements for reporting data quality>> |Completeness – Omission | 0..*
+|<<long.html#_metadata_elements_for_reporting_data_quality,Metadata elements for reporting data quality>> |Positional accuracy – Absolute or external accuracy | 0..*
+|===
+
+# end::tg-recommended-metadata-elements-table[]

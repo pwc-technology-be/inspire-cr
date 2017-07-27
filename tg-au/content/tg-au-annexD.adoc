@@ -1,6 +1,6 @@
 = Annex D (informative) National Administrative Hierarchies (examples)
 
-== D1 Example from Germany (DE)
+== D.1 Example from Germany (DE)
 
 |===
 | *Level of administration* | *Unique structure identifier* | *Designation of the hierarchy level given in national characters* | *Designation of the hierarchy level transliterated in ASCII characters* | *English translation or equivalent of the designation* | *Significant digits of the SHN code* | *Number of objects*
@@ -112,7 +112,7 @@
 
 include::../images/tg-au-images.adoc[tags=tg-au-exampleGermany]
 
-== D2 Example from Norway (NO)
+== D.2 Example from Norway (NO)
 
 |===
 | *Level of administration* | *Unique structure identifier* | *Designation of the hierarchy level given in national characters* | *Designation of the hierarchy level transliterated in ASCII characters* | *English translation or equivalent of the designation* | *Significant digits of the SHN code* | *Number of objects*

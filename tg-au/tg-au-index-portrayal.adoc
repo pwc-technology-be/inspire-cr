@@ -1,1 +1,11 @@
-= Portrayal
+include::content/tg-au-portrayal.adoc[tags=tg-au-portrayal-title]
+
+include::../tg-template/tg-portrayal.adoc[tags=tg-portrayal-intro]
+
+include::content/tg-au-portrayal.adoc[tags=tg-au-portrayal-layers-start]
+
+include::../tg-template/tg-portrayal.adoc[tags=tg-portrayal-layers-req]
+
+include::content/tg-au-portrayal.adoc[tags=tg-au-portrayal-layers-end]
+
+include::content/tg-au-portrayal.adoc[tags=tg-au-portrayal-styles]

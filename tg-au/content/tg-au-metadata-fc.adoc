@@ -9,22 +9,22 @@ image::../tg-template/images/EC%20logo.jpeg["European Commission Logo",150,align
 Infrastructure for Spatial Information in Europe#
 |===
 
-= D2.8.I.2 {documentName}
+= Feature Catalogue "{schema}"
 
 [frame="topbot",grid="none"]
 |===
-| *Title* | D2.8.I.2 {documentName}
+| *Title* | Feature Catalogue "{schema}"
 | *Creator* | INSPIRE Thematic Working Group {theme}
 | *Date* | 2014-04-17
-| *Subject* | INSPIRE Data Specification for the spatial data theme _{theme}_
+| *Subject* | Feature catalogue for the INSPIRE application schema "{schema}"
 | *Publisher* | European Commission Joint Research Centre
 | *Type* | Text
-| *Description* | This document describes the INSPIRE Data Specification for the spatial data theme _{theme}_
+| *Description* | This document describes the feature catalogue for the INSPIRE application schema "{schema}"
 | *Contributor* | Members of the INSPIRE Thematic Working Group {theme}
 | *Format* | {format}
 | *Source* |
 | *Rights* | Public
-| *Identifier* | D2.8.I.4_v3.1
+| *Identifier* |
 | *Language* | EN
 | *Relation* | Directive 2007/2/EC of the European Parliament and of the Council of 14 March 2007 establishing an Infrastructure for Spatial Information in the European Community (INSPIRE)
 | *Coverage* | Project duration
